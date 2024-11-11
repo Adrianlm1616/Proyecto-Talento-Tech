@@ -3,32 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sport Exclusive</title>
+    <title>Contáctenos - Sport Exclusive</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <header style="background-color: black;">
-        <div>
-        <div class="logo"><img src="./img/INICIO/logo pagina inicio.png" alt="" width="200"></div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./tienda.html">Tienda</a></li>
-                <li><a href="./novedades.html">Novedades</a></li>
-                <li><a href="./contactenos.html">Contáctenos</a></li>
-            </ul>
-        </nav>
-    </div>
+    <header class="header" style="background-color: black;">
+        <div class="container">
+            <div class="logo">
+                <img src="./img/INICIO/logo pagina inicio.png" alt="Logo Sport Exclusive" width="200">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="./index.html" title="Ir a la página de inicio">Inicio</a></li>
+                    <li><a href="./tienda.html" title="Ir a la tienda">Tienda</a></li>
+                    <li><a href="./novedades.html" title="Ver las novedades">Novedades</a></li>
+                    <li><a href="./contactenos.html" title="Contáctanos">Contáctenos</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
+        <section class="contact-info">
+            <div class="google-map">
+                <h2>Ubícanos en el mapa</h2>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5028905975155!2d-122.41941808519656!3d37.77492977975866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808d2cbe13e5%3A0x8d045f68fa62f345!2sSan%20Francisco%2C%20California%2C%20Estados%20Unidos!5e0!3m2!1ses!2ses!4v1633156985455!5m2!1ses!2ses"
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
         <br>
-        <br>
-        <br>
-        <div><center><img src="./img/CONTACTENOS/IMAGEN SUPERIOR CONTACTENOS.jpg" alt="" height="200" width="1919"></center></div>
+        <center><div style="background-color: #e0dede; display: block;">
+            <h2>Envíanos un mensaje</h2>
+            <form action="enviar_mensaje.php" method="POST">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div></center>    
     </main>
+
     <footer>
         <p>Elaborado por Adrian Lara</p>
     </footer>
+
     <script src="./js/script.js"></script>
 </body>
 </html>
