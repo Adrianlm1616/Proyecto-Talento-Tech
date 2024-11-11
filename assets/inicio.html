@@ -6,9 +6,27 @@
     <title>Sport Exclusive</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body style="background-image: url(./img/INICIO/Imagen-fondo1.jpg);">
     <header>
+        <div><img src="./img/INICIO/logo pagina inicio.jpg" alt=""></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Tienda</a></li>
+                <li><a href="#">Novedades</a></li>
+                <li><a href="#">Contáctenos</a></li>
+            </ul>
+        </nav>
     </header>
+    <section id="carousel" class="carousel-container">
+        <div class="carousel-slide">
+            <img src="https://via.placeholder.com/1200x400?text=Imagen+1" alt="Imagen 1" class="carousel-image">
+            <img src="https://via.placeholder.com/1200x400?text=Imagen+2" alt="Imagen 2" class="carousel-image">
+            <img src="https://via.placeholder.com/1200x400?text=Imagen+3" alt="Imagen 3" class="carousel-image">
+        </div>
+        <button class="carousel-prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-next" onclick="nextSlide()">&#10095;</button>
+    </section>
     <main>
         <div style="padding: 20px;">
             <h2>DESCUBRE TU ESTILO EN CADA PASO</h2>
