@@ -3,61 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctenos - Sport Exclusive</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <title>Contactanos - Sport Exclusive</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="header" style="background-color: black;">
-        <div class="container">
-            <div class="logo">
-                <img src="./img/INICIO/logo pagina inicio.png" alt="Logo Sport Exclusive" width="200">
-            </div>
+    <header style="background-color: black;">
+        <div class="header-content">
+            <div class="logo"><img src="/assets/img/INICIO/logo pagina inicio.png" alt="Logo" width="200"></div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="./index.html" title="Ir a la página de inicio">Inicio</a></li>
-                    <li><a href="./tienda.html" title="Ir a la tienda">Tienda</a></li>
-                    <li><a href="./novedades.html" title="Ver las novedades">Novedades</a></li>
-                    <li><a href="./contactenos.html" title="Contáctanos">Contáctenos</a></li>
+                    <li><a href="/index.html">INICIO</a></li>
+                    <li><a href="/html/tienda.html">TIENDA</a></li>
+                    <li><a href="/html/novedades.html">NOVEDADES</a></li>
+                    <li><a href="/html/contactenos.html">CONTACTENOS</a></li>
                 </ul>
             </nav>
+            <div class="icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <div class="cart-icon-container">
+                    <i class="fas fa-shopping-cart" onclick="toggleCart()"></i>
+                    <span id="cart-count" class="cart-count">0</span>
+                </div>
+            </div>
         </div>
     </header>
+
     <main>
-        <section class="contact-info">
-            <div class="google-map">
-                <h2>Ubícanos en el mapa</h2>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5028905975155!2d-122.41941808519656!3d37.77492977975866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808d2cbe13e5%3A0x8d045f68fa62f345!2sSan%20Francisco%2C%20California%2C%20Estados%20Unidos!5e0!3m2!1ses!2ses!4v1633156985455!5m2!1ses!2ses"
-                    width="600" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
-            </div>
-        </section>
-        <br>
-        <center><div style="background-color: #e0dede; display: block;">
-            <h2>Envíanos un mensaje</h2>
-            <form action="enviar_mensaje.php" method="POST">
+        <h1 class="section-title">¡Contáctanos!</h1>
+        <div class="contact-form-container">
+            <form action="/submit" method="POST" class="contact-form">
                 <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
-
+                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="Tu correo electrónico">
+                
                 <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Enviar Mensaje</button>
+                <textarea id="message" name="message" required placeholder="Escribe tu mensaje"></textarea>
+                
+                <button type="submit">Enviar mensaje</button>
             </form>
-        </div></center>    
+        </div>
     </main>
+
+    <div id="cart" style="display:none;">
+        <div class="cart-header">
+            <h3>Carrito</h3>
+            <i class="fas fa-times" onclick="toggleCart()"></i>
+        </div>
+        <ul id="cart-items"></ul>
+        <div id="cart-total">
+            <strong>Total: $0</strong>
+        </div>
+        <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button>
+    </div>
 
     <footer>
         <p>Elaborado por Adrian Lara</p>
     </footer>
 
-    <script src="./js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>
