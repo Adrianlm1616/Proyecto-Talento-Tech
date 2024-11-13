@@ -1,87 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Meta tags para definir la codificación de caracteres y la compatibilidad con dispositivos móviles -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sport Exclusive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Asegura que el sitio sea responsive en dispositivos móviles -->
+    
+    <title>Sport Exclusive</title> <!-- Título que aparecerá en la pestaña del navegador -->
+    
+    <!-- Vinculación a los archivos CSS, incluyendo el archivo de estilos propio y el de Font Awesome para los íconos -->
     <link rel="stylesheet" href="/Proyecto-Talento-Tech/assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Vincula Font Awesome para usar íconos -->
 </head>
+
 <body>
 
+    <!-- Encabezado principal del sitio -->
     <header style="background-color: black;">
         <div class="header-content">
-            <div class="logo"><img src="/Proyecto-Talento-Tech/assets/img/INICIO/logo pagina inicio.png" alt="Logo" width="200"></div>
+            <!-- Logo de la tienda -->
+            <div class="logo">
+                <img src="/Proyecto-Talento-Tech/assets/img/INICIO/logo pagina inicio.png" alt="Logo" width="200"> <!-- Imagen del logo -->
+            </div>
+
+            <!-- Barra de navegación con enlaces a las diferentes secciones de la página -->
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/Proyecto-Talento-Tech/index.html">INICIO</a></li>
-                    <li><a href="/Proyecto-Talento-Tech/html/tienda.html">TIENDA</a></li>
-                    <li><a href="/Proyecto-Talento-Tech/html/novedades.html">NOVEDADES</a></li>
-                    <li><a href="/Proyecto-Talento-Tech/html/contactenos.html">CONTACTENOS</a></li>
+                    <li><a href="/Proyecto-Talento-Tech/index.html">INICIO</a></li> <!-- Enlace al inicio -->
+                    <li><a href="/Proyecto-Talento-Tech/html/tienda.html">TIENDA</a></li> <!-- Enlace a la tienda -->
+                    <li><a href="/Proyecto-Talento-Tech/html/novedades.html">NOVEDADES</a></li> <!-- Enlace a novedades -->
+                    <li><a href="/Proyecto-Talento-Tech/html/contactenos.html">CONTACTENOS</a></li> <!-- Enlace a la sección de contacto -->
                 </ul>
             </nav>
+
+            <!-- Contenedor para los íconos de búsqueda, usuario y carrito -->
             <div class="icons">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-user"></i>
+                <i class="fas fa-search"></i> <!-- Ícono de búsqueda -->
+                <i class="fas fa-user"></i> <!-- Ícono de usuario -->
+                
+                <!-- Ícono del carrito de compras -->
                 <div class="cart-icon-container">
-                    <i class="fas fa-shopping-cart" onclick="toggleCart()"></i>
-                    <span id="cart-count" class="cart-count">0</span>
+                    <i class="fas fa-shopping-cart" onclick="toggleCart()"></i> <!-- Ícono de carrito que llama la función toggleCart() -->
+                    <span id="cart-count" class="cart-count">0</span> <!-- Contador de productos en el carrito -->
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Contenido principal de la tienda -->
     <main>
-        <div class="product" data-id="1" data-name="Nike Bailleli" data-price="195000">
-            <img src="/Proyecto-Talento-Tech/assets/img/TIENDA/IMAGEN 1 TIENDA.png" alt="Producto 1" height="300" width="300">
-            <div class="product-details">
-                <h3>Nike Bailleli</h3>
-                <div class="price">$195.000</div>
-                <input type="number" id="quantity-1" value="1" min="1">
-                <button class="buy-button" onclick="addToCart(1, 'Nike Bailleli', 195000)">Comprar Ahora</button>
+        <div class="product-list"> <!-- Contenedor principal donde se mostrarán los productos -->
+            <!-- Producto 1: Nike Bailleli -->
+            <div class="product" data-id="1" data-name="Nike Bailleli" data-price="195000">
+                <img src="/Proyecto-Talento-Tech/assets/img/TIENDA/IMAGEN 1 TIENDA.png" alt="Producto 1" height="300" width="300"> <!-- Imagen del producto -->
+                <div class="product-details">
+                    <h3>Nike Bailleli</h3> <!-- Nombre del producto -->
+                    <div class="price">$195.000</div> <!-- Precio del producto -->
+                    <!-- Input para la cantidad de productos -->
+                    <input type="number" id="quantity-1" value="1" min="1">
+                    <!-- Botón para agregar al carrito, con la función addToCart() -->
+                    <button class="buy-button" onclick="addToCart(1, 'Nike Bailleli', 195000)">Comprar Ahora</button>
+                </div>
             </div>
-        </div>
 
-        <div class="product" data-id="2" data-name="Puma Park Beige" data-price="455000">
-            <img src="/Proyecto-Talento-Tech/assets/img/TIENDA/IMAGEN 2 TIENDA.png" alt="Producto 2" height="300" width="300">
-            <div class="product-details">
-                <h3>Puma Park Beige</h3>
-                <div class="price">$455.000</div>
-                <input type="number" id="quantity-2" value="1" min="1">
-                <button class="buy-button" onclick="addToCart(2, 'Puma Park Beige', 455000)">Comprar Ahora</button>
+            <!-- Producto 2: Puma Park Beige -->
+            <div class="product" data-id="2" data-name="Puma Park Beige" data-price="455000">
+                <img src="/Proyecto-Talento-Tech/assets/img/TIENDA/IMAGEN 2 TIENDA.png" alt="Producto 2" height="300" width="300"> <!-- Imagen del producto -->
+                <div class="product-details">
+                    <h3>Puma Park Beige</h3> <!-- Nombre del producto -->
+                    <div class="price">$455.000</div> <!-- Precio del producto -->
+                    <input type="number" id="quantity-2" value="1" min="1"> <!-- Input para la cantidad de productos -->
+                    <button class="buy-button" onclick="addToCart(2, 'Puma Park Beige', 455000)">Comprar Ahora</button> <!-- Botón de compra -->
+                </div>
             </div>
-        </div>
 
-        <div class="product" data-id="3" data-name="Adidas Tenis Samba" data-price="590000">
-            <img src="/Proyecto-Talento-Tech/assets/img/TIENDA/IMAGEN 3 TIENDA.png" alt="Producto 3" height="300" width="300">
-            <div class="product-details">
-                <h3>Adidas Tenis Samba</h3>
-                <div class="price">$590.000</div>
-                <input type="number" id="quantity-3" value="1" min="1">
-                <button class="buy-button" onclick="addToCart(3, 'Adidas Tenis Samba', 590000)">Comprar Ahora</button>
+            <!-- Producto 3: Adidas Tenis Samba -->
+            <div class="product" data-id="3" data-name="Adidas Tenis Samba" data-price="590000">
+                <img src="/Proyecto-Talento-Tech/assets/img/TIENDA/IMAGEN 3 TIENDA.png" alt="Producto 3" height="300" width="300"> <!-- Imagen del producto -->
+                <div class="product-details">
+                    <h3>Adidas Tenis Samba</h3> <!-- Nombre del producto -->
+                    <div class="price">$590.000</div> <!-- Precio del producto -->
+                    <input type="number" id="quantity-3" value="1" min="1"> <!-- Input para la cantidad de productos -->
+                    <button class="buy-button" onclick="addToCart(3, 'Adidas Tenis Samba', 590000)">Comprar Ahora</button> <!-- Botón de compra -->
+                </div>
             </div>
-        </div>
+        </div> <!-- Fin del contenedor de productos -->
     </main>
 
-    <!-- Carrito de compras -->
+    <!-- Carrito de compras: inicialmente oculto con "display: none;" -->
     <div id="cart" style="display:none;">
         <div class="cart-header">
-            <h3>Carrito</h3>
-            <i class="fas fa-times" onclick="toggleCart()"></i>
+            <h3>Carrito</h3> <!-- Título del carrito -->
+            <i class="fas fa-times" onclick="toggleCart()"></i> <!-- Ícono para cerrar el carrito, que llama la función toggleCart() -->
         </div>
-        <ul id="cart-items"></ul>
+
+        <!-- Lista de productos dentro del carrito -->
+        <ul id="cart-items"></ul> 
+
+        <!-- Total del carrito -->
         <div id="cart-total">
-            <strong>Total: $0</strong>
+            <strong>Total: $0</strong> <!-- Muestra el total acumulado del carrito -->
         </div>
-        <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button>
-        <button onclick="emptyCart()" style="width: 100%; padding: 10px; background-color: red; color: white; border: none;">Vaciar Carrito</button>
+
+        <!-- Botones de acción en el carrito -->
+        <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button> <!-- Botón para ver el carrito completo -->
+        <button onclick="emptyCart()" style="width: 100%; padding: 10px; background-color: red; color: white; border: none;">Vaciar Carrito</button> <!-- Botón para vaciar el carrito -->
     </div>
 
+    <!-- Pie de página con los créditos del autor -->
     <footer>
-        <p>Elaborado por Adrian Lara</p>
+        <p>Elaborado por Adrian Lara</p> <!-- Nombre del creador del sitio -->
     </footer>
 
-    <script src="/Proyecto-Talento-Tech/assets/js/script.js"></script>
-
+    <!-- Vinculación al archivo JavaScript para las funcionalidades del carrito -->
+    <script src="/Proyecto-Talento-Tech/assets/js/script.js"></script> <!-- Archivo JS que contiene la lógica de las interacciones como el carrito -->
 </body>
 </html>
