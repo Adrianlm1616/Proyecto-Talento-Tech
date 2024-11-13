@@ -2,253 +2,268 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Asegura que el padding y el border no afecten al tamaño total de los elementos */
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
+    font-family: Arial, sans-serif; /* Define la tipografía global */
+    color: #333; /* Color del texto principal */
+    line-height: 1.6; /* Espaciado entre líneas de texto para mayor legibilidad */
 }
 
+/* Estilo del encabezado */
 header {
-    background-color: #000;
-    color: white;
-    padding: 20px;
-    position: relative;
+    background-color: #000; /* Color de fondo negro */
+    color: white; /* Color del texto en blanco */
+    padding: 20px; /* Espaciado dentro del encabezado */
+    position: relative; /* Permite posicionar elementos de manera relativa dentro del encabezado */
 }
 
+/* Contenedor para los elementos dentro del encabezado */
 .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+    display: flex; /* Usamos flexbox para alinear los elementos de manera horizontal */
+    justify-content: space-between; /* Distribuye los elementos en los extremos del contenedor */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 0 20px; /* Espaciado horizontal */
 }
 
+/* Submenú oculto */
+.submenu {
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Posiciona el submenú en un lugar específico */
+    background-color: #333; /* Color de fondo gris oscuro */
+    min-width: 160px; /* Ancho mínimo del submenú */
+    z-index: 1; /* Asegura que el submenú esté por encima de otros elementos */
+}
+
+/* Estilo de los enlaces dentro del submenú */
+.submenu a {
+    color: white; /* Color de texto blanco */
+    padding: 12px 16px; /* Espaciado interno */
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    display: block; /* Hace que el enlace ocupe todo el ancho del submenú */
+}
+
+/* Efecto hover sobre los enlaces del submenú */
+.submenu a:hover {
+    background-color: #575757; /* Fondo gris oscuro cuando se pasa el ratón por encima */
+}
+
+/* Muestra el submenú al pasar el ratón sobre el elemento principal del menú */
+.nav-links li:hover .submenu {
+    display: block; /* Muestra el submenú */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+/* Barra de navegación */
 .navbar {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
+    flex-grow: 1; /* Permite que la barra de navegación crezca y ocupe el espacio disponible */
+    display: flex; /* Usamos flexbox para alinear los elementos dentro del contenedor */
+    justify-content: center; /* Centra los elementos horizontalmente */
 }
 
+/* Lista de enlaces de navegación */
 .nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
+    list-style: none; /* Elimina los puntos de lista por defecto */
+    display: flex; /* Muestra los elementos de la lista en línea */
+    justify-content: flex-end; /* Alinea los elementos al final */
 }
+
+/* Elementos de la lista de navegación */
 .nav-links li {
-    margin: 0 10px;
+    position: relative; /* Permite posicionar el submenú dentro de los elementos */
+    padding: 10px 20px; /* Espaciado interno */
 }
 
-.nav-links li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+/* Estilo de los enlaces en la barra de navegación */
+.nav-links a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: white; /* Color del texto */
+    font-size: 16px; /* Tamaño de la fuente */
 }
 
+/* Efecto hover sobre los enlaces de navegación */
+.nav-links a:hover {
+    background-color: #575757; /* Fondo gris oscuro al pasar el ratón */
+}
+
+/* Estilos de los íconos dentro del encabezado */
 .icons i {
-    color: white;
-    font-size: 18px;
-    margin: 0 10px;
-    cursor: pointer;
+    color: white; /* Color blanco para los íconos */
+    font-size: 18px; /* Tamaño de los íconos */
+    margin: 0 10px; /* Espaciado entre los íconos */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
 }
 
+/* Estilo del contenido principal */
 .main {
-    padding: 40px;
+    padding: 40px; /* Espaciado alrededor del contenido principal */
 }
 
+/* Estilo de los títulos */
 h1, h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2em; /* Tamaño de fuente grande */
+    margin-bottom: 20px; /* Espaciado inferior */
 }
 
+/* Estilo de los títulos de secciones */
 section-title {
-    font-size: 1.5em;
-    text-align: center;
-    margin-bottom: 40px;
+    font-size: 1.5em; /* Tamaño de fuente mediano */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 40px; /* Espaciado inferior */
 }
+
+/* Contenedor flexible para alinear texto e imágenes en una sección */
 .content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80vh; /* Alto de la sección */
-    padding: 20px;
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: space-between; /* Distribuye el contenido con espacio entre los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    height: 80vh; /* Establece la altura de la sección */
+    padding: 20px; /* Espaciado interno */
 }
 
+/* Estilo de la columna de texto */
 .text-left {
-    flex: 1;
-    color: aliceblue;
-    text-align: left;
+    flex: 1; /* Permite que el texto ocupe el espacio disponible */
+    color: aliceblue; /* Color de texto claro */
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 
+/* Estilo para el título en la columna de texto */
 .text-left h2 {
-    padding-left: 35px;
-    font-size: 55px;
-    margin-bottom: 20px;
+    padding-left: 35px; /* Espaciado a la izquierda */
+    font-size: 55px; /* Tamaño de fuente grande */
+    margin-bottom: 20px; /* Espaciado inferior */
 }
 
+/* Estilo para el botón de compra */
 .Button-compra {
-    padding: 10px 20px;
-    background-color: white;
-    text-decoration-style: none;
-    height: 60px;
-    width: 200px;
-    border-radius: 50px;
-    font-size: 25px;
-    display: block;
-    margin-top: 20px;
-    justify-content: left;
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco */
+    text-decoration-style: none; /* Elimina el subrayado */
+    height: 60px; /* Altura del botón */
+    width: 200px; /* Ancho del botón */
+    border-radius: 50px; /* Bordes redondeados */
+    font-size: 25px; /* Tamaño de la fuente */
+    display: block; /* Hace que el botón ocupe todo el espacio disponible */
+    margin-top: 20px; /* Espaciado superior */
+    justify-content: left; /* Alinea el contenido del botón a la izquierda */
 }
 
+/* Estilo de la columna de imagen */
 .image-right {
-    flex: 1;
-    text-align: center;
+    flex: 1; /* Permite que la imagen ocupe el espacio disponible */
+    text-align: center; /* Centra la imagen */
 }
 
+/* Estilo de la imagen dentro de la columna */
 .image-right img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
+    width: 100%; /* Hace que la imagen ocupe todo el ancho */
+    max-width: 400px; /* Establece un tamaño máximo para la imagen */
+    border-radius: 10px; /* Bordes redondeados */
 }
 
-/* Novedades */
-/* Botones de navegación */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.prev {
-    left: 0;
-}
-
-.next {
-    right: 0;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-/* Estilos para los productos */
+/* Estilos para la lista de productos (sección de novedades) */
 .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    display: flex; /* Muestra los productos en una fila */
+    flex-wrap: wrap; /* Permite que los productos se ajusten cuando no caben en una línea */
+    justify-content: space-between; /* Espacio entre los productos */
+    gap: 20px; /* Espaciado entre cada producto */
+    padding: 20px; /* Espaciado alrededor de los productos */
 }
 
+/* Estilo de cada producto */
 .product {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    background-color: white; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 300px; /* Ancho fijo para cada producto */
+    text-align: center; /* Centra el contenido del producto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del producto */
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
 }
 
+/* Efecto hover sobre el producto */
 .product:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Aumenta el tamaño del producto ligeramente */
 }
 
+/* Estilo de la imagen del producto */
 .product img {
-    width: 100%;
-    border-radius: 8px 8px 0 0;
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del producto */
+    border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
 }
 
+/* Detalles del producto */
 .product-details {
-    padding: 15px;
+    padding: 15px; /* Espaciado interno */
 }
 
+/* Estilo del título del producto */
 .product h3 {
-    font-size: 1.4em;
-    color: #333;
+    font-size: 1.4em; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
 }
 
+/* Estilo de la descripción del producto */
 .product p {
-    color: #666;
-    font-size: 1em;
-    margin: 10px 0;
+    color: #666; /* Color gris para el texto */
+    font-size: 1em; /* Tamaño de fuente normal */
+    margin: 10px 0; /* Espaciado superior e inferior */
 }
 
+/* Estilo del precio del producto */
 .price {
-    font-size: 1.3em;
-    color: #e74c3c;
-    margin-top: 10px;
+    font-size: 1.3em; /* Tamaño de la fuente */
+    color: #e74c3c; /* Color rojo para destacar el precio */
+    margin-top: 10px; /* Espaciado superior */
 }
 
+/* Estilo del botón de compra */
 .buy-button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    display: inline-block;
+    background-color: #3498db; /* Fondo azul */
+    color: white; /* Color de texto blanco */
+    padding: 10px; /* Espaciado interno */
+    text-decoration: none; /* Elimina el subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Espaciado superior */
+    display: inline-block; /* Hace que el botón se ajuste al contenido */
 }
 
+/* Efecto hover sobre el botón de compra */
 .buy-button:hover {
-    background-color: #2980b9;
+    background-color: #2980b9; /* Fondo azul más oscuro */
 }
 
-/* Carrito */
+/* Estilo para el carrito de compras */
 #cart {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fija el carrito en la esquina superior derecha */
+    top: 0; /* Coloca el carrito en la parte superior */
+    right: 0; /* Coloca el carrito en el lado derecho */
+    width: 300px; /* Ancho del carrito */
+    height: 100%; /* Altura completa */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave a la izquierda */
     display: none; /* Oculto por defecto */
-    z-index: 1000;
-    overflow-y: auto;
+    z-index: 1000; /* Asegura que el carrito esté sobre otros elementos */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
 }
 
+/* Estilo del encabezado del carrito */
 .cart-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #333;
-    color: white;
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: space-between; /* Espaciado entre el título y el botón de cerrar */
+    padding: 10px; /* Espaciado interno */
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Color de texto blanco */
 }
 
-#cart-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-
-#cart-total {
-    padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
+/* Estilo de los íconos del carrito */
 .cart-icon-container {
-    position: relative;
-    display: inline-block;
+    position: relative; /* Permite posicionar elementos dentro del contenedor */
+    display: inline-block; /* Hace que el contenedor del ícono se ajuste al contenido */
 }
 
 .cart-count {
-    position: absolute
-}
-/* Estilo del footer */
-footer {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 40px;
+    position: absolute; /* Posiciona el contador de productos en el carrito */
 }
