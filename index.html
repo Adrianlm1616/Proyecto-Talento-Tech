@@ -2,69 +2,105 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el sitio sea responsive -->
     <title>Sport Exclusive</title>
-    <link rel="stylesheet" href="/Proyecto-Talento-Tech/assets/css/style.css">
+
+    <!-- Vinculación al archivo CSS para los estilos personalizados -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Vinculación a Font Awesome para usar íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body style="background: url(/Proyecto-Talento-Tech/assets/img/INICIO/Imagen-fondo1.jpg); background-repeat: no-repeat; background-size: cover;">
 
+<body style="background: url(/assets/img/INICIO/Imagen-fondo1.jpg); background-repeat: no-repeat; background-size: cover;">
+    
     <header>
+        <!-- Contenedor que contiene todo lo referente al encabezado -->
         <div class="header-content">
+            <!-- Logo de la empresa en el encabezado -->
             <div class="logo">
-                <img src="./img/INICIO/logo pagina inicio.png" alt="Logo Sport Exclusive" width="200">
+                <img src="/assets/img/INICIO/logo pagina inicio.png" alt="Logo Sport Exclusive" width="200"> <!-- Logo de la tienda -->
             </div>
+
+            <!-- Barra de navegación con enlaces -->
             <nav class="navbar">
                 <ul class="nav-links">
-                    <li><a href="/Proyecto-Talento-Tech/index.html">INICIO</a></li>
-                    <li><a href="/Proyecto-Talento-Tech/html/tienda.html">TIENDA</a></li>
-                    <li><a href="/Proyecto-Talento-Tech/html/novedades.html">NOVEDADES</a></li>
-                    <li><a href="/Proyecto-Talento-Tech/html/contactenos.html">CONTACTENOS</a></li>
+                    <!-- Enlaces de navegación -->
+                    <li><a href="Proyecto-Talento-Tech/index.html">INICIO</a></li>
+                    <li><a href="Proyecto-Talento-Tech/html/tienda.html">TIENDA</a></li>
+                    <li><a href="Proyecto-Talento-Tech/html/novedades.html">NOVEDADES</a>
+                        <!-- Submenú de barra de navegación de "NOVEDADES" -->
+                        <div class="submenu">
+                            <a href="#">OFERTAS</a> <!-- Subenlace "OFERTAS" dentro de Novedades -->
+                            <a href="#">MARCAS</a> <!-- Subenlace "MARCAS" dentro de Novedades -->
+                        </div>
+                    </li>
+                    <li><a href="Proyecto-Talento-Tech/html/contactenos.html">CONTACTENOS</a></li> <!-- Enlace a la página de contacto -->
                 </ul>
             </nav>
+
+            <!-- Contenedor de los íconos de búsqueda, usuario y carrito -->
             <div class="icons">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-user"></i>
+                <i class="fas fa-search"></i> <!-- Icono de búsqueda -->
+                <i class="fas fa-user"></i> <!-- Icono de usuario -->
+                
+                <!-- Icono del carrito de compras con contador de productos -->
                 <div class="cart-icon-container">
-                    <i class="fas fa-shopping-cart" onclick="toggleCart()"></i>
-                    <span id="cart-count" class="cart-count">0</span>
+                    <i class="fas fa-shopping-cart" onclick="toggleCart()"></i> <!-- Icono de carrito que activa la función toggleCart() -->
+                    <span id="cart-count" class="cart-count">0</span> <!-- Contador de productos en el carrito -->
                 </div>
             </div>
         </div>
     </header>
 
     <main>
+        <!-- Contenedor principal de contenido de la página -->
         <div class="content-wrapper">
             <div class="text-left">
+                <!-- Título destacado de la página -->
                 <h2>DESCUBRE TU <br> ESTILO <br> EN CADA PASO</h2>
             </div>
+            
+            <!-- Imagen en el lado derecho de la página -->
             <div class="image-right">
-                <img src="/Proyecto-Talento-Tech/assets/img/INICIO/imagen pagina principal.jpg" alt="Imagen principal" width="400">
+                <img src="/assets/img/INICIO/imagen pagina principal.jpg" alt="Imagen principal" width="400">
             </div>
         </div>
+
+        <!-- Botón de llamada a la acción para compra inmediata -->
         <div class="Button-compra">
-            <a href="#" class="btn-buy-now"><p style="color: red;">COMPRA YA!</p></a>
+            <a href="#" class="btn-buy-now"><p style="color: red;">COMPRA YA!</p></a> <!-- Enlace con un mensaje de urgencia para incentivar la compra -->
         </div>
     </main>
 
+    <!-- Sección de carrito de compras -->
     <div id="cart">
+        <!-- Encabezado del carrito de compras -->
         <div class="cart-header">
-            <h3>Carrito</h3>
-            <i class="fas fa-times" onclick="toggleCart()"></i>
+            <h3>Carrito</h3> <!-- Título del carrito -->
+            <i class="fas fa-times" onclick="toggleCart()"></i> <!-- Icono para cerrar el carrito, que llama a la función toggleCart() -->
         </div>
+        
+        <!-- Lista de productos en el carrito -->
         <ul id="cart-items">
         </ul>
+
+        <!-- Total del carrito -->
         <div id="cart-total">
-            <strong>Total: $0</strong>
+            <strong>Total: $0</strong> <!-- Muestra el total del carrito -->
         </div>
-        <button onclick="emptyCart()" style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Vaciar Carrito</button>
-        <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button>
+        
+        <!-- Botones para vaciar el carrito o ver el carrito completo -->
+        <button onclick="emptyCart()" style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Vaciar Carrito</button> <!-- Botón para vaciar el carrito -->
+        <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button> <!-- Botón para ver el carrito -->
     </div>
 
+    <!-- Pie de página -->
     <footer>
-        <p>Elaborado por Adrian Lara</p>
+        <p>Elaborado por Adrian Lara</p> <!-- Texto con el nombre del autor del sitio -->
     </footer>
 
-    <script src="/Proyecto-Talento-Tech/assets/js/script.js"></script>
+    <!-- Vinculación al archivo JS para la funcionalidad del carrito -->
+    <script src="/assets/js/script.js"></script> <!-- Archivo JS que contiene las funciones del carrito y otras interacciones -->
 </body>
 </html>
