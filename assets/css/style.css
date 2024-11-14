@@ -408,26 +408,60 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     outline: none; /* Elimina el contorno al enfocar el botón */
 }
 
-/* Aseguramos que las imágenes del carrusel se ajusten a un tamaño consistente */
-.carousel-item img {
-    width: 100%; /* Hace que la imagen ocupe todo el ancho disponible */
-    height: 500px; /* Establece una altura fija para todas las imágenes del carrusel */
-    object-fit: cover; /* Asegura que la imagen se recorte adecuadamente para llenar el contenedor */
-    object-position: center; /* Asegura que la imagen se enfoque en el centro */
+/* Contenedor principal del carrusel */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-/* Ajustamos el tamaño del carrusel y lo centramos */
+/* Carrusel (contenedor de las imágenes) */
 .carousel {
-    max-width: 100%; /* Asegura que el carrusel no se estire más allá del tamaño de su contenedor */
-    margin: 0 auto; /* Centra el carrusel */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
-/* Mejora la visibilidad del texto en las imágenes del carrusel */
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la visibilidad del texto */
-    color: white; /* Texto blanco */
-    padding: 20px; /* Espaciado alrededor del texto */
-    border-radius: 5px; /* Bordes redondeados */
+/* Cada imagen dentro del carrusel */
+.carousel-item {
+    min-width: 100%;
+    display: block;
+}
+
+/* Imagen del carrusel */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+/* Botones de control del carrusel */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 30px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Posición del botón "Anterior" */
+.prev {
+    left: 10px;
+}
+
+/* Posición del botón "Siguiente" */
+.next {
+    right: 10px;
+}
+
+/* Cambiar el cursor cuando se pasa por encima */
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 del{

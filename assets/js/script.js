@@ -92,81 +92,50 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
 });
 
-// --- Carrusel de imágenes: Funcionalidad para mostrar y navegar entre imágenes ---
-let imagenIndex = 0;  // Índice de la imagen actual en el carrusel
-const imagenes = document.querySelectorAll('.carrusel-images img');  // Seleccionar todas las imágenes del carrusel
-const indicadores = document.querySelectorAll('.indicadores span');  // Seleccionar los indicadores
-const totalImagenes = imagenes.length;  // Total de imágenes en el carrusel
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel');
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    let currentIndex = 0;
 
-// Función para mostrar una imagen específica del carrusel
-function mostrarImagen(index) {
-    imagenIndex = index;
-    actualizarCarrusel();
-}
+    // Botones de control
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
-// Función para actualizar el carrusel (mostrar la imagen actual y actualizar indicadores)
-function actualizarCarrusel() {
-    // Asegurarse de que el índice esté dentro del rango de imágenes
-    if (imagenIndex < 0) imagenIndex = totalImagenes - 1;
-    if (imagenIndex >= totalImagenes) imagenIndex = 0;
+    // Función para mostrar la imagen actual
+    function updateCarousel() {
+        // Desplazar el carrusel a la posición correspondiente
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
 
-    // Ocultar todas las imágenes
-    imagenes.forEach(img => img.classList.remove('active'));
-    // Mostrar la imagen correspondiente
-    imagenes[imagenIndex].classList.add('active');
-
-    // Actualizar los indicadores
-    indicadores.forEach(indicator => indicator.classList.remove('active'));
-    indicadores[imagenIndex].classList.add('active');
-}
-
-// Función para ir a la siguiente imagen del carrusel
-function siguienteImagen() {
-    imagenIndex++;
-    actualizarCarrusel();
-}
-
-// Función para ir a la imagen anterior del carrusel
-function anteriorImagen() {
-    imagenIndex--;
-    actualizarCarrusel();
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Inicializar el carrusel con jQuery
-    $('.carousel').carousel({
-        interval: 3000,  // Intervalo de desplazamiento automático (en milisegundos)
-        pause: 'hover'   // Pausa el carrusel cuando el mouse pasa por encima
+    // Función para ir a la imagen anterior
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex === 0) {
+            currentIndex = totalItems - 1; // Si estamos en la primera imagen, ir a la última
+        } else {
+            currentIndex--;
+        }
+        updateCarousel();
     });
 
-    // Agregar los eventos de los controles del carrusel
-    const prevButton = document.querySelector('.carousel-control-prev');
-    const nextButton = document.querySelector('.carousel-control-next');
+    // Función para ir a la imagen siguiente
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex === totalItems - 1) {
+            currentIndex = 0; // Si estamos en la última imagen, ir a la primera
+        } else {
+            currentIndex++;
+        }
+        updateCarousel();
+    });
 
-    if (prevButton && nextButton) {
-        prevButton.addEventListener('click', function () {
-            $('#carouselExample').carousel('prev');
-        });
-        nextButton.addEventListener('click', function () {
-            $('#carouselExample').carousel('next');
-        });
-    }
+    // Inicializar el carrusel
+    updateCarousel();
 });
 
-// Agregar eventos a los controles del carrusel
-document.querySelector('.carousel-control-prev').addEventListener('click', anteriorImagen);
-document.querySelector('.carousel-control-next').addEventListener('click', siguienteImagen);
-
-// Establecer los indicadores del carrusel
-indicadores.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => mostrarImagen(index));
-});
-
-// Iniciar el carrusel con la primera imagen visible
-actualizarCarrusel();
-
-// Cambiar automáticamente las imágenes del carrusel cada 15 segundos
-setInterval(siguienteImagen, 15000);  // Cambiar cada 15 segundos
+// Autoplay del carrusel (opcional)
+setInterval(() => {
+    nextBtn.click(); // Simula un clic en el botón "siguiente"
+}, 15000); // Cada 15 segundos
 
 // Función para abrir y cerrar la barra lateral de login
 function toggleLoginSidebar() {
