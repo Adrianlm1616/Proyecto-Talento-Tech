@@ -439,12 +439,12 @@ del{
     overflow-x: hidden; /* Desactivar el desplazamiento horizontal */
     transition: 0.3s; /* Animación para abrir/cerrar */
     padding-top: 60px;
-    z-index: 101;
+    z-index: 101; /* Asegúrate de que el z-index sea alto para estar por encima de otros elementos */
 }
 
 /* Cuando se agrega la clase 'open', la barra lateral se expande */
 .sidebar.open {
-    width: 300px; /* Nuevo tamaño cuando la barra lateral está abierta */
+    width: 300px; /* Nuevo tamaño cuando la barra lateral está abierta (elige 300px o 250px, pero no ambos) */
 }
 
 /* Estilo para el contenido de la barra lateral */
@@ -457,7 +457,6 @@ del{
 .sidebar h2 {
     margin-bottom: 20px;
 }
-
 
 /* Estilo de los campos de entrada en la barra lateral */
 .input-container {
@@ -523,7 +522,7 @@ button:hover {
 
 /* Animación para abrir la barra lateral */
 .sidebar.open {
-    width: 250px; /* Ancho de la barra lateral cuando está abierta */
+    width: 300px; /* Mantén solo una definición para el ancho de la barra lateral */
 }
 
 /* Animación para el mensaje de bienvenida */
