@@ -162,16 +162,17 @@ const correctPassword = 'talentotech1';
 
 // Función para abrir la barra lateral de inicio de sesión
 function openLoginSidebar() {
-    document.getElementById("loginSidebar").style.width = "300px"; // Cambia el ancho de la barra lateral
+    sidebar.classList.add('open'); // Añadimos la clase 'open' para abrir la barra lateral
 }
 
 // Función para cerrar la barra lateral
 function closeLoginSidebar() {
-    document.getElementById("loginSidebar").style.width = "0"; // Restaura el ancho a 0
+    sidebar.classList.remove('open'); // Quitamos la clase 'open' para cerrar la barra lateral
 }
+
 // Asociamos las funciones al icono de usuario y el botón de cierre
-document.getElementById("openBtn").addEventListener("click", openLoginSidebar); // Evento para abrir la barra lateral
-document.getElementById("closeBtn").addEventListener("click", closeLoginSidebar); // Evento para cerrar la barra lateral
+openBtn.addEventListener("click", openLoginSidebar); // Evento para abrir la barra lateral
+closeBtn.addEventListener("click", closeLoginSidebar); // Evento para cerrar la barra lateral
 
 // Función para manejar el evento de inicio de sesión
 loginForm.addEventListener('submit', (e) => {

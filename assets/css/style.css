@@ -428,34 +428,36 @@ del{
     text-decoration: line-through;
 }
 
-/* Barra lateral de inicio de sesión */
+/* Estilo de la barra lateral */
 .sidebar {
-    height: 100%; /* La barra lateral ocupa todo el alto de la pantalla */
-    width: 0; /* Inicialmente la barra lateral está oculta */
-    position: fixed; /* Fija la barra lateral en la pantalla */
+    height: 100%;
+    width: 0; /* Comienza colapsada */
+    position: fixed;
     top: 0;
-    left: 0; /* La barra lateral se muestra desde la parte izquierda */
-    background-color: #111; /* Color de fondo oscuro */
-    color: white; /* Color del texto blanco */
-    overflow-x: hidden; /* Evita que se desplace horizontalmente */
-    transition: 0.5s; /* Transición suave cuando se abre o cierra */
-    padding-top: 60px; /* Espacio desde la parte superior */
-    z-index: 101; /* Asegura que la barra lateral esté por encima de otros elementos */
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden; /* Desactivar el desplazamiento horizontal */
+    transition: 0.3s; /* Animación para abrir/cerrar */
+    padding-top: 60px;
+    z-index: 101;
 }
 
-/* Estilo del contenido de la barra lateral */
+/* Cuando se agrega la clase 'open', la barra lateral se expande */
+.sidebar.open {
+    width: 300px; /* Nuevo tamaño cuando la barra lateral está abierta */
+}
+
+/* Estilo para el contenido de la barra lateral */
 .sidebar-content {
     color: white;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 
-/* Títulos dentro de la barra lateral */
 .sidebar h2 {
-    margin-bottom: 20px; /* Espaciado debajo del título */
-    font-size: 24px; /* Tamaño de fuente del título */
-    color: #f1f1f1; /* Color de los títulos en la barra lateral */
+    margin-bottom: 20px;
 }
+
 
 /* Estilo de los campos de entrada en la barra lateral */
 .input-container {
