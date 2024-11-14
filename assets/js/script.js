@@ -213,16 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
     visitCounterElement.textContent = `${visitCount} personas han visitado esta página`;
 });
 
-// Muestra u oculta la barra de filtros
-function toggleFilter() {
-    const filterBar = document.getElementById('filters');
-    if (filterBar.style.left === '0px') {
-        filterBar.style.left = '-300px';  // Oculta
-    } else {
-        filterBar.style.left = '0';  // Muestra
-    }
-}
-
 // Aplica los filtros seleccionados
 function applyFilters() {
     const brand = document.getElementById('brand').value;
@@ -258,18 +248,23 @@ function applyFilters() {
         });
     }
 
-    // Muestra los productos filtrados
+    // Muestra los productos filtrados y oculta los demás
     updateProductList(filteredProducts);
 }
 
 // Actualiza la lista de productos en la página
 function updateProductList(filteredProducts) {
     const productList = document.getElementById('product-list');
-    productList.innerHTML = '';  // Limpia la lista de productos
+    
+    // Ocultar todos los productos
+    const allProducts = document.querySelectorAll('.product');
+    allProducts.forEach(product => {
+        product.style.display = 'none';  // Ocultamos todos los productos
+    });
 
-    // Agrega los productos filtrados al contenedor
+    // Mostrar los productos filtrados
     filteredProducts.forEach(product => {
-        productList.appendChild(product);
+        product.style.display = 'block';  // Mostramos solo los productos que cumplen los filtros
     });
 
     // Si no hay productos que mostrar, muestra un mensaje
