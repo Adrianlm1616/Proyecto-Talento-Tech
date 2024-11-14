@@ -17,7 +17,6 @@ header {
     color: white; /* Color del texto en blanco */
     padding: 10px; /* Espaciado dentro del encabezado */
     position: relative; /* Permite posicionar elementos de manera relativa dentro del encabezado */
-    height: 10px;
 }
 
 /* Contenedor para los elementos dentro del encabezado */
@@ -61,7 +60,6 @@ header {
     /*flex-grow: 1; /* Permite que la barra de navegación crezca y ocupe el espacio disponible */
     display: flex; /* Usamos flexbox para alinear los elementos dentro del contenedor */
     justify-content: center; /* Centra los elementos horizontalmente */
-    height: 100%;
 }
 
 /* Lista de enlaces de navegación */
