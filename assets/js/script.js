@@ -147,48 +147,45 @@ actualizarCarrusel();
 // Cambiar automáticamente las imágenes del carrusel cada 15 segundos
 setInterval(siguienteImagen, 15000);  // Cambiar cada 15 segundos
 
-// --- Funciones para manejar el inicio de sesión y la barra lateral ---
-const openBtn = document.getElementById('openBtn');  // Botón para abrir la barra lateral
-const closeBtn = document.getElementById('closeBtn');  // Botón para cerrar la barra lateral
-const sidebar = document.getElementById('loginSidebar');  // Barra lateral de inicio de sesión
-const loginForm = document.getElementById('loginForm');  // Formulario de inicio de sesión
-const usernameInput = document.getElementById('username');  // Campo de texto para el nombre de usuario
-const passwordInput = document.getElementById('password');  // Campo de texto para la contraseña
-const welcomeMessage = document.getElementById('welcomeMessage');  // Contenedor del mensaje de bienvenida
+document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.getElementById('openBtn');  // Botón para abrir la barra lateral
+    const closeBtn = document.getElementById('closeBtn');  // Botón para cerrar la barra lateral
+    const sidebar = document.getElementById('loginSidebar');  // Barra lateral de inicio de sesión
+    const loginForm = document.getElementById('loginForm');  // Formulario de inicio de sesión
+    const usernameInput = document.getElementById('username');  // Campo de texto para el nombre de usuario
+    const passwordInput = document.getElementById('password');  // Campo de texto para la contraseña
+    const welcomeMessage = document.getElementById('welcomeMessage');  // Contenedor del mensaje de bienvenida
 
-// Usuario y contraseña correctos
-const correctUsername = 'cainetech';
-const correctPassword = 'talentotech1';
-
-// Función para abrir la barra lateral de inicio de sesión
-function openLoginSidebar() {
-    sidebar.classList.add('open'); // Añadimos la clase 'open' para abrir la barra lateral
-}
-
-// Función para cerrar la barra lateral
-function closeLoginSidebar() {
-    sidebar.classList.remove('open'); // Quitamos la clase 'open' para cerrar la barra lateral
-}
-
-// Asociamos las funciones al icono de usuario y el botón de cierre
-openBtn.addEventListener("click", openLoginSidebar); // Evento para abrir la barra lateral
-closeBtn.addEventListener("click", closeLoginSidebar); // Evento para cerrar la barra lateral
-
-// Función para manejar el evento de inicio de sesión
-loginForm.addEventListener('submit', (e) => {
-    e.preventDefault();  // Prevenir el envío tradicional del formulario
-
-    // Obtener los valores ingresados por el usuario
-    const username = usernameInput.value.trim();  // Eliminar espacios en blanco
-    const password = passwordInput.value.trim();
-
-    // Verificar si las credenciales son correctas
-    if (username === correctUsername && password === correctPassword) {
-        // Si las credenciales son correctas, cerrar la barra lateral y mostrar el mensaje de bienvenida
-        sidebar.classList.remove('open');  // Eliminar la clase 'open' para cerrar la barra lateral
-        welcomeMessage.style.display = 'block';  // Mostrar el mensaje de bienvenida
-    } else {
-        // Si las credenciales son incorrectas, mostrar un mensaje de alerta
-        alert('Usuario o contraseña incorrectos');  // Mostrar un mensaje de error
+    // Función para abrir la barra lateral de inicio de sesión
+    function openLoginSidebar() {
+        sidebar.classList.add('open');  // Añadimos la clase 'open' para abrir la barra lateral
     }
+
+    // Función para cerrar la barra lateral
+    function closeLoginSidebar() {
+        sidebar.classList.remove('open');  // Quitamos la clase 'open' para cerrar la barra lateral
+    }
+
+    // Asociamos los eventos a los botones
+    openBtn.addEventListener("click", openLoginSidebar);  // Evento para abrir la barra lateral
+    closeBtn.addEventListener("click", closeLoginSidebar);  // Evento para cerrar la barra lateral
+
+    // Función para manejar el evento de inicio de sesión
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();  // Prevenir el envío tradicional del formulario
+
+        // Obtener los valores ingresados por el usuario
+        const username = usernameInput.value.trim();  // Eliminar espacios en blanco
+        const password = passwordInput.value.trim();
+
+        // Verificar si las credenciales son correctas
+        if (username === 'cainetech' && password === 'talentotech1') {
+            // Si las credenciales son correctas, cerrar la barra lateral y mostrar el mensaje de bienvenida
+            sidebar.classList.remove('open');  // Eliminar la clase 'open' para cerrar la barra lateral
+            welcomeMessage.style.display = 'block';  // Mostrar el mensaje de bienvenida
+        } else {
+            // Si las credenciales son incorrectas, mostrar un mensaje de alerta
+            alert('Usuario o contraseña incorrectos');  // Mostrar un mensaje de error
+        }
+    });
 });
