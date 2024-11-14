@@ -216,7 +216,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Función para mostrar u ocultar el panel de filtros
 function toggleFilter() {
     const filterPanel = document.getElementById('filters');
-    filterPanel.style.display = (filterPanel.style.display === 'block') ? 'none' : 'block';
+    if (filterPanel.style.display === 'none' || filterPanel.style.display === '') {
+        filterPanel.style.display = 'block'; // Muestra el panel de filtros
+    } else {
+        filterPanel.style.display = 'none'; // Oculta el panel de filtros
+    }
 }
 
 // Función para aplicar los filtros
