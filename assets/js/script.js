@@ -147,6 +147,19 @@ actualizarCarrusel();
 // ** Función para activar el cambio automático de imágenes del carrusel (si se desea)**
 setInterval(siguienteImagen, 15000);  // Cambiar cada 15 segundos (ajustable)
 
+// Simulando los productos (estos pueden provenir de una base de datos en un caso real)
+const products = [
+    { id: 1, name: 'Nike Bailleli', brand: 'Nike', price: 195000, image: '/Proyecto-Talento-Tech/assets/img/TIENDA/IMAGEN 1 TIENDA.png' },
+    { id: 2, name: 'Puma Park Beige', brand: 'Puma', price: 455000, image: '/Proyecto-Talento-Tech/assets/img/TIENDA/IMAGEN 2 TIENDA.png' },
+    { id: 3, name: 'Adidas Tenis Samba', brand: 'Adidas', price: 590000, image: '/Proyecto-Talento-Tech/assets/img/TIENDA/IMAGEN 3 TIENDA.png' },
+    { id: 4, name: 'Tenis Dame 9 Low', brand: 'Puma', price: 250000, image: '/Proyecto-Talento-Tech/assets/img/TIENDA/Tenis_Dame_9_Low_Blanco_IG6603_04_standard (1)-Photoroom.png' },
+    { id: 5, name: 'Running Nike Renew Ride 3', brand: 'Nike', price: 290000, image: '/Proyecto-Talento-Tech/assets/img/TIENDA/zapatos nike 1-Photoroom.png' },
+    { id: 6, name: 'Tenis de Running Supernova Rise adidas', brand: 'Adidas', price: 495000, image: '/Proyecto-Talento-Tech/assets/img/TIENDA/zapatos adida 1-Photoroom.png' },
+    { id: 7, name: 'Nike Downshifter 13', brand: 'Nike', price: 305000, image: '/Proyecto-Talento-Tech/assets/img/TIENDA/zapatos nike 2-Photoroom.png' },
+    { id: 8, name: 'New Balance Edición especial Fresh Foam 574', brand: 'New Balance', price: 235000, image: '/Proyecto-Talento-Tech/assets/img/TIENDA/zapatos new balance 1.png' },
+    { id: 9, name: 'New Balance 442 v2 Pro FG', brand: 'New Balance', price: 395000, image: '/Proyecto-Talento-Tech/assets/img/TIENDA/zapatos new balance 2-Photoroom.png' },
+];
+
 // Función para aplicar los filtros seleccionados por el usuario
 function applyFilters() {
     // Obtener los valores seleccionados por el usuario para marca y rango de precio
