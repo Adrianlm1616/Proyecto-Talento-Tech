@@ -229,7 +229,7 @@ function applyFilters() {
 
     // Obtener todos los productos
     const products = document.querySelectorAll('.product');
-    const productList = document.querySelector('.product-list');
+    const productList = document.getElementById('product-list');
     
     // Filtrar productos
     let filteredProducts = Array.from(products).filter(product => {
