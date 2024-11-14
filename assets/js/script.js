@@ -213,77 +213,54 @@ document.addEventListener('DOMContentLoaded', () => {
     visitCounterElement.textContent = `${visitCount} personas han visitado esta página`;
 });
 
-// Aplica los filtros seleccionados
+// Función para mostrar u ocultar el panel de filtros
+function toggleFilter() {
+    const filterPanel = document.getElementById('filters');
+    filterPanel.style.display = (filterPanel.style.display === 'block') ? 'none' : 'block';
+}
+
+// Función para aplicar los filtros
 function applyFilters() {
-    const brand = document.getElementById('brand').value;
-    const priceMin = parseInt(document.getElementById('price-min').value);
-    const priceMax = parseInt(document.getElementById('price-max').value);
-    const sort = document.getElementById('sort').value;
+    // Obtener los valores de los filtros
+    const brandFilter = document.getElementById('brand').value;
+    const priceMinFilter = parseFloat(document.getElementById('price-min').value);
+    const priceMaxFilter = parseFloat(document.getElementById('price-max').value);
+    const sortFilter = document.getElementById('sort').value;
 
-    // Obtén todos los productos
+    // Obtener todos los productos
     const products = document.querySelectorAll('.product');
-
-    // Filtra los productos en función de los criterios seleccionados
-    let filteredProducts = Array.from(products).filter(product => {
-        const productBrand = product.getAttribute('data-brand');
-        const productPrice = parseInt(product.getAttribute('data-price'));
-
-        // Filtra por marca
-        const isBrandValid = brand === 'all' || productBrand === brand;
-
-        // Filtra por precio
-        const isPriceValid = productPrice >= priceMin && productPrice <= priceMax;
-
-        return isBrandValid && isPriceValid;
-    });
-
-    // Ordena los productos si se selecciona ordenar por precio
-    if (sort === 'asc') {
-        filteredProducts.sort((a, b) => {
-            return parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price'));
-        });
-    } else if (sort === 'desc') {
-        filteredProducts.sort((a, b) => {
-            return parseInt(b.getAttribute('data-price')) - parseInt(a.getAttribute('data-price'));
-        });
-    }
-
-    // Actualizamos la lista de productos (muestra los filtrados, oculta los no filtrados)
-    updateProductList(filteredProducts);
-}
-
-// Actualiza la lista de productos en la página
-function updateProductList(filteredProducts) {
-    const productList = document.getElementById('product-list');
+    const productList = document.querySelector('.product-list');
     
-    // Primero, mostramos todos los productos
-    const allProducts = document.querySelectorAll('.product');
-    allProducts.forEach(product => {
-        product.style.display = 'none';  // Ocultamos todos los productos
+    // Filtrar productos
+    let filteredProducts = Array.from(products).filter(product => {
+        const productPrice = parseFloat(product.getAttribute('data-price'));
+        const productBrand = product.getAttribute('data-brand');
+
+        // Aplicar filtro de marca
+        if (brandFilter !== 'all' && productBrand !== brandFilter) {
+            return false;
+        }
+
+        // Aplicar filtro de precio
+        if (productPrice < priceMinFilter || productPrice > priceMaxFilter) {
+            return false;
+        }
+
+        return true;
     });
 
-    // Si hay productos filtrados, los mostramos
-    if (filteredProducts.length > 0) {
-        filteredProducts.forEach(product => {
-            product.style.display = 'block';  // Mostramos los productos que cumplen con el filtro
-        });
-    } else {
-        // Si no hay productos filtrados, mostrar un mensaje que indique que no hay productos
-        const noProductsMessage = document.createElement('p');
-        noProductsMessage.textContent = 'No hay productos que coincidan con los filtros seleccionados.';
-        productList.appendChild(noProductsMessage);
+    // Ordenar los productos si se ha seleccionado alguna opción
+    if (sortFilter === 'asc') {
+        filteredProducts.sort((a, b) => parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price')));
+    } else if (sortFilter === 'desc') {
+        filteredProducts.sort((a, b) => parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price')));
     }
+
+    // Limpiar la lista de productos
+    productList.innerHTML = '';
+
+    // Añadir los productos filtrados y ordenados a la lista
+    filteredProducts.forEach(product => {
+        productList.appendChild(product);
+    });
 }
-
-// Inicializa la lista de productos al cargar la página (muestra todos los productos inicialmente)
-document.addEventListener('DOMContentLoaded', () => {
-    // Muestra todos los productos inicialmente (sin filtro)
-    const products = document.querySelectorAll('.product');
-    updateProductList(Array.from(products));  // Muestra todos los productos inicialmente
-
-    // Asignar el evento de cambio para los filtros
-    document.getElementById('brand').addEventListener('change', applyFilters);
-    document.getElementById('price-min').addEventListener('input', applyFilters);
-    document.getElementById('price-max').addEventListener('input', applyFilters);
-    document.getElementById('sort').addEventListener('change', applyFilters);
-});
