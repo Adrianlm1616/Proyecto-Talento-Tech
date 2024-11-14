@@ -193,3 +193,22 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCart();
     updateCartCount();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Verificar si el contador de visitas ya existe en localStorage
+    let visitCount = localStorage.getItem('visitCount');
+
+    // Si no existe, inicializamos el contador en 1, si existe, lo incrementamos
+    if (visitCount === null) {
+        visitCount = 1; // Si es la primera vez que alguien visita la página
+    } else {
+        visitCount = parseInt(visitCount) + 1; // Incrementar el contador de visitas
+    }
+
+    // Guardar el contador actualizado en localStorage
+    localStorage.setItem('visitCount', visitCount);
+
+    // Mostrar el contador de visitas en el pie de página
+    const visitCounterElement = document.getElementById('visit-counter');
+    visitCounterElement.textContent = `${visitCount} personas han visitado esta página`;
+});
