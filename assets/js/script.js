@@ -132,6 +132,24 @@ function anteriorImagen() {
     actualizarCarrusel();
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Verificar si los botones del carrusel existen antes de agregar los eventos
+    const prevButton = document.querySelector('.carousel-control-prev');
+    const nextButton = document.querySelector('.carousel-control-next');
+    
+    if (prevButton && nextButton) {
+        prevButton.addEventListener('click', anteriorImagen);
+        nextButton.addEventListener('click', siguienteImagen);
+    } else {
+        console.error("No se encuentran los botones de control del carrusel.");
+    }
+    
+    // Resto del código de inicialización
+    updateCart();
+    updateCartCount();
+    actualizarCarrusel();
+});
+
 // Agregar eventos a los controles del carrusel
 document.querySelector('.carousel-control-prev').addEventListener('click', anteriorImagen);
 document.querySelector('.carousel-control-next').addEventListener('click', siguienteImagen);
