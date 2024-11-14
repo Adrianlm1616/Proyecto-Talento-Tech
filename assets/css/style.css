@@ -439,12 +439,12 @@ del{
     overflow-x: hidden; /* Desactivar el desplazamiento horizontal */
     transition: 0.3s; /* Animación para abrir/cerrar */
     padding-top: 60px;
-    z-index: 101; /* Asegúrate de que el z-index sea alto para estar por encima de otros elementos */
+    z-index: 9999; /* Asegúrate de que el z-index sea alto para estar por encima de otros elementos */
 }
 
 /* Cuando se agrega la clase 'open', la barra lateral se expande */
 .sidebar.open {
-    width: 300px; /* Nuevo tamaño cuando la barra lateral está abierta (elige 300px o 250px, pero no ambos) */
+    width: 300px; /* Ajusta el tamaño cuando la barra lateral está abierta */
 }
 
 /* Estilo para el contenido de la barra lateral */
@@ -518,11 +518,6 @@ button:hover {
     font-size: 24px; /* Tamaño grande para el ícono de cerrar */
     cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
     color: white; /* Color blanco */
-}
-
-/* Animación para abrir la barra lateral */
-.sidebar.open {
-    width: 300px; /* Mantén solo una definición para el ancho de la barra lateral */
 }
 
 /* Animación para el mensaje de bienvenida */
