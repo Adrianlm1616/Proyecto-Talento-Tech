@@ -216,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Muestra u oculta la barra de filtros
 function toggleFilter() {
     const filterBar = document.getElementById('filters');
-    // Cambiar la posición de la barra de filtros
     if (filterBar.style.left === '0px') {
         filterBar.style.left = '-300px';  // Oculta
     } else {
@@ -272,6 +271,13 @@ function updateProductList(filteredProducts) {
     filteredProducts.forEach(product => {
         productList.appendChild(product);
     });
+
+    // Si no hay productos que mostrar, muestra un mensaje
+    if (filteredProducts.length === 0) {
+        const noProductsMessage = document.createElement('div');
+        noProductsMessage.textContent = 'No se encontraron productos que coincidan con los filtros seleccionados.';
+        productList.appendChild(noProductsMessage);
+    }
 }
 
 // Inicializa la lista de productos al cargar la página

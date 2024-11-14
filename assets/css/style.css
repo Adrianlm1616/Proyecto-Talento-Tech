@@ -219,35 +219,31 @@ section-title {
 
 /* Estilo de cada producto */
 .product {
-    background-color: white; /* Fondo blanco */
-    border: 1px solid #ddd; /* Borde gris claro */
-    border-radius: 8px; /* Bordes redondeados */
-    width: 300px; /* Ancho fijo para cada producto */
-    text-align: center; /* Centra el contenido del producto */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del producto */
-    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Efecto hover sobre el producto */
 .product:hover {
-    transform: scale(1.05); /* Aumenta el tamaño del producto ligeramente */
+    transform: scale(1.05);
 }
 
-/* Estilo de la imagen del producto */
 .product img {
-    width: 100%; /* Hace que la imagen ocupe todo el ancho del producto */
-    border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+    width: 100%;
+    border-radius: 8px 8px 0 0;
 }
 
-/* Detalles del producto */
 .product-details {
-    padding: 15px; /* Espaciado interno */
+    padding: 15px;
 }
 
-/* Estilo del título del producto */
 .product h3 {
-    font-size: 1.4em; /* Tamaño de la fuente */
-    color: #333; /* Color del texto */
+    font-size: 1.4em;
+    color: #333;
 }
 
 /* Estilo de la descripción del producto */
