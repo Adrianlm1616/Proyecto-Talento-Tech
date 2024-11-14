@@ -61,8 +61,10 @@
                 <div class="product-details">
                     <h3>Nike Bailleli</h3> <!-- Nombre del producto -->
                     <div class="price">$195.000</div> <!-- Precio del producto -->
-                    <!-- Input para la cantidad de productos -->
-                    <input type="number" id="quantity-1" value="1" min="1">
+                    <div class="quantity-container"> <!-- Contenedor para la cantidad -->
+                    <label for="quantity-1">Cantidad =</label> <!-- Label para la cantidad de productos -->
+                    <input type="number" id="quantity-1" value="1" min="1" class="quantity-input"> <!-- Input para la cantidad de productos -->
+                    </div>
                     <!-- Botón para agregar al carrito, con la función addToCart() -->
                     <button class="buy-button" onclick="addToCart(1, 'Nike Bailleli', 195000)">Comprar Ahora</button>
                 </div>
