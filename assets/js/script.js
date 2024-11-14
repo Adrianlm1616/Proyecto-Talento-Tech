@@ -147,6 +147,100 @@ actualizarCarrusel();
 // Cambiar automáticamente las imágenes del carrusel cada 15 segundos
 setInterval(siguienteImagen, 15000);  // Cambiar cada 15 segundos
 
+// Función para abrir y cerrar el carrito
+function toggleCart() {
+    const cart = document.getElementById('cart');
+    // Alterna la visibilidad del carrito cambiando entre "block" (visible) y "none" (oculto)
+    cart.style.display = (cart.style.display === "block") ? "none" : "block";
+}
+
+// Función para agregar productos al carrito
+function addToCart(id, name, price) {
+    // Obtener la cantidad seleccionada del producto desde un campo de entrada
+    const quantity = parseInt(document.getElementById(`quantity-${id}`).value);
+    const product = {
+        id,        // ID del producto
+        name,      // Nombre del producto
+        price,     // Precio del producto
+        quantity  // Cantidad seleccionada
+    };
+
+    // Obtener el carrito desde localStorage o un array vacío si no existe
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Verificar si el producto ya existe en el carrito
+    const existingProduct = cart.find(item => item.id === id);
+    if (existingProduct) {
+        // Si el producto ya existe, aumentamos la cantidad
+        existingProduct.quantity += quantity;
+    } else {
+        // Si no está en el carrito, agregamos el nuevo producto
+        cart.push(product);
+    }
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Actualizar la vista del carrito y el contador de productos
+    updateCart();
+    updateCartCount();
+}
+
+// Función para actualizar la vista del carrito
+function updateuser() {
+    // Cargar el carrito desde localStorage
+    let user = JSON.parse(localStorage.getItem('user')) || [];
+
+    // Obtener el contenedor donde se mostrarán los productos del carrito
+    const userItemsContainer = document.getElementById('user-items');
+    userItemsContainer.innerHTML = ''; // Limpiar cualquier contenido previo
+
+    let total = 0;  // Variable para calcular el total del carrito
+    user.forEach(item => {
+        // Crear un elemento <li> para cada producto en el carrito
+        const itemElement = document.createElement('li');
+        itemElement.textContent = `${item.name} - ${item.quantity} x $${item.price.toLocaleString()}`;
+        userItemsContainer.appendChild(itemElement);
+
+        // Sumar al total del carrito
+        total += item.price * item.quantity;
+    });
+
+    // Actualizar el total del carrito en la interfaz
+    const userTotal = document.getElementById('user-total');
+    userTotal.textContent = `Total: $${total.toLocaleString()}`;
+}
+
+// Función para actualizar el contador de productos en el carrito
+function updateuserCount() {
+    // Cargar el carrito desde localStorage
+    let user = JSON.parse(localStorage.getItem('user')) || [];
+
+    // Calcular la cantidad total de productos en el carrito
+    const totalItems = user.reduce((sum, item) => sum + item.quantity, 0);
+
+    // Actualizar el contador de productos en el carrito
+    const userCount = document.getElementById('user-count');
+    userCount.textContent = totalItems;
+}
+
+// Función para vaciar el carrito
+function emptyuser() {
+    // Eliminar el carrito de localStorage
+    localStorage.removeItem('user');
+
+    // Actualizar la vista del carrito y el contador
+    updateuser();
+    updateuserCount();
+}
+
+// Función para inicializar el carrito al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    // Cargar y mostrar el carrito al cargar la página
+    updateuser();
+    updateuserCount();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const openBtn = document.getElementById('openBtn');  // Botón para abrir la barra lateral
     const closeBtn = document.getElementById('closeBtn');  // Botón para cerrar la barra lateral

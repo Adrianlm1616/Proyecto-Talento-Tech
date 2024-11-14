@@ -429,108 +429,37 @@ del{
 }
 
 /* Estilo de la barra lateral */
-.sidebar {
-    height: 100%;
-    width: 0; /* Comienza colapsada */
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden; /* Desactivar el desplazamiento horizontal */
-    transition: 0.3s; /* Animación para abrir/cerrar */
-    padding-top: 60px;
-    z-index: 9999; /* Asegúrate de que el z-index sea alto para estar por encima de otros elementos */
+
+#user {
+    position: fixed; /* Fija el carrito en la esquina superior derecha */
+    top: 0; /* Coloca el carrito en la parte superior */
+    right: 0; /* Coloca el carrito en el lado derecho */
+    width: 300px; /* Ancho del carrito */
+    height: 100%; /* Altura completa */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave a la izquierda */
+    display: none; /* Oculto por defecto */
+    z-index: 1000; /* Asegura que el carrito esté sobre otros elementos */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
 }
 
-/* Cuando se agrega la clase 'open', la barra lateral se expande */
-.sidebar.open {
-    width: 300px; /* Ajusta el tamaño cuando la barra lateral está abierta */
+/* Estilo del encabezado del carrito */
+.user-header {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: space-between; /* Espaciado entre el título y el botón de cerrar */
+    padding: 10px; /* Espaciado interno */
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Color de texto blanco */
 }
 
-/* Estilo para el contenido de la barra lateral */
-.sidebar-content {
-    color: white;
-    padding: 10px;
-    text-align: center;
+/* Estilo de los íconos del carrito */
+.user-icon-container {
+    position: relative; /* Permite posicionar elementos dentro del contenedor */
+    display: inline-block; /* Hace que el contenedor del ícono se ajuste al contenido */
 }
 
-.sidebar h2 {
-    margin-bottom: 20px;
-}
-
-/* Estilo de los campos de entrada en la barra lateral */
-.input-container {
-    margin-bottom: 15px; /* Espaciado entre los campos de entrada */
-}
-
-input[type="text"], input[type="email"], input[type="password"] {
-    padding: 10px;
-    width: 250px; /* Ancho fijo de los campos de entrada */
-    margin: 5px;
-    border: none; /* Sin borde */
-    border-radius: 4px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de la fuente */
-    background-color: #f1f1f1; /* Fondo claro */
-    color: #333; /* Color de texto oscuro */
-    transition: background-color 0.3s; /* Transición suave para el cambio de color al enfocar */
-}
-
-/* Efecto de enfoque sobre los campos de entrada */
-input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
-    background-color: #ddd; /* Fondo oscuro cuando el campo está enfocado */
-    outline: none; /* Elimina el contorno por defecto */
-}
-
-/* Estilo de los botones en la barra lateral */
-button {
-    padding: 10px;
-    width: 100%;
-    border: none;
-    background-color: #333; /* Fondo oscuro para los botones */
-    color: white;
-    cursor: pointer; /* Aparece como puntero al pasar sobre el botón */
-    font-size: 16px;
-    border-radius: 4px; /* Bordes redondeados */
-    margin-top: 20px; /* Espaciado superior */
-    transition: background-color 0.3s; /* Transición suave en el cambio de color */
-}
-
-/* Efecto hover sobre los botones */
-button:hover {
-    background-color: #555; /* Fondo más claro cuando se pasa el ratón */
-}
-
-/* Estilo del mensaje de bienvenida */
-.welcome-message {
-    background-color: #4CAF50; /* Fondo verde */
-    color: white; /* Texto blanco */
-    padding: 20px;
-    text-align: center;
-    display: none; /* Comienza oculto */
-    margin-top: 20px; /* Añade espacio superior */
-}
-
-/* Estilo para el botón de cerrar */
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px; /* Tamaño grande para el ícono de cerrar */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
-    color: white; /* Color blanco */
-}
-
-/* Animación para el mensaje de bienvenida */
-.welcome-message.show {
-    display: block; /* Muestra el mensaje cuando la clase 'show' está aplicada */
-}
-
-/* Estilo para el formulario dentro de la barra lateral */
-.sidebar form {
-    display: flex;
-    flex-direction: column; /* Organiza los elementos verticalmente */
-    align-items: center; /* Alinea los campos de entrada en el centro */
-    gap: 15px; /* Espacio entre los campos */
+.user-count {
+    position: absolute; /* Posiciona el contador de productos en el carrito */
 }
 
 /* Estilo del footer */

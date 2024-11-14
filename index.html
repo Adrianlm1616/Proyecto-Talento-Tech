@@ -31,7 +31,9 @@
 
             <div class="icons">
                 <i class="fas fa-search"></i>
-                <i class="fas fa-user" id="openBtn" onclick="toggleLoginSidebar()"></i> <!-- Icono de usuario -->
+                <div class="user-icon-container ">
+                    <i class="fas fa-user" onclick="toggleLoginSidebar()"></i>
+                    <span id="user-count" class="user-count">0</span>
                 <div class="cart-icon-container ">
                     <i class="fas fa-shopping-cart" onclick="toggleCart()"></i>
                     <span id="cart-count" class="cart-count">0</span>
@@ -66,6 +68,19 @@
         </div>
         <button onclick="emptyCart()">Vaciar Carrito</button>
         <button>Ver Carrito</button>
+    </div>
+
+    <div id="user">
+        <div class="user-header">
+            <h3>Carrito</h3>
+            <i class="fas fa-times" onclick="toggleLoginSidebar()"></i>
+        </div>
+        <ul id="user-items"></ul>
+        <div id="user-total">
+            <strong>Total: $0</strong>
+        </div>
+        <button onclick="emptyuser()">Vaciar user</button>
+        <button>userrr</button>
     </div>
 
     <!-- Barra lateral de inicio de sesión -->
