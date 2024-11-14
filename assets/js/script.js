@@ -156,19 +156,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.getElementById('password');  // Campo de texto para la contraseña
     const welcomeMessage = document.getElementById('welcomeMessage');  // Contenedor del mensaje de bienvenida
 
+    // Función para abrir y cerrar la barra lateral de inicio de sesión
+function toggleLoginSidebar() {
+    const sidebar = document.getElementById('loginSidebar');
+    sidebar.classList.toggle('open');
+}
+
+// Función para manejar el evento de inicio de sesión
+document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.getElementById('openBtn');  // Ícono de usuario
+    const closeBtn = document.getElementById('closeBtn');  // Botón para cerrar la barra lateral
+    const sidebar = document.getElementById('loginSidebar');  // Barra lateral de login
+    
     // Función para abrir la barra lateral de inicio de sesión
-    function openLoginSidebar() {
-        sidebar.classList.add('open');  // Añadimos la clase 'open' para abrir la barra lateral
-    }
-
-    // Función para cerrar la barra lateral
-    function closeLoginSidebar() {
-        sidebar.classList.remove('open');  // Quitamos la clase 'open' para cerrar la barra lateral
-    }
-
-    // Asociamos los eventos a los botones
-    openBtn.addEventListener("click", openLoginSidebar);  // Evento para abrir la barra lateral
-    closeBtn.addEventListener("click", closeLoginSidebar);  // Evento para cerrar la barra lateral
+    openBtn.addEventListener("click", toggleLoginSidebar);  // Al hacer clic en el ícono de usuario, se abre la barra lateral
+    
+    // Función para cerrar la barra lateral de inicio de sesión
+    closeBtn.addEventListener("click", () => {
+        sidebar.classList.remove('open');  // Al hacer clic en el botón de cerrar, se cierra la barra lateral
+    });
+    
+    // Aquí agregamos cualquier otra lógica para el login si es necesario...
+});
 
     // Función para manejar el evento de inicio de sesión
     loginForm.addEventListener('submit', (e) => {
