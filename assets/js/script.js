@@ -150,7 +150,12 @@ setInterval(siguienteImagen, 15000);  // Cambiar cada 15 segundos
 // Función para abrir y cerrar la barra lateral de login
 function toggleLoginSidebar() {
     const loginSidebar = document.getElementById('loginSidebar');
-    loginSidebar.style.display = (loginSidebar.style.display === "block") ? "none" : "block";
+    // Verificamos el estado de la barra lateral y la alternamos entre "block" y "none"
+    if (loginSidebar.style.display === "none" || loginSidebar.style.display === "") {
+        loginSidebar.style.display = "block";
+    } else {
+        loginSidebar.style.display = "none";
+    }
 }
 
 // Función para el login
@@ -182,3 +187,9 @@ function logout() {
     document.getElementById('password').value = '';
     document.getElementById('errorMessage').style.display = 'none';
 }
+
+// Inicializar el carrito al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    updateCart();
+    updateCartCount();
+});
