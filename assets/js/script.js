@@ -132,22 +132,25 @@ function anteriorImagen() {
     actualizarCarrusel();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Verificar si los botones del carrusel existen antes de agregar los eventos
+document.addEventListener('DOMContentLoaded', function () {
+    // Inicializar el carrusel con jQuery
+    $('.carousel').carousel({
+        interval: 3000,  // Intervalo de desplazamiento automático (en milisegundos)
+        pause: 'hover'   // Pausa el carrusel cuando el mouse pasa por encima
+    });
+
+    // Agregar los eventos de los controles del carrusel
     const prevButton = document.querySelector('.carousel-control-prev');
     const nextButton = document.querySelector('.carousel-control-next');
-    
+
     if (prevButton && nextButton) {
-        prevButton.addEventListener('click', anteriorImagen);
-        nextButton.addEventListener('click', siguienteImagen);
-    } else {
-        console.error("No se encuentran los botones de control del carrusel.");
+        prevButton.addEventListener('click', function () {
+            $('#carouselExample').carousel('prev');
+        });
+        nextButton.addEventListener('click', function () {
+            $('#carouselExample').carousel('next');
+        });
     }
-    
-    // Resto del código de inicialización
-    updateCart();
-    updateCartCount();
-    actualizarCarrusel();
 });
 
 // Agregar eventos a los controles del carrusel
