@@ -428,85 +428,113 @@ del{
     text-decoration: line-through;
 }
 
+/* Barra lateral de inicio de sesión */
 .sidebar {
     height: 100%; /* La barra lateral ocupa todo el alto de la pantalla */
     width: 0; /* Inicialmente la barra lateral está oculta */
     position: fixed; /* Fija la barra lateral en la pantalla */
     top: 0;
-    right: 0; /* La barra lateral se muestra desde la parte derecha */
-    background-color: #333; /* Color de fondo oscuro */
+    left: 0; /* La barra lateral se muestra desde la parte izquierda */
+    background-color: #111; /* Color de fondo oscuro */
     color: white; /* Color del texto blanco */
     overflow-x: hidden; /* Evita que se desplace horizontalmente */
     transition: 0.5s; /* Transición suave cuando se abre o cierra */
     padding-top: 60px; /* Espacio desde la parte superior */
-}
-
-/* Estilo para la barra lateral */
-.sidebar {
-    height: 100%;
-    width: 0; /* Comienza colapsada */
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden; /* Desactivar el desplazamiento horizontal */
-    transition: 0.3s; /* Animación para abrir/cerrar */
-    padding-top: 60px;
-    z-index: 101;
+    z-index: 101; /* Asegura que la barra lateral esté por encima de otros elementos */
 }
 
 /* Estilo del contenido de la barra lateral */
 .sidebar-content {
     color: white;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
 }
 
+/* Títulos dentro de la barra lateral */
 .sidebar h2 {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Espaciado debajo del título */
+    font-size: 24px; /* Tamaño de fuente del título */
+    color: #f1f1f1; /* Color de los títulos en la barra lateral */
 }
 
+/* Estilo de los campos de entrada en la barra lateral */
 .input-container {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Espaciado entre los campos de entrada */
 }
 
-input {
+input[type="text"], input[type="email"], input[type="password"] {
     padding: 10px;
-    width: 200px;
+    width: 250px; /* Ancho fijo de los campos de entrada */
     margin: 5px;
-    border: none;
-    border-radius: 4px;
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+    background-color: #f1f1f1; /* Fondo claro */
+    color: #333; /* Color de texto oscuro */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color al enfocar */
 }
 
+/* Efecto de enfoque sobre los campos de entrada */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    background-color: #ddd; /* Fondo oscuro cuando el campo está enfocado */
+    outline: none; /* Elimina el contorno por defecto */
+}
+
+/* Estilo de los botones en la barra lateral */
 button {
     padding: 10px;
     width: 100%;
     border: none;
-    background-color: #333;
+    background-color: #333; /* Fondo oscuro para los botones */
     color: white;
-    cursor: pointer;
+    cursor: pointer; /* Aparece como puntero al pasar sobre el botón */
     font-size: 16px;
-    border-radius: 4px;
-    margin-top: 20px;
+    border-radius: 4px; /* Bordes redondeados */
+    margin-top: 20px; /* Espaciado superior */
+    transition: background-color 0.3s; /* Transición suave en el cambio de color */
 }
 
-/* Estilo para el mensaje de bienvenida */
+/* Efecto hover sobre los botones */
+button:hover {
+    background-color: #555; /* Fondo más claro cuando se pasa el ratón */
+}
+
+/* Estilo del mensaje de bienvenida */
 .welcome-message {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #4CAF50; /* Fondo verde */
+    color: white; /* Texto blanco */
     padding: 20px;
     text-align: center;
     display: none; /* Comienza oculto */
+    margin-top: 20px; /* Añade espacio superior */
 }
 
-/* Estilo del botón de cerrar */
+/* Estilo para el botón de cerrar */
 .close-btn {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
+    font-size: 24px; /* Tamaño grande para el ícono de cerrar */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+    color: white; /* Color blanco */
+}
+
+/* Animación para abrir la barra lateral */
+.sidebar.open {
+    width: 250px; /* Ancho de la barra lateral cuando está abierta */
+}
+
+/* Animación para el mensaje de bienvenida */
+.welcome-message.show {
+    display: block; /* Muestra el mensaje cuando la clase 'show' está aplicada */
+}
+
+/* Estilo para el formulario dentro de la barra lateral */
+.sidebar form {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos verticalmente */
+    align-items: center; /* Alinea los campos de entrada en el centro */
+    gap: 15px; /* Espacio entre los campos */
 }
 
 /* Estilo del footer */

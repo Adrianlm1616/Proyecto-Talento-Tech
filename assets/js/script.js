@@ -162,12 +162,12 @@ const correctPassword = 'talentotech1';
 
 // Función para abrir la barra lateral al hacer clic en el botón "Iniciar Sesión"
 openBtn.addEventListener('click', () => {
-    sidebar.style.width = '300px';  // Abrir la barra lateral (establecer el ancho a 300px)
+    sidebar.classList.add('open');  // Agregar la clase 'open' para abrir la barra lateral
 });
 
 // Función para cerrar la barra lateral al hacer clic en el botón "Cerrar"
 closeBtn.addEventListener('click', () => {
-    sidebar.style.width = '0';  // Colapsar la barra lateral (establecer el ancho a 0)
+    sidebar.classList.remove('open');  // Eliminar la clase 'open' para cerrar la barra lateral
 });
 
 // Función para manejar el evento de inicio de sesión
@@ -181,7 +181,7 @@ loginForm.addEventListener('submit', (e) => {
     // Verificar si las credenciales son correctas
     if (username === correctUsername && password === correctPassword) {
         // Si las credenciales son correctas, cerrar la barra lateral y mostrar el mensaje de bienvenida
-        sidebar.style.width = '0';  // Cerrar la barra lateral
+        sidebar.classList.remove('open');  // Eliminar la clase 'open' para cerrar la barra lateral
         welcomeMessage.style.display = 'block';  // Mostrar el mensaje de bienvenida
     } else {
         // Si las credenciales son incorrectas, mostrar un mensaje de alerta

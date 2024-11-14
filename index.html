@@ -2,166 +2,99 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el sitio sea responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sport Exclusive</title>
-
-    <!-- Vinculación al archivo CSS para los estilos personalizados -->
     <link rel="stylesheet" href="/Proyecto-Talento-Tech/assets/css/style.css">
-
-    <!-- Vinculación a Font Awesome para usar íconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body style="background: url(/Proyecto-Talento-Tech/assets/img/INICIO/Imagen-fondo1.jpg); background-repeat: no-repeat; background-size: cover;">
     
     <header>
-        <!-- Contenedor que contiene todo lo referente al encabezado -->
         <div class="header-content">
-            <!-- Logo de la empresa en el encabezado -->
             <div class="logo">
-                <img src="/Proyecto-Talento-Tech/assets/img/INICIO/logo pagina inicio.png" alt="Logo" width="200"> <!-- Logo de la tienda -->
+                <img src="/Proyecto-Talento-Tech/assets/img/INICIO/logo pagina inicio.png" alt="Logo" width="200">
             </div>
-
-            <!-- Barra de navegación con enlaces -->
             <nav class="navbar">
                 <ul class="nav-links">
-                    <!-- Enlaces de navegación -->
                     <li><a href="/Proyecto-Talento-Tech/index.html">INICIO</a></li>
                     <li><a href="/Proyecto-Talento-Tech/html/tienda.html">TIENDA</a></li>
                     <li><a href="/Proyecto-Talento-Tech/html/novedades.html">NOVEDADES</a>
-                        <!-- Submenú de barra de navegación de "NOVEDADES" -->
                         <div class="submenu">
-                            <a href="/Proyecto-Talento-Tech/html/ofertas.html">OFERTAS</a> <!-- Subenlace "OFERTAS" dentro de Novedades -->
-                            <a href="#">MARCAS</a> <!-- Subenlace "MARCAS" dentro de Novedades -->
+                            <a href="/Proyecto-Talento-Tech/html/ofertas.html">OFERTAS</a>
+                            <a href="#">MARCAS</a>
                         </div>
                     </li>
-                    <li><a href="/Proyecto-Talento-Tech/html/contactenos.html">CONTACTENOS</a></li> <!-- Enlace a la página de contacto -->
+                    <li><a href="/Proyecto-Talento-Tech/html/contactenos.html">CONTACTENOS</a></li>
                 </ul>
             </nav>
 
-            <!-- Contenedor de los íconos de búsqueda, usuario y carrito -->
             <div class="icons">
-                <i class="fas fa-search"></i> <!-- Icono de búsqueda -->
-                <i class="fas fa-user" id="openBtn"></i> <!-- Icono de usuario, que al hacer clic abrirá la barra lateral -->
-                
-                <!-- Icono del carrito de compras con contador de productos -->
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user" id="openBtn"></i> <!-- Icono de usuario -->
                 <div class="cart-icon-container">
-                    <i class="fas fa-shopping-cart" onclick="toggleCart()"></i> <!-- Icono de carrito que activa la función toggleCart() -->
-                    <span id="cart-count" class="cart-count">0</span> <!-- Contador de productos en el carrito -->
+                    <i class="fas fa-shopping-cart" onclick="toggleCart()"></i>
+                    <span id="cart-count" class="cart-count">0</span>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Contenedor principal de contenido de la página -->
         <div class="content-wrapper">
             <div class="text-left">
-                <!-- Título destacado de la página -->
                 <h2>DESCUBRE TU <br> ESTILO <br> EN CADA PASO</h2>
             </div>
-            
-            <!-- Imagen en el lado derecho de la página -->
             <div class="image-right">
                 <img src="/Proyecto-Talento-Tech/assets/img/INICIO/imagen pagina principal.jpg" alt="Imagen principal" width="400">
             </div>
         </div>
 
-        <!-- Botón de llamada a la acción para compra inmediata -->
         <div class="Button-compra">
-            <a href="/Proyecto-Talento-Tech/html/tienda.html" class="btn-buy-now"><p style="color: red; text-decoration: none;">COMPRA YA!</p></a> <!-- Enlace con un mensaje de urgencia para incentivar la compra -->
+            <a href="/Proyecto-Talento-Tech/html/tienda.html" class="btn-buy-now"><p style="color: red; text-decoration: none;">COMPRA YA!</p></a>
         </div>
     </main>
 
-    <!-- Sección de carrito de compras -->
     <div id="cart">
-        <!-- Encabezado del carrito de compras -->
         <div class="cart-header">
-            <h3>Carrito</h3> <!-- Título del carrito -->
-            <i class="fas fa-times" onclick="toggleCart()"></i> <!-- Icono para cerrar el carrito, que llama a la función toggleCart() -->
+            <h3>Carrito</h3>
+            <i class="fas fa-times" onclick="toggleCart()"></i>
         </div>
-        
-        <!-- Lista de productos en el carrito -->
-        <ul id="cart-items">
-        </ul>
-
-        <!-- Total del carrito -->
+        <ul id="cart-items"></ul>
         <div id="cart-total">
-            <strong>Total: $0</strong> <!-- Muestra el total del carrito -->
+            <strong>Total: $0</strong>
         </div>
-        
-        <!-- Botones para vaciar el carrito o ver el carrito completo -->
-        <button onclick="emptyCart()" style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Vaciar Carrito</button> <!-- Botón para vaciar el carrito -->
-        <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button> <!-- Botón para ver el carrito -->
+        <button onclick="emptyCart()">Vaciar Carrito</button>
+        <button>Ver Carrito</button>
     </div>
 
     <!-- Barra lateral de inicio de sesión -->
     <div id="loginSidebar" class="sidebar">
         <div class="sidebar-content">
-            <h2>Iniciar Sesión</h2> <!-- Título del formulario de inicio de sesión -->
-            
-            <!-- Formulario para ingresar usuario y contraseña -->
-            <form id="loginForm" action="javascript:void(0);"> <!-- 'action="javascript:void(0);"' previene el envío tradicional -->
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm" action="javascript:void(0);">
                 <div class="input-container">
-                    <label for="username">Usuario:</label> <!-- Etiqueta para el campo de usuario -->
-                    <input type="text" id="username" name="username" required placeholder="Introduce tu usuario"> <!-- Campo de texto para el nombre de usuario -->
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required placeholder="Introduce tu usuario">
                 </div>
-                
                 <div class="input-container">
-                    <label for="password">Contraseña:</label> <!-- Etiqueta para el campo de contraseña -->
-                    <input type="password" id="password" name="password" required placeholder="Introduce tu contraseña"> <!-- Campo de contraseña -->
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required placeholder="Introduce tu contraseña">
                 </div>
-                
-                <!-- Botón para enviar el formulario -->
                 <button type="submit">Iniciar Sesión</button>
             </form>
-
-            <!-- Botón para cerrar la barra lateral -->
             <button id="closeBtn" class="close-btn">Cerrar</button>
         </div>
     </div>
 
-    <!-- Mensaje de bienvenida, inicialmente oculto -->
     <div id="welcomeMessage" class="welcome-message" style="display: none;">
-        <h2>Bienvenido Caine de la Hoz</h2> <!-- Mensaje de bienvenida -->
+        <h2>Bienvenido Caine de la Hoz</h2>
     </div>
-    
-    <!-- Pie de página -->
+
     <footer>
-        <p>Elaborado por Adrian Lara</p> <!-- Texto con el nombre del autor del sitio -->
+        <p>Elaborado por Adrian Lara</p>
     </footer>
 
-    <!-- Vinculación al archivo JS para la funcionalidad del carrito -->
-    <script src="/Proyecto-Talento-Tech/assets/js/script.js"></script> <!-- Archivo JS que contiene las funciones del carrito y otras interacciones -->
-
-    <!-- Vinculación al archivo JS para la funcionalidad del inicio de sesión -->
-    <script>
-        // Función para abrir la barra lateral al hacer clic en el ícono del usuario
-        document.getElementById('openBtn').addEventListener('click', function() {
-            document.getElementById('loginSidebar').style.width = '300px'; // Abrir la barra lateral expandiéndola
-        });
-
-        // Función para cerrar la barra lateral cuando se haga clic en el botón "Cerrar"
-        document.getElementById('closeBtn').addEventListener('click', function() {
-            document.getElementById('loginSidebar').style.width = '0'; // Colapsar la barra lateral
-        });
-
-        // Función para manejar el envío del formulario de inicio de sesión
-        const loginForm = document.getElementById('loginForm');
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevenir el envío normal del formulario
-
-            const username = document.getElementById('username').value.trim(); // Obtener el valor del campo de usuario
-            const password = document.getElementById('password').value.trim(); // Obtener el valor del campo de contraseña
-
-            // Verificar si las credenciales son correctas
-            if (username === 'cainetech' && password === 'talentotech1') {
-                document.getElementById('loginSidebar').style.width = '0'; // Cerrar la barra lateral
-                document.getElementById('welcomeMessage').style.display = 'block'; // Mostrar el mensaje de bienvenida
-            } else {
-                alert('Usuario o contraseña incorrectos'); // Mostrar alerta si las credenciales son incorrectas
-            }
-        });
-    </script>
+    <script src="/Proyecto-Talento-Tech/assets/js/script.js"></script>
 </body>
 </html>
