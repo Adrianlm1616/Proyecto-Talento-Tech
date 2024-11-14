@@ -186,60 +186,12 @@ function addToCart(id, name, price) {
     updateCartCount();
 }
 
-// Función para actualizar la vista del carrito
-function updateuser() {
-    // Cargar el carrito desde localStorage
-    let user = JSON.parse(localStorage.getItem('user')) || [];
-
-    // Obtener el contenedor donde se mostrarán los productos del carrito
-    const userItemsContainer = document.getElementById('user-items');
-    userItemsContainer.innerHTML = ''; // Limpiar cualquier contenido previo
-
-    let total = 0;  // Variable para calcular el total del carrito
-    user.forEach(item => {
-        // Crear un elemento <li> para cada producto en el carrito
-        const itemElement = document.createElement('li');
-        itemElement.textContent = `${item.name} - ${item.quantity} x $${item.price.toLocaleString()}`;
-        userItemsContainer.appendChild(itemElement);
-
-        // Sumar al total del carrito
-        total += item.price * item.quantity;
-    });
-
-    // Actualizar el total del carrito en la interfaz
-    const userTotal = document.getElementById('user-total');
-    userTotal.textContent = `Total: $${total.toLocaleString()}`;
+// Función para abrir y cerrar el carrito
+function toggleLoginSidebar() {
+    const user = document.getElementById('user');
+    // Alterna la visibilidad del carrito cambiando entre "block" (visible) y "none" (oculto)
+    user.style.display = (user.style.display === "block") ? "none" : "block";
 }
-
-// Función para actualizar el contador de productos en el carrito
-function updateuserCount() {
-    // Cargar el carrito desde localStorage
-    let user = JSON.parse(localStorage.getItem('user')) || [];
-
-    // Calcular la cantidad total de productos en el carrito
-    const totalItems = user.reduce((sum, item) => sum + item.quantity, 0);
-
-    // Actualizar el contador de productos en el carrito
-    const userCount = document.getElementById('user-count');
-    userCount.textContent = totalItems;
-}
-
-// Función para vaciar el carrito
-function emptyuser() {
-    // Eliminar el carrito de localStorage
-    localStorage.removeItem('user');
-
-    // Actualizar la vista del carrito y el contador
-    updateuser();
-    updateuserCount();
-}
-
-// Función para inicializar el carrito al cargar la página
-document.addEventListener('DOMContentLoaded', () => {
-    // Cargar y mostrar el carrito al cargar la página
-    updateuser();
-    updateuserCount();
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     const openBtn = document.getElementById('openBtn');  // Botón para abrir la barra lateral
