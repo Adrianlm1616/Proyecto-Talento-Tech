@@ -235,7 +235,7 @@ section-title {
 
 /* Estilo para el campo de entrada de cantidad (input[type="number"]) */
 .quantity-input {
-    width: 50px; /* Establece el ancho del campo de entrada (se ajusta el tamaño para que sea más compacto) */
+    width: 80px; /* Establece el ancho del campo de entrada (se ajusta el tamaño para que sea más compacto) */
     padding: 8px; /* Añade un espacio interno alrededor del texto del campo de entrada */
     font-size: 16px; /* Define el tamaño de la fuente dentro del campo de entrada */
     border-radius: 35px; /* Redondea ligeramente las esquinas del campo de entrada */
