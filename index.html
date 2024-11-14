@@ -31,9 +31,7 @@
 
             <div class="icons">
                 <i class="fas fa-search"></i>
-                <div class="user-icon-container ">
-                    <i class="fas fa-user" onclick="toggleLoginSidebar()"></i>
-                    <span id="user-count" class="user-count">0</span>
+                <i class="fas fa-user" onclick="toggleLoginSidebar()"></i>
                 <div class="cart-icon-container ">
                     <i class="fas fa-shopping-cart" onclick="toggleCart()"></i>
                     <span id="cart-count" class="cart-count">0</span>
@@ -70,31 +68,25 @@
         <button>Ver Carrito</button>
     </div>
 
-    <div id="user">
-        <div class="user-header">
-            <h3>Carrito</h3>
-            <i class="fas fa-times" onclick="toggleLoginSidebar()"></i>
-        </div>
-        <ul id="user-items"></ul>
-        <div id="user-total">
-            <strong>Total: $0</strong>
-        </div>
-        <button onclick="emptyuser()">Vaciar user</button>
-        <button>userrr</button>
-    </div>
-
     <!-- Barra lateral de inicio de sesión -->
-    <div id="loginSidebar" class="sidebar">
-        <div id="closeBtn" class="close-btn">X</div>
-        <form id="loginForm">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" required>
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" required>
-            <button type="submit">Iniciar sesión</button>
-        </form>
-        <div id="welcomeMessage" style="display:none;">Bienvenido, usuario</div>
+<div id="loginSidebar">
+    <div class="sidebar-header">
+        <h3>Iniciar Sesión</h3>
+        <i class="fas fa-times" onclick="toggleLoginSidebar()"></i>
     </div>
+    <form id="loginForm" onsubmit="loginUser(event)">
+        <input type="text" id="username" placeholder="Nombre de Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+    <div id="welcomeMessage" style="display:none;">
+        <p>Hola, <span id="usernameDisplay"></span>! Es un placer verte.</p>
+        <button onclick="logout()">Cerrar sesión</button>
+    </div>
+    <div id="errorMessage" style="display:none; color: red;">
+        <p>Inicio de sesión incorrecto. Inténtalo de nuevo.</p>
+    </div>
+</div>
 
     <footer>
         <p>Elaborado por Adrian Lara</p>

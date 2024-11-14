@@ -428,7 +428,64 @@ del{
     text-decoration: line-through;
 }
 
-/* Estilo de la barra lateral */
+/* Estilo para la barra lateral de login */
+#loginSidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Oculto por defecto */
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Estilo del encabezado de la barra lateral de login */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+/* Estilo del formulario de login */
+#loginForm {
+    padding: 20px;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#loginForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo del mensaje de bienvenida */
+#welcomeMessage {
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+#errorMessage {
+    padding: 20px;
+    text-align: center;
+    background-color: #ffcccb;
+}
 
 /* Estilo del footer */
 footer {

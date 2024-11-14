@@ -147,8 +147,38 @@ actualizarCarrusel();
 // Cambiar automáticamente las imágenes del carrusel cada 15 segundos
 setInterval(siguienteImagen, 15000);  // Cambiar cada 15 segundos
 
+// Función para abrir y cerrar la barra lateral de login
 function toggleLoginSidebar() {
-    const user = document.toggleLoginSidebar('user');
-    // Alterna la visibilidad del carrito cambiando entre "block" (visible) y "none" (oculto)
-    user.style.display = (user.style.display === "block") ? "none" : "block";
+    const loginSidebar = document.getElementById('loginSidebar');
+    loginSidebar.style.display = (loginSidebar.style.display === "block") ? "none" : "block";
+}
+
+// Función para el login
+function loginUser(event) {
+    event.preventDefault(); // Prevenir que el formulario se envíe de forma tradicional
+
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Verificar las credenciales
+    if (username === 'caine' && password === '12345') {
+        // Credenciales correctas
+        document.getElementById('loginForm').style.display = 'none'; // Ocultar formulario
+        document.getElementById('welcomeMessage').style.display = 'block'; // Mostrar mensaje de bienvenida
+        document.getElementById('usernameDisplay').textContent = username; // Mostrar nombre de usuario
+        document.getElementById('errorMessage').style.display = 'none'; // Ocultar mensaje de error
+    } else {
+        // Credenciales incorrectas
+        document.getElementById('errorMessage').style.display = 'block'; // Mostrar error
+    }
+}
+
+// Función para cerrar sesión
+function logout() {
+    // Restablecer el formulario
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('welcomeMessage').style.display = 'none';
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+    document.getElementById('errorMessage').style.display = 'none';
 }
