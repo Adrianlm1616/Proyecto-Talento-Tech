@@ -365,6 +365,10 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     border-radius: 5px; /* Bordes redondeados */
 }
 
+del{
+    color: red;
+    text-decoration: line-through;
+}
 /* Estilo del footer */
 footer {
     background-color: #000; /* Fondo negro */
