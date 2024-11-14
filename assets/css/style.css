@@ -5,7 +5,6 @@
     box-sizing: border-box; /* Asegura que el padding y el border no afecten al tamaño total de los elementos */
 }
 
-/* Estilos generales del cuerpo */
 body {
     font-family: Arial, sans-serif; /* Define la tipografía global */
     color: #333; /* Color del texto principal */
@@ -28,7 +27,7 @@ header {
     padding: 0 20px; /* Espaciado horizontal */
 }
 
-/* Estilos para el submenú */
+/* Submenú oculto */
 .submenu {
     display: none; /* Inicialmente oculto */
     position: absolute; /* Posiciona el submenú en un lugar específico */
@@ -58,6 +57,7 @@ header {
 
 /* Barra de navegación */
 .navbar {
+    /*flex-grow: 1; /* Permite que la barra de navegación crezca y ocupe el espacio disponible */
     display: flex; /* Usamos flexbox para alinear los elementos dentro del contenedor */
     justify-content: center; /* Centra los elementos horizontalmente */
 }
@@ -67,6 +67,24 @@ header {
     list-style: none; /* Elimina los puntos de lista por defecto */
     display: flex; /* Muestra los elementos de la lista en línea */
     justify-content: flex-end; /* Alinea los elementos al final */
+}
+
+/* Elementos de la lista de navegación */
+.nav-links li {
+    position: relative; /* Permite posicionar el submenú dentro de los elementos */
+    padding: 10px 20px; /* Espaciado interno */
+}
+
+/* Estilo de los enlaces en la barra de navegación */
+.nav-links a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: white; /* Color del texto */
+    font-size: 16px; /* Tamaño de la fuente */
+}
+
+/* Efecto hover sobre los enlaces de navegación */
+.nav-links a:hover {
+    background-color: #575757; /* Fondo gris oscuro al pasar el ratón */
 }
 
 /* Estilos de los íconos dentro del encabezado */
@@ -88,7 +106,328 @@ h1, h2 {
     margin-bottom: 20px; /* Espaciado inferior */
 }
 
-/* Barra lateral de inicio de sesión (login) */
+/* Estilo de los títulos de secciones */
+section-title {
+    font-size: 1.5em; /* Tamaño de fuente mediano */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 40px; /* Espaciado inferior */
+}
+
+/* Contenedor flexible para alinear texto e imágenes en una sección */
+.content-wrapper {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: space-between; /* Distribuye el contenido con espacio entre los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    height: 80vh; /* Establece la altura de la sección */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Estilo de la columna de texto */
+.text-left {
+    flex: 1; /* Permite que el texto ocupe el espacio disponible */
+    color: aliceblue; /* Color de texto claro */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Estilo para el título en la columna de texto */
+.text-left h2 {
+    padding-left: 35px; /* Espaciado a la izquierda */
+    font-size: 55px; /* Tamaño de fuente grande */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Estilo para el botón de compra */
+.Button-compra {
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco */
+    text-decoration-style: none; /* Elimina el subrayado */
+    height: 60px; /* Altura del botón */
+    width: 200px; /* Ancho del botón */
+    border-radius: 50px; /* Bordes redondeados */
+    font-size: 25px; /* Tamaño de la fuente */
+    display: block; /* Hace que el botón ocupe todo el espacio disponible */
+    margin-top: 20px; /* Espaciado superior */
+    justify-content: left; /* Alinea el contenido del botón a la izquierda */
+}
+
+/* Estilo de la columna de imagen */
+.image-right {
+    flex: 1; /* Permite que la imagen ocupe el espacio disponible */
+    text-align: center; /* Centra la imagen */
+}
+
+/* Estilo de la imagen dentro de la columna */
+.image-right img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho */
+    max-width: 400px; /* Establece un tamaño máximo para la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilos para los filtros */
+.filters {
+    margin: 20px 0;  /* Espaciado alrededor del contenedor de filtros */
+    padding: 10px;   /* Espaciado interno */
+    border: 1px solid #ccc;  /* Borde gris claro alrededor del contenedor */
+    background-color: #f9f9f9; /* Fondo de color gris muy claro */
+}
+
+/* Formulario de filtros: usamos display flex para organizarlos de forma vertical */
+.filters form {
+    display: flex;
+    flex-direction: column;  /* Organiza los elementos de arriba hacia abajo */
+}
+
+/* Estilo para las etiquetas de los filtros */
+.filters label {
+    margin-bottom: 5px; /* Espaciado debajo de las etiquetas */
+}
+
+/* Estilo para los campos de entrada y select (para marca, precios y ordenación) */
+.filters select, .filters input {
+    margin-bottom: 10px; /* Espaciado debajo de los campos de entrada */
+    padding: 5px;        /* Espaciado dentro de los campos */
+}
+
+/* Estilo para el botón de aplicar filtros */
+.filters button {
+    padding: 10px;        /* Espaciado dentro del botón */
+    background-color: #333;  /* Fondo oscuro para el botón */
+    color: #fff;          /* Texto blanco */
+    border: none;         /* Sin borde */
+    cursor: pointer;      /* Aparece el cursor como mano al pasar sobre el botón */
+}
+
+/* Estilos para la lista de productos (sección de novedades) */
+.product-list {
+    display: flex; /* Muestra los productos en una fila */
+    flex-wrap: wrap; /* Permite que los productos se ajusten cuando no caben en una línea */
+    justify-content: space-between; /* Espacio entre los productos */
+    gap: 20px; /* Espaciado entre cada producto */
+    padding: 20px; /* Espaciado alrededor de los productos */
+}
+
+/* Estilo de cada producto */
+.product {
+    background-color: white; /* Fondo blanco */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 300px; /* Ancho fijo para cada producto */
+    text-align: center; /* Centra el contenido del producto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del producto */
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+/* Efecto hover sobre el producto */
+.product:hover {
+    transform: scale(1.05); /* Aumenta el tamaño del producto ligeramente */
+}
+
+/* Estilo de la imagen del producto */
+.product img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del producto */
+    border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+/* Detalles del producto */
+.product-details {
+    padding: 15px; /* Espaciado interno */
+}
+
+/* Estilo del título del producto */
+.product h3 {
+    font-size: 1.4em; /* Tamaño de la fuente */
+    color: #333; /* Color del texto */
+}
+
+/* Estilo de la descripción del producto */
+.product p {
+    color: #666; /* Color gris para el texto */
+    font-size: 1em; /* Tamaño de fuente normal */
+    margin: 10px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilo del precio del producto */
+.price {
+    font-size: 1.3em; /* Tamaño de la fuente */
+    color: #e74c3c; /* Color rojo para destacar el precio */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+/* Estilo para el contenedor de la cantidad */
+.quantity-container {
+    margin-top: 10px; /* Añade un espacio arriba para separar este contenedor de otros elementos */
+    display: flex; /* Utiliza Flexbox para organizar los elementos en línea (horizontalmente) */
+    align-items: center; /* Alinea verticalmente los elementos dentro del contenedor (en el centro) */
+    gap: 8px; /* Añade un espacio de 8px entre los elementos dentro del contenedor */
+}
+
+/* Estilo para el texto de la etiqueta (Cantidad =) */
+.quantity-container label {
+    font-size: 16px; /* Establece el tamaño de la fuente del texto */
+    color: #333; /* Define el color del texto con un gris oscuro */
+}
+
+/* Estilo para el campo de entrada de cantidad (input[type="number"]) */
+.quantity-input {
+    width: 80px; /* Establece el ancho del campo de entrada (se ajusta el tamaño para que sea más compacto) */
+    padding: 8px; /* Añade un espacio interno alrededor del texto del campo de entrada */
+    font-size: 16px; /* Define el tamaño de la fuente dentro del campo de entrada */
+    border-radius: 35px; /* Redondea ligeramente las esquinas del campo de entrada */
+    border: 1px solid #ddd; /* Añade un borde de color gris claro alrededor del campo de entrada */
+    text-align: center; /* Centra el texto (número) dentro del campo de entrada */
+}
+
+/* Estilo del botón de compra */
+.buy-button {
+    background-color: #3498db; /* Fondo azul */
+    color: white; /* Color de texto blanco */
+    padding: 10px; /* Espaciado interno */
+    text-decoration: none; /* Elimina el subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Espaciado superior */
+    display: inline-block; /* Hace que el botón se ajuste al contenido */
+}
+
+/* Efecto hover sobre el botón de compra */
+.buy-button:hover {
+    background-color: #2980b9; /* Fondo azul más oscuro */
+}
+
+/* Estilo para el carrito de compras */
+#cart {
+    position: fixed; /* Fija el carrito en la esquina superior derecha */
+    top: 0; /* Coloca el carrito en la parte superior */
+    right: 0; /* Coloca el carrito en el lado derecho */
+    width: 300px; /* Ancho del carrito */
+    height: 100%; /* Altura completa */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave a la izquierda */
+    display: none; /* Oculto por defecto */
+    z-index: 1000; /* Asegura que el carrito esté sobre otros elementos */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+}
+
+/* Estilo del encabezado del carrito */
+.cart-header {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: space-between; /* Espaciado entre el título y el botón de cerrar */
+    padding: 10px; /* Espaciado interno */
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Color de texto blanco */
+}
+
+/* Estilo de los íconos del carrito */
+.cart-icon-container {
+    position: relative; /* Permite posicionar elementos dentro del contenedor */
+    display: inline-block; /* Hace que el contenedor del ícono se ajuste al contenido */
+}
+
+.cart-count {
+    position: absolute; /* Posiciona el contador de productos en el carrito */
+}
+/* Contenedor del formulario */
+.form-container {
+    background-color: #fff; /* Fondo blanco para el formulario */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 40px; /* Espaciado interno */
+    width: 100%; /* El formulario ocupará todo el ancho disponible */
+    max-width: 500px; /* Ancho máximo del formulario */
+    margin-top: 100px; /* Deja espacio desde la parte superior para que no quede pegado a la barra de navegación fija */
+}
+
+/* Título del formulario */
+.form-title {
+    text-align: center; /* Centra el título */
+    font-size: 24px; /* Tamaño grande para el título */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+    color: #333; /* Color de texto gris oscuro */
+}
+
+/* Estilo de los grupos de formulario (input, textarea) */
+.form-group {
+    margin-bottom: 20px; /* Espaciado inferior entre los grupos de campos */
+}
+
+/* Etiquetas de los campos */
+.form-group label {
+    display: block; /* Hace que las etiquetas ocupen todo el ancho disponible */
+    font-size: 14px; /* Tamaño pequeño para las etiquetas */
+    color: #555; /* Color gris para las etiquetas */
+    margin-bottom: 8px; /* Espaciado inferior para separar las etiquetas de los campos */
+}
+
+/* Estilos de los campos de entrada y textarea */
+input[type="text"], input[type="email"], textarea {
+    width: 100%; /* Hace que el campo ocupe todo el ancho disponible */
+    padding: 12px; /* Espaciado interno para que el texto no quede pegado al borde */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 6px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente adecuado */
+    transition: border-color 0.3s; /* Transición suave en el cambio de color del borde al enfocarse */
+}
+
+/* Efecto al enfocar los campos de entrada */
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #3498db; /* Cambia el color del borde a azul al enfocar el campo */
+    outline: none; /* Elimina el contorno por defecto al enfocar */
+}
+
+/* Estilo para el botón de envío */
+.submit-btn {
+    background-color: #3498db; /* Fondo azul para el botón */
+    color: white; /* Texto blanco */
+    padding: 12px 20px; /* Espaciado interno */
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+    border: none; /* Elimina el borde */
+    border-radius: 6px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño adecuado de fuente */
+    cursor: pointer; /* Cambia el cursor a mano cuando se pasa por encima */
+    transition: background-color 0.3s; /* Transición suave al cambiar el color de fondo */
+}
+
+/* Efecto hover del botón */
+.submit-btn:hover {
+    background-color: #2980b9; /* Cambia el color de fondo a un tono más oscuro al pasar el ratón */
+}
+
+/* Efecto al presionar el botón */
+.submit-btn:active {
+    background-color: #1f6fa4; /* Cambia el fondo cuando el botón está siendo presionado */
+}
+
+/* Estilo del texto dentro del botón */
+.submit-btn:focus {
+    outline: none; /* Elimina el contorno al enfocar el botón */
+}
+
+/* Aseguramos que las imágenes del carrusel se ajusten a un tamaño consistente */
+.carousel-item img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho disponible */
+    height: 500px; /* Establece una altura fija para todas las imágenes del carrusel */
+    object-fit: cover; /* Asegura que la imagen se recorte adecuadamente para llenar el contenedor */
+    object-position: center; /* Asegura que la imagen se enfoque en el centro */
+}
+
+/* Ajustamos el tamaño del carrusel y lo centramos */
+.carousel {
+    max-width: 100%; /* Asegura que el carrusel no se estire más allá del tamaño de su contenedor */
+    margin: 0 auto; /* Centra el carrusel */
+}
+
+/* Mejora la visibilidad del texto en las imágenes del carrusel */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar la visibilidad del texto */
+    color: white; /* Texto blanco */
+    padding: 20px; /* Espaciado alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+del{
+    color: red;
+    text-decoration: line-through;
+}
+
 .sidebar {
     height: 100%; /* La barra lateral ocupa todo el alto de la pantalla */
     width: 0; /* Inicialmente la barra lateral está oculta */
@@ -102,52 +441,43 @@ h1, h2 {
     padding-top: 60px; /* Espacio desde la parte superior */
 }
 
-/* Estilo de los enlaces dentro de la barra lateral */
-.sidebar a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
+/* Estilo para la barra lateral */
+.sidebar {
+    height: 100%;
+    width: 0; /* Comienza colapsada */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden; /* Desactivar el desplazamiento horizontal */
+    transition: 0.3s; /* Animación para abrir/cerrar */
+    padding-top: 60px;
+    z-index: 101;
 }
 
-/* Efecto hover sobre los enlaces de la barra lateral */
-.sidebar a:hover {
-    color: #f1f1f1;
+/* Estilo del contenido de la barra lateral */
+.sidebar-content {
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
 
-/* Muestra la barra lateral cuando se activa */
-.sidebar.active {
-    width: 250px; /* Ancho de la barra lateral cuando está activa */
+.sidebar h2 {
+    margin-bottom: 20px;
 }
 
-/* Barra lateral de inicio de sesión: contenedor de formulario */
-.form-container {
-    background-color: #fff; /* Fondo blanco para el formulario */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del formulario */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 40px; /* Espaciado interno */
-    width: 100%; /* El formulario ocupará todo el ancho disponible */
-    max-width: 500px; /* Ancho máximo del formulario */
-    margin-top: 100px; /* Deja espacio desde la parte superior para que no quede pegado a la barra de navegación fija */
-}
-
-/* Estilos del formulario de login */
 .input-container {
-    margin-bottom: 15px; /* Espaciado debajo de los campos de entrada */
+    margin-bottom: 15px;
 }
 
-/* Estilo de los campos de entrada */
 input {
     padding: 10px;
     width: 200px;
     margin: 5px;
     border: none;
-    border-radius: 4px; /* Bordes redondeados para los inputs */
+    border-radius: 4px;
 }
 
-/* Estilo del botón de login */
 button {
     padding: 10px;
     width: 100%;
@@ -156,13 +486,13 @@ button {
     color: white;
     cursor: pointer;
     font-size: 16px;
-    border-radius: 4px; /* Bordes redondeados en los botones */
-    margin-top: 20px; /* Espaciado superior */
+    border-radius: 4px;
+    margin-top: 20px;
 }
 
-/* Estilo del mensaje de bienvenida */
+/* Estilo para el mensaje de bienvenida */
 .welcome-message {
-    background-color: #4CAF50; /* Fondo verde para el mensaje de bienvenida */
+    background-color: #4CAF50;
     color: white;
     padding: 20px;
     text-align: center;
@@ -179,7 +509,7 @@ button {
     color: white;
 }
 
-/* Footer */
+/* Estilo del footer */
 footer {
     background-color: #000; /* Fondo negro */
     color: white; /* Texto blanco */
@@ -187,4 +517,3 @@ footer {
     padding: 10px; /* Espaciado alrededor del contenido */
     margin-top: 40px; /* Deja espacio en la parte superior para separar del contenido anterior */
 }
-
