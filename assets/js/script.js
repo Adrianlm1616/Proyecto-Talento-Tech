@@ -220,5 +220,46 @@ function displayProducts(productsToDisplay) {
     });
 }
 
+// Obtener los elementos del DOM para interacción
+const closeBtn = document.getElementById('closeBtn'); // Botón para cerrar la barra lateral
+const sidebar = document.getElementById('loginSidebar'); // Barra lateral de inicio de sesión
+const loginForm = document.getElementById('loginForm'); // Formulario de inicio de sesión
+const usernameInput = document.getElementById('username'); // Campo de texto para el nombre de usuario
+const passwordInput = document.getElementById('password'); // Campo de texto para la contraseña
+const welcomeMessage = document.getElementById('welcomeMessage'); // Contenedor para el mensaje de bienvenida
+
+// Usuario y contraseña correctos (ficticios en este caso)
+const correctUsername = 'cainetech';
+const correctPassword = 'talentotech1';
+
+// Función para abrir la barra lateral al hacer clic en "Iniciar Sesión"
+openBtn.addEventListener('click', () => {
+    sidebar.style.width = '300px'; // Expandir la barra lateral a un ancho de 300px
+});
+
+// Función para cerrar la barra lateral al hacer clic en "Cerrar"
+closeBtn.addEventListener('click', () => {
+    sidebar.style.width = '0'; // Colapsar la barra lateral (ancho 0)
+});
+
+// Función para manejar el evento de envío del formulario
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevenir el envío tradicional del formulario (evita la recarga de la página)
+
+    // Obtener los valores ingresados por el usuario
+    const username = usernameInput.value.trim(); // Eliminar espacios adicionales
+    const password = passwordInput.value.trim();
+
+    // Verificar si el nombre de usuario y la contraseña son correctos
+    if (username === correctUsername && password === correctPassword) {
+        // Si las credenciales son correctas, ocultar la barra lateral y mostrar el mensaje de bienvenida
+        sidebar.style.width = '0'; // Cerrar la barra lateral
+        welcomeMessage.style.display = 'block'; // Mostrar el mensaje de bienvenida
+    } else {
+        // Si las credenciales son incorrectas, mostrar un mensaje de error
+        alert('Usuario o contraseña incorrectos'); // Alerta de error
+    }
+});
+
 // Inicialmente, mostramos todos los productos sin ningún filtro aplicado
 displayProducts(products);

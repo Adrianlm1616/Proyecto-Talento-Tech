@@ -42,7 +42,7 @@
             <!-- Contenedor de los íconos de búsqueda, usuario y carrito -->
             <div class="icons">
                 <i class="fas fa-search"></i> <!-- Icono de búsqueda -->
-                <i class="fas fa-user"></i> <!-- Icono de usuario -->
+                <i class="fas fa-user" id="openBtn"></i> <!-- Icono de usuario, que al hacer clic abrirá la barra lateral -->
                 
                 <!-- Icono del carrito de compras con contador de productos -->
                 <div class="cart-icon-container">
@@ -95,6 +95,37 @@
         <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button> <!-- Botón para ver el carrito -->
     </div>
 
+    <!-- Barra lateral de inicio de sesión -->
+    <div id="loginSidebar" class="sidebar">
+        <div class="sidebar-content">
+            <h2>Iniciar Sesión</h2> <!-- Título del formulario de inicio de sesión -->
+            
+            <!-- Formulario para ingresar usuario y contraseña -->
+            <form id="loginForm" action="javascript:void(0);"> <!-- 'action="javascript:void(0);"' previene el envío tradicional -->
+                <div class="input-container">
+                    <label for="username">Usuario:</label> <!-- Etiqueta para el campo de usuario -->
+                    <input type="text" id="username" name="username" required placeholder="Introduce tu usuario"> <!-- Campo de texto para el nombre de usuario -->
+                </div>
+                
+                <div class="input-container">
+                    <label for="password">Contraseña:</label> <!-- Etiqueta para el campo de contraseña -->
+                    <input type="password" id="password" name="password" required placeholder="Introduce tu contraseña"> <!-- Campo de contraseña -->
+                </div>
+                
+                <!-- Botón para enviar el formulario -->
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+
+            <!-- Botón para cerrar la barra lateral -->
+            <button id="closeBtn" class="close-btn">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Mensaje de bienvenida, inicialmente oculto -->
+    <div id="welcomeMessage" class="welcome-message" style="display: none;">
+        <h2>Bienvenido Caine de la Hoz</h2> <!-- Mensaje de bienvenida -->
+    </div>
+    
     <!-- Pie de página -->
     <footer>
         <p>Elaborado por Adrian Lara</p> <!-- Texto con el nombre del autor del sitio -->
@@ -102,5 +133,35 @@
 
     <!-- Vinculación al archivo JS para la funcionalidad del carrito -->
     <script src="/Proyecto-Talento-Tech/assets/js/script.js"></script> <!-- Archivo JS que contiene las funciones del carrito y otras interacciones -->
+
+    <!-- Vinculación al archivo JS para la funcionalidad del inicio de sesión -->
+    <script>
+        // Función para abrir la barra lateral al hacer clic en el ícono del usuario
+        document.getElementById('openBtn').addEventListener('click', function() {
+            document.getElementById('loginSidebar').style.width = '300px'; // Abrir la barra lateral expandiéndola
+        });
+
+        // Función para cerrar la barra lateral cuando se haga clic en el botón "Cerrar"
+        document.getElementById('closeBtn').addEventListener('click', function() {
+            document.getElementById('loginSidebar').style.width = '0'; // Colapsar la barra lateral
+        });
+
+        // Función para manejar el envío del formulario de inicio de sesión
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el envío normal del formulario
+
+            const username = document.getElementById('username').value.trim(); // Obtener el valor del campo de usuario
+            const password = document.getElementById('password').value.trim(); // Obtener el valor del campo de contraseña
+
+            // Verificar si las credenciales son correctas
+            if (username === 'cainetech' && password === 'talentotech1') {
+                document.getElementById('loginSidebar').style.width = '0'; // Cerrar la barra lateral
+                document.getElementById('welcomeMessage').style.display = 'block'; // Mostrar el mensaje de bienvenida
+            } else {
+                alert('Usuario o contraseña incorrectos'); // Mostrar alerta si las credenciales son incorrectas
+            }
+        });
+    </script>
 </body>
 </html>
