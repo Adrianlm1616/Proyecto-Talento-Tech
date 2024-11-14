@@ -163,12 +163,18 @@ section-title {
     border-radius: 10px; /* Bordes redondeados */
 }
 
-/* Estilos para los filtros */
+/* Estilo para la barra de filtros deslizante */
 .filters {
-    margin: 20px 0;  /* Espaciado alrededor del contenedor de filtros */
-    padding: 10px;   /* Espaciado interno */
-    border: 1px solid #ccc;  /* Borde gris claro alrededor del contenedor */
-    background-color: #f9f9f9; /* Fondo de color gris muy claro */
+    position: fixed;
+    top: 0;
+    left: -300px;  /* Inicialmente oculta */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 999;
 }
 
 /* Formulario de filtros: usamos display flex para organizarlos de forma vertical */
@@ -188,22 +194,27 @@ section-title {
     padding: 5px;        /* Espaciado dentro de los campos */
 }
 
-/* Estilo para el botón de aplicar filtros */
-.filters button {
-    padding: 10px;        /* Espaciado dentro del botón */
-    background-color: #333;  /* Fondo oscuro para el botón */
-    color: #fff;          /* Texto blanco */
-    border: none;         /* Sin borde */
-    cursor: pointer;      /* Aparece el cursor como mano al pasar sobre el botón */
+/* Estilo para el botón de filtro */
+#filter-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para la lista de productos (sección de novedades) */
+/* Estilo para los productos */
 .product-list {
-    display: flex; /* Muestra los productos en una fila */
-    flex-wrap: wrap; /* Permite que los productos se ajusten cuando no caben en una línea */
-    justify-content: space-between; /* Espacio entre los productos */
-    gap: 20px; /* Espaciado entre cada producto */
-    padding: 20px; /* Espaciado alrededor de los productos */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
 }
 
 /* Estilo de cada producto */

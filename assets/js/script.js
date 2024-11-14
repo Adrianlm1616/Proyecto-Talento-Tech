@@ -212,3 +212,70 @@ document.addEventListener('DOMContentLoaded', () => {
     const visitCounterElement = document.getElementById('visit-counter');
     visitCounterElement.textContent = `${visitCount} personas han visitado esta página`;
 });
+
+// Muestra u oculta la barra de filtros
+function toggleFilter() {
+    const filterBar = document.getElementById('filters');
+    // Cambiar la posición de la barra de filtros
+    if (filterBar.style.left === '0px') {
+        filterBar.style.left = '-300px';  // Oculta
+    } else {
+        filterBar.style.left = '0';  // Muestra
+    }
+}
+
+// Aplica los filtros seleccionados
+function applyFilters() {
+    const brand = document.getElementById('brand').value;
+    const priceMin = parseInt(document.getElementById('price-min').value);
+    const priceMax = parseInt(document.getElementById('price-max').value);
+    const sort = document.getElementById('sort').value;
+
+    // Obtén todos los productos
+    const products = document.querySelectorAll('.product');
+
+    // Filtra los productos en función de los criterios seleccionados
+    let filteredProducts = Array.from(products).filter(product => {
+        const productBrand = product.getAttribute('data-brand');
+        const productPrice = parseInt(product.getAttribute('data-price'));
+
+        // Filtra por marca
+        const isBrandValid = brand === 'all' || productBrand === brand;
+
+        // Filtra por precio
+        const isPriceValid = productPrice >= priceMin && productPrice <= priceMax;
+
+        return isBrandValid && isPriceValid;
+    });
+
+    // Ordena los productos si se selecciona ordenar por precio
+    if (sort === 'asc') {
+        filteredProducts.sort((a, b) => {
+            return parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price'));
+        });
+    } else if (sort === 'desc') {
+        filteredProducts.sort((a, b) => {
+            return parseInt(b.getAttribute('data-price')) - parseInt(a.getAttribute('data-price'));
+        });
+    }
+
+    // Muestra los productos filtrados
+    updateProductList(filteredProducts);
+}
+
+// Actualiza la lista de productos en la página
+function updateProductList(filteredProducts) {
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = '';  // Limpia la lista de productos
+
+    // Agrega los productos filtrados al contenedor
+    filteredProducts.forEach(product => {
+        productList.appendChild(product);
+    });
+}
+
+// Inicializa la lista de productos al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    const products = document.querySelectorAll('.product');
+    updateProductList(products);  // Muestra todos los productos inicialmente
+});
