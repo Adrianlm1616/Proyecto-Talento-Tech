@@ -248,7 +248,7 @@ function applyFilters() {
         });
     }
 
-    // Muestra los productos filtrados y oculta los demás
+    // Actualizamos la lista de productos (muestra los filtrados, oculta los no filtrados)
     updateProductList(filteredProducts);
 }
 
@@ -256,27 +256,34 @@ function applyFilters() {
 function updateProductList(filteredProducts) {
     const productList = document.getElementById('product-list');
     
-    // Ocultar todos los productos
+    // Primero, mostramos todos los productos
     const allProducts = document.querySelectorAll('.product');
     allProducts.forEach(product => {
         product.style.display = 'none';  // Ocultamos todos los productos
     });
 
-    // Mostrar los productos filtrados
-    filteredProducts.forEach(product => {
-        product.style.display = 'block';  // Mostramos solo los productos que cumplen los filtros
-    });
-
-    // Si no hay productos que mostrar, muestra un mensaje
-    if (filteredProducts.length === 0) {
-        const noProductsMessage = document.createElement('div');
-        noProductsMessage.textContent = 'No se encontraron productos que coincidan con los filtros seleccionados.';
+    // Si hay productos filtrados, los mostramos
+    if (filteredProducts.length > 0) {
+        filteredProducts.forEach(product => {
+            product.style.display = 'block';  // Mostramos los productos que cumplen con el filtro
+        });
+    } else {
+        // Si no hay productos filtrados, mostrar un mensaje que indique que no hay productos
+        const noProductsMessage = document.createElement('p');
+        noProductsMessage.textContent = 'No hay productos que coincidan con los filtros seleccionados.';
         productList.appendChild(noProductsMessage);
     }
 }
 
-// Inicializa la lista de productos al cargar la página
+// Inicializa la lista de productos al cargar la página (muestra todos los productos inicialmente)
 document.addEventListener('DOMContentLoaded', () => {
+    // Muestra todos los productos inicialmente (sin filtro)
     const products = document.querySelectorAll('.product');
-    updateProductList(products);  // Muestra todos los productos inicialmente
+    updateProductList(Array.from(products));  // Muestra todos los productos inicialmente
+
+    // Asignar el evento de cambio para los filtros
+    document.getElementById('brand').addEventListener('change', applyFilters);
+    document.getElementById('price-min').addEventListener('input', applyFilters);
+    document.getElementById('price-max').addEventListener('input', applyFilters);
+    document.getElementById('sort').addEventListener('change', applyFilters);
 });
