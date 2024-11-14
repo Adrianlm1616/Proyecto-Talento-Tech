@@ -163,6 +163,40 @@ section-title {
     border-radius: 10px; /* Bordes redondeados */
 }
 
+/* Estilos para los filtros */
+.filters {
+    margin: 20px 0;  /* Espaciado alrededor del contenedor de filtros */
+    padding: 10px;   /* Espaciado interno */
+    border: 1px solid #ccc;  /* Borde gris claro alrededor del contenedor */
+    background-color: #f9f9f9; /* Fondo de color gris muy claro */
+}
+
+/* Formulario de filtros: usamos display flex para organizarlos de forma vertical */
+.filters form {
+    display: flex;
+    flex-direction: column;  /* Organiza los elementos de arriba hacia abajo */
+}
+
+/* Estilo para las etiquetas de los filtros */
+.filters label {
+    margin-bottom: 5px; /* Espaciado debajo de las etiquetas */
+}
+
+/* Estilo para los campos de entrada y select (para marca, precios y ordenación) */
+.filters select, .filters input {
+    margin-bottom: 10px; /* Espaciado debajo de los campos de entrada */
+    padding: 5px;        /* Espaciado dentro de los campos */
+}
+
+/* Estilo para el botón de aplicar filtros */
+.filters button {
+    padding: 10px;        /* Espaciado dentro del botón */
+    background-color: #333;  /* Fondo oscuro para el botón */
+    color: #fff;          /* Texto blanco */
+    border: none;         /* Sin borde */
+    cursor: pointer;      /* Aparece el cursor como mano al pasar sobre el botón */
+}
+
 /* Estilos para la lista de productos (sección de novedades) */
 .product-list {
     display: flex; /* Muestra los productos en una fila */

@@ -146,3 +146,66 @@ actualizarCarrusel();
 
 // ** Función para activar el cambio automático de imágenes del carrusel (si se desea)**
 setInterval(siguienteImagen, 15000);  // Cambiar cada 15 segundos (ajustable)
+
+// Función para aplicar los filtros seleccionados por el usuario
+function applyFilters() {
+    // Obtener los valores seleccionados por el usuario para marca y rango de precio
+    const brandFilter = document.getElementById('brand').value;
+    const priceMin = parseInt(document.getElementById('price-min').value) || 0; // Si no hay valor, se asigna 0
+    const priceMax = parseInt(document.getElementById('price-max').value) || 1000000; // Si no hay valor, se asigna 1000000 (un precio muy alto para no limitar los productos)
+    const sortOption = document.getElementById('sort').value; // Obtener la opción seleccionada para orden
+
+    // Filtrar los productos basados en la marca y el precio
+    let filteredProducts = products.filter(product => {
+        // Comprobar si el producto coincide con la marca seleccionada (si "Todas las marcas" es seleccionado, pasa la validación)
+        const isBrandMatch = (brandFilter === 'all' || product.brand === brandFilter);
+        // Comprobar si el producto está dentro del rango de precio seleccionado
+        const isPriceMatch = (product.price >= priceMin && product.price <= priceMax);
+        // Devolver true si ambos filtros coinciden
+        return isBrandMatch && isPriceMatch;
+    });
+
+    // Ordenar los productos según la opción de precio seleccionada (ascendente o descendente)
+    if (sortOption === 'asc') {
+        filteredProducts.sort((a, b) => a.price - b.price); // Orden ascendente (menor a mayor precio)
+    } else if (sortOption === 'desc') {
+        filteredProducts.sort((a, b) => b.price - a.price); // Orden descendente (mayor a menor precio)
+    }
+
+    // Mostrar los productos filtrados y ordenados
+    displayProducts(filteredProducts);
+}
+
+// Función para mostrar los productos filtrados en el contenedor
+function displayProducts(productsToDisplay) {
+    const productList = document.querySelector('.product-list');
+    productList.innerHTML = '';  // Limpiar los productos actuales del contenedor antes de agregar los nuevos productos
+
+    // Iterar sobre los productos filtrados y agregar cada uno al HTML
+    productsToDisplay.forEach(product => {
+        // Crear un nuevo div para el producto
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product'); // Asignar la clase "product" para estilo
+        productDiv.setAttribute('data-id', product.id);  // Agregar atributo data-id para referencia
+        productDiv.setAttribute('data-name', product.name); // Agregar atributo data-name para referencia
+        productDiv.setAttribute('data-price', product.price); // Agregar atributo data-price para referencia
+        productDiv.setAttribute('data-brand', product.brand); // Agregar atributo data-brand para referencia
+        
+        // Incluir el contenido HTML dentro del div del producto
+        productDiv.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" height="300" width="300">
+            <div class="product-details">
+                <h3>${product.name}</h3>
+                <div class="price">$${product.price.toLocaleString()}</div>
+                <input type="number" id="quantity-${product.id}" value="1" min="1">
+                <button class="buy-button" onclick="addToCart(${product.id}, '${product.name}', ${product.price})">Comprar Ahora</button>
+            </div>
+        `;
+        
+        // Añadir el producto al contenedor de productos
+        productList.appendChild(productDiv);
+    });
+}
+
+// Inicialmente, mostramos todos los productos sin ningún filtro aplicado
+displayProducts(products);
