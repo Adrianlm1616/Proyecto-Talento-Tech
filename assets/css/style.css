@@ -129,31 +129,24 @@ section-title {
 }
 
 /* Estilo de la columna de texto */
-.text-left {
+.image-left {
     flex: 1; /* Permite que el texto ocupe el espacio disponible */
     color: aliceblue; /* Color de texto claro */
-    text-align: left; /* Alinea el texto a la izquierda */
+    text-align: center; /* Alinea el texto a la izquierda */
+}
+
+/* Estilo de la imagen dentro de la columna */
+.image-left img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho */
+    max-width: 400px; /* Establece un tamaño máximo para la imagen */
+    border-radius: 10px; /* Bordes redondeados */
 }
 
 /* Estilo para el título en la columna de texto */
-.text-left h2 {
+.image-left p {
     padding-left: 35px; /* Espaciado a la izquierda */
-    font-size: 55px; /* Tamaño de fuente grande */
+    font-size: 35px; /* Tamaño de fuente grande */
     margin-bottom: 20px; /* Espaciado inferior */
-}
-
-/* Estilo para el botón de compra */
-.Button-compra {
-    padding: 10px 20px; /* Espaciado interno */
-    background-color: white; /* Fondo blanco */
-    text-decoration-style: none; /* Elimina el subrayado */
-    height: 60px; /* Altura del botón */
-    width: 200px; /* Ancho del botón */
-    border-radius: 50px; /* Bordes redondeados */
-    font-size: 25px; /* Tamaño de la fuente */
-    display: block; /* Hace que el botón ocupe todo el espacio disponible */
-    margin-top: 20px; /* Espaciado superior */
-    justify-content: left; /* Alinea el contenido del botón a la izquierda */
 }
 
 /* Estilo de la columna de imagen */
@@ -167,6 +160,11 @@ section-title {
     width: 100%; /* Hace que la imagen ocupe todo el ancho */
     max-width: 400px; /* Establece un tamaño máximo para la imagen */
     border-radius: 10px; /* Bordes redondeados */
+}
+.image-right p {
+    padding-left: 35px; /* Espaciado a la izquierda */
+    font-size: 35px; /* Tamaño de fuente grande */
+    margin-bottom: 20px; /* Espaciado inferior */
 }
 
 /* Estilo para la barra de filtros deslizante */
