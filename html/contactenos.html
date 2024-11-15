@@ -93,23 +93,30 @@
             </div>
     </main>
 
-    <!-- Carrito de compras (oculto por defecto) -->
+    <!-- Carrito de compras: inicialmente oculto con "display: none;" -->
     <div id="cart" style="display:none;">
         <div class="cart-header">
             <h3>Carrito</h3> <!-- Título del carrito -->
-            <i class="fas fa-times" onclick="toggleCart()"></i> <!-- Ícono para cerrar el carrito -->
+            <i class="fas fa-times" onclick="toggleCart()"></i> <!-- Ícono para cerrar el carrito, que llama la función toggleCart() -->
         </div>
-        
-        <!-- Lista de artículos en el carrito (vacía inicialmente) -->
-        <ul id="cart-items"></ul>
 
-        <!-- Muestra el total acumulado del carrito -->
+        <!-- Lista de productos dentro del carrito -->
+        <ul id="cart-items"></ul> 
+
+        <!-- Total del carrito -->
         <div id="cart-total">
-            <strong>Total: $0</strong> <!-- Total acumulado en el carrito -->
+            <strong>Total: $0</strong> <!-- Muestra el total acumulado del carrito -->
         </div>
 
-        <!-- Botones para interactuar con el carrito -->
-        <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button> <!-- Botón para ver el carrito -->
+        <!-- Botones de acción en el carrito -->
+        <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button> <!-- Botón para ver el carrito completo -->
+        <button onclick="emptyCart()" style="width: 100%; padding: 10px; background-color: red; color: white; border: none;">Vaciar Carrito</button> <!-- Botón para vaciar el carrito -->
+        <!-- Agregar el botón "Ver Más" al carrito -->
+         <a href="/Proyecto-Talento-Tech/html/carrito.html">
+        <button style="width: 100%; padding: 10px; background-color: #3498db; color: white; border: none;">
+        Ver Más 
+        </button>
+    </a>
     </div>
 
     <!-- Barra lateral de inicio de sesión -->
