@@ -718,6 +718,6 @@ del{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del contenedor del mapa */
     border: 2px solid #ccc; /* Borde gris claro alrededor del contenedor del mapa */
 }
-.acerca-container{
+.acerca-container h1{
     color: #e74c3c;
 }
