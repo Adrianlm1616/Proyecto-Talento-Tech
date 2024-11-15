@@ -306,48 +306,48 @@ document.getElementById('price-min').addEventListener('input', applyFilters);
 document.getElementById('price-max').addEventListener('input', applyFilters);
 document.getElementById('sort').addEventListener('change', applyFilters);
 
-// Configurar EmailJS con tu user ID
-(function() {
-    emailjs.init("Gz686p0bvQMAWeV95");  // Reemplaza con tu User ID de EmailJS
-})();
+document.addEventListener("DOMContentLoaded", function() {
+    // Inicializa EmailJS con tu User ID
+    emailjs.init("Gz686p0bvQMAWeV95");  // Reemplaza con tu User ID
 
-// Agregar un event listener para enviar el formulario
-document.querySelector(".form").addEventListener("submit", function(event) {
-    event.preventDefault();  // Prevenir el comportamiento por defecto del formulario (no recargar la página)
+    // Agregar un event listener para enviar el formulario
+    document.querySelector(".form").addEventListener("submit", function(event) {
+        event.preventDefault();  // Prevenir el comportamiento por defecto del formulario
 
-    const name = document.getElementById("name").value;  // Obtener el valor del campo "name"
-    const email = document.getElementById("email").value;  // Obtener el valor del campo "email"
-    const message = document.getElementById("message").value;  // Obtener el valor del campo "message"
+        // Obtener los valores de los campos
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
 
-    // Usar EmailJS para enviar el correo con la información
-    emailjs.send("your_service_id", "your_template_id", {
-        name: name,
-        email: email,
-        message: message
-    })
-    
-    .then(function(response) {
-        // Si el mensaje fue enviado con éxito
-        console.log("SUCCESS", response);
+        // Usar EmailJS para enviar el correo con la información
+        emailjs.send("your_service_id", "your_template_id", {
+            name: name,
+            email: email,
+            message: message
+        })
+        .then(function(response) {
+            // Si el mensaje fue enviado con éxito
+            console.log("SUCCESS", response);
 
-        // Mostrar mensaje de éxito
-        const formContainer = document.querySelector(".form-container");
-        formContainer.innerHTML = `
-            <div class="success-message">
-                <h3>¡Mensaje Enviado Exitosamente!</h3>
-                <p>Te responderemos pronto. Gracias por contactarnos.</p>
-            </div>
-        `;
-    }, function(error) {
-        // Si hubo un error al enviar el mensaje
-        console.log("FAILED", error);
+            // Mostrar mensaje de éxito
+            const formContainer = document.querySelector(".form-container");
+            formContainer.innerHTML = `
+                <div class="success-message">
+                    <h3>¡Mensaje Enviado Exitosamente!</h3>
+                    <p>Te responderemos pronto. Gracias por contactarnos.</p>
+                </div>
+            `;
+        }, function(error) {
+            // Si hubo un error al enviar el mensaje
+            console.log("FAILED", error);
 
-        // Mostrar mensaje de error
-        const formContainer = document.querySelector(".form-container");
-        formContainer.innerHTML = `
-            <div class="error-message">
-                <h3>Hubo un problema al enviar tu mensaje. Intenta nuevamente más tarde.</h3>
-            </div>
-        `;
+            // Mostrar mensaje de error
+            const formContainer = document.querySelector(".form-container");
+            formContainer.innerHTML = `
+                <div class="error-message">
+                    <h3>Hubo un problema al enviar tu mensaje. Intenta nuevamente más tarde.</h3>
+                </div>
+            `;
+        });
     });
 });

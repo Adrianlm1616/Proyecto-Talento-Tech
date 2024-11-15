@@ -359,7 +359,6 @@ section-title {
     max-width: 500px; /* Ancho máximo del formulario */
     margin-top: 100px; /* Deja espacio desde la parte superior para que no quede pegado a la barra de navegación fija */
     padding-top: 35px;
-    padding-bottom: 105px;
 }
 
 /* Título del formulario */
