@@ -318,54 +318,37 @@ document.addEventListener('DOMContentLoaded', () => {
     updateProductList(Array.from(products));  // Muestra todos los productos inicialmente
 });
 
-// Asigna los eventos de cambio a los filtros
-document.getElementById('brand').addEventListener('change', applyFilters);
-document.getElementById('price-min').addEventListener('input', applyFilters);
-document.getElementById('price-max').addEventListener('input', applyFilters);
-document.getElementById('sort').addEventListener('change', applyFilters);
+// Obtener el formulario y el contenedor del mensaje
+const form = document.querySelector('.form');
+const formContainer = document.querySelector('.form-container');
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Inicializa EmailJS con tu User ID
-    emailjs.init("Gz686p0bvQMAWeV95");  // Reemplaza con tu User ID
+// Función para manejar el envío del formulario
+form.addEventListener('submit', function(event) {
+    // Prevenir el comportamiento por defecto (enviar el formulario)
+    event.preventDefault();
 
-    // Agregar un event listener para enviar el formulario
-    document.querySelector(".form").addEventListener("submit", function(event) {
-        event.preventDefault();  // Prevenir el comportamiento por defecto del formulario
+    // Obtener los valores del formulario
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-        // Obtener los valores de los campos
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
+    // Verificar que todos los campos están llenos (aunque ya es obligatorio por "required")
+    if (name && email && message) {
+        // Crear el mensaje de confirmación
+        const confirmationMessage = document.createElement('div');
+        confirmationMessage.classList.add('confirmation-message');
+        confirmationMessage.innerHTML = `
+            <p>Mensaje enviado con éxito, ${name}. ¡Te contactaremos pronto!</p>
+        `;
 
-        // Usar EmailJS para enviar el correo con la información
-        emailjs.send("your_service_id", "your_template_id", {
-            name: name,
-            email: email,
-            message: message
-        })
-        .then(function(response) {
-            // Si el mensaje fue enviado con éxito
-            console.log("SUCCESS", response);
+        // Limpiar el formulario
+        form.reset();
 
-            // Mostrar mensaje de éxito
-            const formContainer = document.querySelector(".form-container");
-            formContainer.innerHTML = `
-                <div class="success-message">
-                    <h3>¡Mensaje Enviado Exitosamente!</h3>
-                    <p>Te responderemos pronto. Gracias por contactarnos.</p>
-                </div>
-            `;
-        }, function(error) {
-            // Si hubo un error al enviar el mensaje
-            console.log("FAILED", error);
-
-            // Mostrar mensaje de error
-            const formContainer = document.querySelector(".form-container");
-            formContainer.innerHTML = `
-                <div class="error-message">
-                    <h3>Hubo un problema al enviar tu mensaje. Intenta nuevamente más tarde.</h3>
-                </div>
-            `;
-        });
-    });
+        // Mostrar el mensaje de confirmación y ocultar el formulario
+        formContainer.innerHTML = '';
+        formContainer.appendChild(confirmationMessage);
+    } else {
+        // Si falta algún campo, mostrar un mensaje de error
+        alert('Por favor, completa todos los campos.');
+    }
 });
