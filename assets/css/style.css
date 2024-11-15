@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #000000;
+    background-color: white;
     font-family: Arial, sans-serif; /* Define la tipografía global */
     color: black;/* Color del texto principal -- ver 1.11.1*/
     line-height: 1.6; /* Espaciado entre líneas de texto para mayor legibilidad */
