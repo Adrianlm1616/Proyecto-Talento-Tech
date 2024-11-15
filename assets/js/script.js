@@ -369,7 +369,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-
-function mostraMensaje(){
-    alert("Compra Realizada")
-}
