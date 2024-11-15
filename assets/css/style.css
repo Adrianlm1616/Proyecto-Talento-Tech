@@ -17,7 +17,7 @@ header {
     background-color: black; /* Color de fondo negro */
     color: white; /* Color del texto en blanco */
     padding: 10px; /* Espaciado dentro del encabezado */
-    position: fixed; /* Permite posicionar elementos de manera relativa dentro del encabezado */
+    position: relative; /* Permite posicionar elementos de manera relativa dentro del encabezado */
 }
 
 /* Contenedor para los elementos dentro del encabezado */
