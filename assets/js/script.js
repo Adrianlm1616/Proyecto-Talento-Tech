@@ -268,30 +268,40 @@ function applyFilters() {
         });
     }
 
-    // Muestra los productos filtrados
+    // Muestra u oculta los productos basados en el filtro
     updateProductList(filteredProducts);
 }
 
-// Actualiza la lista de productos en la página
+// Actualiza la visibilidad de los productos en la página (no los elimina)
 function updateProductList(filteredProducts) {
-    const productList = document.getElementById('product-list');
-    productList.innerHTML = '';  // Limpia la lista de productos
+    const products = document.querySelectorAll('.product');
 
-    // Agrega los productos filtrados al contenedor
-    filteredProducts.forEach(product => {
-        productList.appendChild(product);
+    // Muestra todos los productos
+    products.forEach(product => {
+        product.style.display = 'none';  // Ocultamos todos los productos inicialmente
     });
 
-    // Si no hay productos que mostrar, muestra un mensaje
-    if (filteredProducts.length === 0) {
+    // Muestra solo los productos que cumplen con el filtro
+    if (filteredProducts.length > 0) {
+        filteredProducts.forEach(product => {
+            product.style.display = 'block';  // Mostramos solo los productos filtrados
+        });
+    } else {
+        // Si no hay productos que coincidan con los filtros, muestra un mensaje
         const noProductsMessage = document.createElement('div');
         noProductsMessage.textContent = 'No se encontraron productos que coincidan con los filtros seleccionados.';
-        productList.appendChild(noProductsMessage);
+        document.getElementById('product-list').appendChild(noProductsMessage);
     }
 }
 
 // Inicializa la lista de productos al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     const products = document.querySelectorAll('.product');
-    updateProductList(products);  // Muestra todos los productos inicialmente
+    updateProductList(Array.from(products));  // Muestra todos los productos inicialmente
 });
+
+// Asigna los eventos de cambio a los filtros
+document.getElementById('brand').addEventListener('change', applyFilters);
+document.getElementById('price-min').addEventListener('input', applyFilters);
+document.getElementById('price-max').addEventListener('input', applyFilters);
+document.getElementById('sort').addEventListener('change', applyFilters);
