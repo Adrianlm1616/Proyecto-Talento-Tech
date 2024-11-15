@@ -448,8 +448,9 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 
 /* Imagen del carrusel */
 .carousel-item img {
+    padding-top: 45px;
     width: 100%;
-    height: auto;
+    height: 300px;
     object-fit: cover; /* Asegura que la imagen se recorte adecuadamente para llenar el contenedor */
     object-position: center; /* Mantiene el centro de la imagen centrado */
 }
