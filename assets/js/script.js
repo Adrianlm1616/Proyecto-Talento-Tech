@@ -314,6 +314,19 @@ document.querySelector(".form").addEventListener("submit", function(event) {
     const email = document.getElementById("email").value;  // Obtener el valor del campo "email"
     const message = document.getElementById("message").value;  // Obtener el valor del campo "message"
 
+// Configurar EmailJS con tu user ID
+(function() {
+    emailjs.init("user_your_user_id_here");  // Reemplaza con tu User ID de EmailJS
+})();
+
+// Agregar un event listener para enviar el formulario
+document.querySelector(".form").addEventListener("submit", function(event) {
+    event.preventDefault();  // Prevenir el comportamiento por defecto del formulario (no recargar la página)
+
+    const name = document.getElementById("name").value;  // Obtener el valor del campo "name"
+    const email = document.getElementById("email").value;  // Obtener el valor del campo "email"
+    const message = document.getElementById("message").value;  // Obtener el valor del campo "message"
+
     // Usar EmailJS para enviar el correo con la información
     emailjs.send("service_id", "template_id", {
         name: name,
@@ -323,7 +336,7 @@ document.querySelector(".form").addEventListener("submit", function(event) {
     .then(function(response) {
         // Si el mensaje fue enviado con éxito
         console.log("SUCCESS", response);
-        
+
         // Mostrar mensaje de éxito
         const formContainer = document.querySelector(".form-container");
         formContainer.innerHTML = `
@@ -335,7 +348,7 @@ document.querySelector(".form").addEventListener("submit", function(event) {
     }, function(error) {
         // Si hubo un error al enviar el mensaje
         console.log("FAILED", error);
-        
+
         // Mostrar mensaje de error
         const formContainer = document.querySelector(".form-container");
         formContainer.innerHTML = `
