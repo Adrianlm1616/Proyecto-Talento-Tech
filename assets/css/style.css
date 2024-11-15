@@ -6,20 +6,48 @@
 }
 
 /* Media Queries */
+/* Para computadoras de escritorio y tablets grandes (más de 1024px) */
+@media (max-width: 1200px) {
+    /* Ajustes para pantallas entre 1024px y 1200px (tabletas grandes o pantallas de laptop) */
+    header .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-@media (max-width: 432px) {
+    nav .nav-links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav .nav-links li {
+        margin-right: 20px;
+    }
+
+    .icons {
+        display: flex;
+    }
+
+    .cart-icon-container {
+        margin-left: 10px;
+    }
+}
+
+/* Para tablets (pantallas de entre 768px y 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    /* Ajustes para tablets */
     header .header-content {
         flex-direction: column;
         align-items: flex-start;
     }
 
     nav .nav-links {
+        display: flex;
         flex-direction: column;
+        width: 100%;
         margin-top: 10px;
     }
 
     nav .nav-links li {
-        margin-right: 0;
         margin-bottom: 10px;
     }
 
@@ -30,60 +58,42 @@
     .cart-icon-container {
         margin-left: 10px;
     }
-}
 
-@media (max-width: 432px) {
-    /* Para dispositivos móviles */
-    header .header-content {
-        align-items: flex-start;
-        padding: 10px;
-    }
-
-    nav .nav-links {
-        display: none; /* Ocultamos los enlaces de navegación en pantallas pequeñas */
-        flex-direction: column;
-        width: 100%;
-        padding-top: 10px;
-    }
-
-    nav .nav-links li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    nav .nav-links.active {
-        display: block; /* Mostrar cuando la barra de navegación está activa */
-    }
-
-    .icons {
-        display: flex;
-        flex-direction: column;
-        margin-top: 10px;
-    }
-
-    .cart-icon-container {
-        margin-bottom: 10px;
-    }
-
-    /* Imagen de inicio */
     main img {
         width: 100%;
         height: auto;
     }
 }
 
-@media (max-width: 432px) {
-    footer .footer-container {
-        flex-direction: column;
-        text-align: center;
+/* Estilo por defecto para pantallas más grandes que 1024px (computadoras de escritorio) */
+@media (min-width: 1025px) {
+    /* Aquí, los estilos ya estarán optimizados para pantallas grandes como computadoras de escritorio */
+    header .header-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 50px;
     }
 
-    footer .footer-section {
-        margin-bottom: 20px;
+    nav .nav-links {
+        display: flex;
+        flex-direction: row;
     }
 
-    footer .footer-bottom {
-        margin-top: 20px;
+    nav .nav-links li {
+        margin-right: 20px;
+    }
+
+    .icons {
+        display: flex;
+    }
+
+    .cart-icon-container {
+        margin-left: 10px;
+    }
+
+    main img {
+        width: 100%;
+        height: auto;
     }
 }
 
