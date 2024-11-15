@@ -7,18 +7,18 @@
 
 body {
     font-family: Arial, sans-serif; /* Define la tipografía global */
-     /* Color del texto principal */
+    color: #ddd;/* Color del texto principal */
     line-height: 1.6; /* Espaciado entre líneas de texto para mayor legibilidad */
     min-height: 100vh;
-    filter: brightness(50%);
 }
 
 /* Estilo del encabezado */
 header {
-    background-color: #000; /* Color de fondo negro */
+     /* Color de fondo negro */
     color: white; /* Color del texto en blanco */
     padding: 10px; /* Espaciado dentro del encabezado */
     position: fixed; /* Permite posicionar elementos de manera relativa dentro del encabezado */
+    filter: brightness(50%);
 }
 
 /* Contenedor para los elementos dentro del encabezado */
