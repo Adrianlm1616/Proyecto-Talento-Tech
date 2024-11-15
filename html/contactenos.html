@@ -83,12 +83,12 @@
             </div>
             <div class="image-right">
                 <div class="map-container">
-                    <iframe 
-                        width="100%" 
-                        height="100%" 
-                        src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Calle+85+%23+48-38,+Barranquilla,+Atlántico,+Colombia" 
-                        allowfullscreen>
-                    </iframe>
+                    <h2>Ubícanos en el mapa</h2>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.5028905975155!2d-122.41941808519656!3d37.77492977975866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808d2cbe13e5%3A0x8d045f68fa62f345!2sSan%20Francisco%2C%20California%2C%20Estados%20Unidos!5e0!3m2!1ses!2ses!4v1633156985455!5m2!1ses!2ses"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+
                 </div>
             </div>
     </main>
@@ -111,6 +111,26 @@
         <!-- Botones para interactuar con el carrito -->
         <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button> <!-- Botón para ver el carrito -->
     </div>
+
+    <!-- Barra lateral de inicio de sesión -->
+<div id="loginSidebar">
+    <div class="sidebar-header">
+        <h3>Iniciar Sesión</h3>
+        <i class="fas fa-times" onclick="toggleLoginSidebar()"></i>
+    </div>
+    <form id="loginForm" onsubmit="loginUser(event)">
+        <input type="text" id="username" placeholder="Nombre de Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+    <div id="welcomeMessage" style="display:none;">
+        <p>Hola, <span id="usernameDisplay"></span>! Es un placer verte.</p>
+        <button onclick="logout()">Cerrar sesión</button>
+    </div>
+    <div id="errorMessage" style="display:none; color: red;">
+        <p>Inicio de sesión incorrecto. Inténtalo de nuevo.</p>
+    </div>
+</div>
 
     <!-- Pie de página -->
     <footer>

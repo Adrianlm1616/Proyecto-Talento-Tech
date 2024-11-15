@@ -97,6 +97,26 @@
         <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button> <!-- Botón para ver el carrito -->
     </div>
 
+    <!-- Barra lateral de inicio de sesión -->
+<div id="loginSidebar">
+    <div class="sidebar-header">
+        <h3>Iniciar Sesión</h3>
+        <i class="fas fa-times" onclick="toggleLoginSidebar()"></i>
+    </div>
+    <form id="loginForm" onsubmit="loginUser(event)">
+        <input type="text" id="username" placeholder="Nombre de Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+    <div id="welcomeMessage" style="display:none;">
+        <p>Hola, <span id="usernameDisplay"></span>! Es un placer verte.</p>
+        <button onclick="logout()">Cerrar sesión</button>
+    </div>
+    <div id="errorMessage" style="display:none; color: red;">
+        <p>Inicio de sesión incorrecto. Inténtalo de nuevo.</p>
+    </div>
+</div>
+
     <!-- Pie de página -->
     <footer>
         <p>Elaborado por Adrian Lara</p> <!-- Información del autor -->
