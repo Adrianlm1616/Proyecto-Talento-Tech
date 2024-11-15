@@ -5,6 +5,88 @@
     box-sizing: border-box; /* Asegura que el padding y el border no afecten al tamaño total de los elementos */
 }
 
+/* Media Queries */
+
+@media (max-width: 1200px) {
+    header .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav .nav-links li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .icons {
+        margin-top: 10px;
+    }
+
+    .cart-icon-container {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Para dispositivos móviles */
+    header .header-content {
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    nav .nav-links {
+        display: none; /* Ocultamos los enlaces de navegación en pantallas pequeñas */
+        flex-direction: column;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    nav .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav .nav-links.active {
+        display: block; /* Mostrar cuando la barra de navegación está activa */
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .cart-icon-container {
+        margin-bottom: 10px;
+    }
+
+    /* Imagen de inicio */
+    main img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .footer-section {
+        margin-bottom: 20px;
+    }
+
+    footer .footer-bottom {
+        margin-top: 20px;
+    }
+}
+
 body {
     background-color: white;
     font-family: Arial, sans-serif; /* Define la tipografía global */
