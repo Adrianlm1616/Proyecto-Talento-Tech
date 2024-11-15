@@ -52,16 +52,16 @@ header {
 
 /* Muestra el submenú al pasar el ratón sobre el elemento principal del menú */
 .nav-links li:hover .submenu {
-    display: block; /* Muestra el submenú */
+    display:block; /* Muestra el submenú */
     text-align: center; /* Alinea el texto al centro */
 }
 
 /* Barra de navegación */
 .navbar {
-    /*flex-grow: 1; /* Permite que la barra de navegación crezca y ocupe el espacio disponible */
+    position: fixed;
     display: flex; /* Usamos flexbox para alinear los elementos dentro del contenedor */
     justify-content: center; /* Centra los elementos horizontalmente */
-    position: fixed;
+    
 }
 
 /* Lista de enlaces de navegación */
@@ -102,6 +102,7 @@ header {
     flex: 1; /* Esto hace que el contenido ocupe todo el espacio disponible */
     padding-bottom: 80px; /* Espacio para que el pie de página no tape el contenido */
     padding: 40px; /* Espaciado alrededor del contenido principal */
+    min-height: 100vh;
 }
 
 /* Estilo de los títulos */
