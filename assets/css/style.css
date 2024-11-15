@@ -154,9 +154,6 @@ header {
 
 /* Barra de navegación */
 .navbar {
-    position: absolute;
-    left: 0;
-    top: 50%;
     transform: translateY(-50%);
     width: 40%; /* Ocupa el 40% del ancho de la pantalla */
     display: flex; /* Usamos flexbox para alinear los elementos dentro del contenedor */
@@ -169,8 +166,6 @@ header {
     list-style: none; /* Elimina los puntos de lista por defecto */
     display: flex; /* Muestra los elementos de la lista en línea */
     justify-content: space-around; /* Alinea los elementos al final */
-    margin-top: 0;
-    padding-left: 0;
 }
 
 /* Elementos de la lista de navegación */
@@ -189,17 +184,6 @@ header {
 /* Efecto hover sobre los enlaces de navegación */
 .nav-links a:hover {
     background-color: #575757; /* Fondo gris oscuro al pasar el ratón */
-}
-
-/* Logo centrado */
-.logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Centra el logo horizontalmente */
-}
-
-.logo img {
-    width: 150px; /* Ajusta el tamaño del logo */
 }
 
 /* Estilos de los íconos dentro del encabezado */
@@ -599,7 +583,7 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
 .carousel-item img {
     padding-top: 35px;
     width: 100%;
-    height: 400px;
+    height: 600px;
     object-fit: cover; /* Asegura que la imagen se recorte adecuadamente para llenar el contenedor */
     object-position: center; /* Mantiene el centro de la imagen centrado */
 }
