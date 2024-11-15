@@ -223,6 +223,16 @@ function toggleFilter() {
     }
 }
 
+// Muestra u oculta la barra de filtros
+function toggleFilter() {
+    const filterBar = document.getElementById('filters');
+    if (filterBar.style.left === '0px') {
+        filterBar.style.left = '-300px';  // Oculta
+    } else {
+        filterBar.style.left = '0';  // Muestra
+    }
+}
+
 // Aplica los filtros seleccionados
 function applyFilters() {
     const brand = document.getElementById('brand').value;
