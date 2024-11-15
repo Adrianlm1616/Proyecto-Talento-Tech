@@ -574,7 +574,7 @@ del{
 .footer {
     background-color: #333; /* Color de fondo oscuro */
     color: white;
-    position: fixed;
+    position: relative;  /* Pie de página se posiciona según el flujo del contenido */
     bottom: 0;
     left: 0;
     width: 100%;
