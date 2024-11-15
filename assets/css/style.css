@@ -7,9 +7,10 @@
 
 body {
     font-family: Arial, sans-serif; /* Define la tipografía global */
-    color: #333; /* Color del texto principal */
+     /* Color del texto principal */
     line-height: 1.6; /* Espaciado entre líneas de texto para mayor legibilidad */
     min-height: 100vh;
+    filter: brightness(50%);
 }
 
 /* Estilo del encabezado */
@@ -17,7 +18,7 @@ header {
     background-color: #000; /* Color de fondo negro */
     color: white; /* Color del texto en blanco */
     padding: 10px; /* Espaciado dentro del encabezado */
-    position: relative; /* Permite posicionar elementos de manera relativa dentro del encabezado */
+    position: fixed; /* Permite posicionar elementos de manera relativa dentro del encabezado */
 }
 
 /* Contenedor para los elementos dentro del encabezado */
@@ -58,7 +59,6 @@ header {
 
 /* Barra de navegación */
 .navbar {
-    position: fixed;
     display: flex; /* Usamos flexbox para alinear los elementos dentro del contenedor */
     justify-content: center; /* Centra los elementos horizontalmente */
     
