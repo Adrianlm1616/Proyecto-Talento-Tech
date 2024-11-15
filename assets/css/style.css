@@ -97,10 +97,6 @@ header {
     margin: 0 10px; /* Espaciado entre los íconos */
     cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
 }
-header-logo{
-    align-items: center;
-    width: 150px;
-}
 
 /* Estilo del contenido principal */
 .main {
