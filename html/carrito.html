@@ -155,47 +155,52 @@
     <script src="/Proyecto-Talento-Tech/assets/js/script.js"></script> <!-- Vincula el archivo de script que contiene la lógica de JavaScript -->
 <script>
     // Función para cargar los productos del carrito desde localStorage
-    document.addEventListener('DOMContentLoaded', () => {
-        loadCartItems();
+document.addEventListener('DOMContentLoaded', () => {
+    loadCartItems();
+});
+
+// Función para cargar y mostrar los productos del carrito en la página carrito.html
+function loadCartItems() {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items-list');
+    const cartTotal = document.getElementById('cart-total');
+    let total = 0;
+
+    // Limpiar el contenedor
+    cartItemsContainer.innerHTML = '';
+
+    // Mostrar cada producto en el carrito
+    cartItems.forEach(item => {
+        const productElement = document.createElement('div');
+        productElement.classList.add('product');
+        
+        // Crear el HTML del producto con la imagen, nombre, precio y cantidad
+        productElement.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" height="150" width="150"> <!-- Asignar la imagen del producto -->
+            <div class="product-details">
+                <h3>${item.name}</h3>
+                <div class="price">$${item.price.toLocaleString()}</div>
+                <div class="quantity">Cantidad: ${item.quantity}</div>
+            </div>
+        `;
+        
+        // Añadir el producto al contenedor
+        cartItemsContainer.appendChild(productElement);
+
+        // Sumar al total
+        total += item.price * item.quantity;
     });
 
-    // Función para cargar y mostrar los productos del carrito en la página carrito.html
-    function loadCartItems() {
-        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartItemsContainer = document.getElementById('cart-items-list');
-        const cartTotal = document.getElementById('cart-total');
-        let total = 0;
+    // Actualizar el total del carrito
+    cartTotal.innerHTML = `Total: $${total.toLocaleString()}`;
+}
 
-        // Limpiar el contenedor
-        cartItemsContainer.innerHTML = '';
+// Función para vaciar el carrito
+function emptyCart() {
+    localStorage.removeItem('cart');
+    loadCartItems(); // Recargar los productos del carrito
+}
 
-        // Mostrar cada producto en el carrito
-        cartItems.forEach(item => {
-            const productElement = document.createElement('div');
-            productElement.classList.add('product');
-            productElement.innerHTML = `
-                <img src="" alt="${item.name}" height="150" width="150">
-                <div class="product-details">
-                    <h3>${item.name}</h3>
-                    <div class="price">$${item.price.toLocaleString()}</div>
-                    <div class="quantity">Cantidad: ${item.quantity}</div>
-                </div>
-            `;
-            cartItemsContainer.appendChild(productElement);
-
-            // Sumar al total
-            total += item.price * item.quantity;
-        });
-
-        // Actualizar el total del carrito
-        cartTotal.innerHTML = `Total: $${total.toLocaleString()}`;
-    }
-
-    // Función para vaciar el carrito
-    function emptyCart() {
-        localStorage.removeItem('cart');
-        loadCartItems(); // Recargar los productos del carrito
-    }
 </script>
 </body>
 </html>
