@@ -14,7 +14,7 @@ body {
 
 /* Estilo del encabezado */
 header {
-     /* Color de fondo negro */
+    background-color: black; /* Color de fondo negro */
     color: white; /* Color del texto en blanco */
     padding: 10px; /* Espaciado dentro del encabezado */
     position: fixed; /* Permite posicionar elementos de manera relativa dentro del encabezado */
