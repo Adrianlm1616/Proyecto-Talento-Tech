@@ -121,6 +121,7 @@ header {
     justify-content: space-between; /* Distribuye los elementos en los extremos del contenedor */
     align-items: center; /* Centra los elementos verticalmente */
     padding: 0 20px; /* Espaciado horizontal */
+    position: relative;
 }
 
 /* Submenú oculto */
@@ -153,6 +154,11 @@ header {
 
 /* Barra de navegación */
 .navbar {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%; /* Ocupa el 40% del ancho de la pantalla */
     display: flex; /* Usamos flexbox para alinear los elementos dentro del contenedor */
     justify-content: flex-start; /* Centra los elementos horizontalmente */
     
@@ -162,7 +168,9 @@ header {
 .nav-links {
     list-style: none; /* Elimina los puntos de lista por defecto */
     display: flex; /* Muestra los elementos de la lista en línea */
-    justify-content: flex-start; /* Alinea los elementos al final */
+    justify-content: space-around; /* Alinea los elementos al final */
+    margin-top: 0;
+    padding-left: 0;
 }
 
 /* Elementos de la lista de navegación */
