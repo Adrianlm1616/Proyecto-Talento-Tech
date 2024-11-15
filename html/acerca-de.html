@@ -3,59 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca de Nosotros</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sport Exclusive</title>
+    <link rel="stylesheet" href="/Proyecto-Talento-Tech/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
 
-    <!-- Encabezado fijo -->
+<body>
+    
     <header>
         <div class="header-content">
+            <div class="logo">
+                <img src="/Proyecto-Talento-Tech/assets/img/INICIO/logo pagina inicio.png" alt="Logo" width="200">
+            </div>
             <nav class="navbar">
                 <ul class="nav-links">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Tienda</a></li>
-                    <li><a href="#">Marcas</a></li>
-                    <li><a href="#">Contáctenos</a></li>
+                    <li><a href="/Proyecto-Talento-Tech/index.html">INICIO</a></li>
+                    <li><a href="/Proyecto-Talento-Tech/html/tienda.html">TIENDA</a></li>
+                    <li><a href="/Proyecto-Talento-Tech/html/novedades.html">NOVEDADES</a>
+                        <div class="submenu">
+                            <a href="/Proyecto-Talento-Tech/html/ofertas.html">OFERTAS</a>
+                            <a href="/Proyecto-Talento-Tech/html/marcas.html">MARCAS</a>
+                        </div>
+                    </li>
+                    <li><a href="/Proyecto-Talento-Tech/html/contactenos.html">CONTACTENOS</a></li>
+                    <li><a href="/Proyecto-Talento-Tech/html/acerca-de.html">ACERCA DE</a></li>
                 </ul>
             </nav>
-            <img src="logo.png" alt="Logo" class="logo">
+
             <div class="icons">
                 <i class="fas fa-search"></i>
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user" onclick="toggleLoginSidebar()"></i>
+                <div class="cart-icon-container ">
+                    <i class="fas fa-shopping-cart" onclick="toggleCart()"></i>
+                    <span id="cart-count" class="cart-count">0</span>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Sección principal "Acerca de nosotros" -->
     <main>
-        <section class="about-section">
-            <div class="about-content">
-                <h1>Acerca de Nosotros</h1>
-                <p>Somos una empresa dedicada a ofrecer los mejores productos en línea. Nuestra misión es proporcionar calidad y satisfacción en cada compra.</p>
-                <p>Nuestra visión es convertirnos en líderes del mercado online, destacándonos por la atención al cliente y la innovación constante.</p>
-            </div>
-        </section>
+       <div>
+        <h2>Acerca de Nosotros</h1>
+            <br>
+            <h1>Bienvenidos a [Nombre de la Tienda]</h1>
+            <br>
+            <p>Tu destino para encontrar los mejores zapatos deportivos para cada deporte y estilo de vida. Nos especializamos en ofrecer calzado de la más alta calidad, diseñado para rendir al máximo en cualquier actividad deportiva, ya sea correr, entrenar, jugar fútbol, baloncesto o simplemente para un día activo.</p>
+            <br>
+            <br>
+            <h2>Nuestra Historia</h2>
+            <br>
+            <p>En [Nombre de la Tienda], nuestra pasión por el deporte y el bienestar nos lleva a ofrecerte los zapatos más innovadores y cómodos del mercado. Desde nuestra fundación en [año de fundación], hemos trabajado con las mejores marcas para garantizar que tengas acceso a los últimos modelos y tecnologías en calzado deportivo. Nuestro objetivo es que cada paso que des sea más seguro, cómodo y con el rendimiento que necesitas.</p>
+            <br>
+            <br>
+            <h1>Misión</h1>
+            <br>
+            <p>Nuestra misión es ofrecerte los mejores zapatos deportivos, con un enfoque en la calidad, tecnología e innovación. Queremos que te sientas cómodo y seguro en cada paso que des, ya sea en el campo de juego, en el gimnasio o en tus actividades diarias.</p>
+            <br>
+            <br>
+            <h1>Visión</h1>
+            <br>
+            <p>Ser la tienda líder en calzado deportivo, reconocida por nuestra variedad, calidad y servicio excepcional, ayudando a cada persona a alcanzar su máximo potencial físico.</p>
+        </div>
+
     </main>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Enlaces rápidos</h3>
-                <p><a href="#">Inicio</a></p>
-                <p><a href="#">Tienda</a></p>
-                <p><a href="#">Contáctenos</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <p>Email: contacto@empresa.com</p>
-                <p>Teléfono: +123 456 789</p>
-            </div>
+    <div id="cart">
+        <div class="cart-header">
+            <h3>Carrito</h3>
+            <i class="fas fa-times" onclick="toggleCart()"></i>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Empresa. Todos los derechos reservados.</p>
+        <ul id="cart-items"></ul>
+        <div id="cart-total">
+            <strong>Total: $0</strong>
         </div>
-    </footer>
+        <button onclick="emptyCart()">Vaciar Carrito</button>
+        <button>Ver Carrito</button>
+    </div>
 
+    <!-- Carrito de compras: inicialmente oculto con "display: none;" -->
+    <div id="cart" style="display:none;">
+        <div class="cart-header">
+            <h3>Carrito</h3> <!-- Título del carrito -->
+            <i class="fas fa-times" onclick="toggleCart()"></i> <!-- Ícono para cerrar el carrito, que llama la función toggleCart() -->
+        </div>
+
+        <!-- Lista de productos dentro del carrito -->
+        <ul id="cart-items"></ul> 
+
+        <!-- Total del carrito -->
+        <div id="cart-total">
+            <strong>Total: $0</strong> <!-- Muestra el total acumulado del carrito -->
+        </div>
+
+        <!-- Botones de acción en el carrito -->
+        <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button> <!-- Botón para ver el carrito completo -->
+        <button onclick="emptyCart()" style="width: 100%; padding: 10px; background-color: red; color: white; border: none;">Vaciar Carrito</button> <!-- Botón para vaciar el carrito -->
+        <!-- Agregar el botón "Ver Más" al carrito -->
+         <a href="/Proyecto-Talento-Tech/html/carrito.html">
+        <button style="width: 100%; padding: 10px; background-color: #3498db; color: white; border: none;">
+        Ver Más 
+        </button>
+    </a>
+    </div>
+
+<!-- Barra lateral de inicio de sesión -->
+<div id="loginSidebar">
+    <div class="sidebar-header">
+        <h3>Iniciar Sesión</h3>
+        <i class="fas fa-times" onclick="toggleLoginSidebar()"></i>
+    </div>
+    <form id="loginForm" onsubmit="loginUser(event)">
+        <input type="text" id="username" placeholder="Nombre de Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+    <div id="welcomeMessage" style="display:none;">
+        <p>Hola, <span id="usernameDisplay"></span>! Es un placer verte.</p>
+        <button onclick="logout()">Cerrar sesión</button>
+    </div>
+    <div id="errorMessage" style="display:none; color: red;">
+        <p>Inicio de sesión incorrecto. Inténtalo de nuevo.</p>
+    </div>
+</div>
+    <!-- Pie de página -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section contact-info">
+            <h3>Contacto</h3>
+            <p><strong>Teléfono:</strong> <a href="tel:3106041228">3106041228</a></p>
+            <p><strong>Dirección:</strong> Cra 4a #80-37, Barrio Santo Domingo</p>
+        </div>
+
+        <div class="footer-section social-media">
+            <h3>Redes Sociales</h3>
+            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/p/Kendra-Cantillo-100094295231154/">Kendra Cantillo</a></p>
+            <p><strong>Instagram:</strong> <a href="https://instagram.com/pontexclusivo-07" target="_blank">pontexclusivo-07</a></p>
+        </div>
+
+        <div class="footer-section about">
+            <h3>Sobre Nosotros</h3>
+            <p>En <strong>Sport Exclusive</strong> ofrecemos los mejores productos deportivos al alcance de todos. Encuentra calzado, ropa y accesorios para todos los deportes.</p>
+        </div>
+    </div>
+
+    <!-- Derechos reservados -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 <strong>Sport Exclusive</strong> - Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+    <script src="/Proyecto-Talento-Tech/assets/js/script.js"></script>
 </body>
 </html>

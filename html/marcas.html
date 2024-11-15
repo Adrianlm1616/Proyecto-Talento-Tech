@@ -1,54 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcas</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Meta tags para establecer la codificación de caracteres y la compatibilidad con dispositivos móviles -->
+    <meta charset="UTF-8"> <!-- Definición de la codificación de caracteres a UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el diseño sea responsivo en dispositivos móviles -->
+    
+    <title>Contactanos - Sport Exclusive</title> <!-- Título que aparece en la pestaña del navegador -->
+    
+    <!-- Vinculación de archivos CSS -->
+    <link rel="stylesheet" href="/Proyecto-Talento-Tech/assets/css/style.css"> <!-- Vincula el archivo CSS propio del sitio -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Vincula la librería de Font Awesome para los íconos -->
 </head>
 <body>
-
-    <!-- Encabezado fijo -->
-    <header>
+    <!-- Encabezado de la página -->
+    <header style="background-color: black;">
         <div class="header-content">
-            <nav class="navbar">
+            <!-- Logo de la tienda -->
+            <div class="logo">
+                <img src="/Proyecto-Talento-Tech/assets/img/INICIO/logo pagina inicio.png" alt="Logo" width="200"> <!-- Imagen del logo -->
+            </div>
+            
+            <!-- Barra de navegación -->
+            <nav>
                 <ul class="nav-links">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Tienda</a></li>
-                    <li><a href="#">Marcas</a></li>
-                    <li><a href="#">Contáctenos</a></li>
+                    <li><a href="/Proyecto-Talento-Tech/index.html">INICIO</a></li>
+                    <li><a href="/Proyecto-Talento-Tech/html/tienda.html">TIENDA</a></li>
+                    <li><a href="/Proyecto-Talento-Tech/html/novedades.html">NOVEDADES</a>
+                        <div class="submenu">
+                            <a href="/Proyecto-Talento-Tech/html/ofertas.html">OFERTAS</a>
+                            <a href="/Proyecto-Talento-Tech/html/marcas.html">MARCAS</a>
+                        </div>
+                    </li>
+                    <li><a href="/Proyecto-Talento-Tech/html/contactenos.html">CONTACTENOS</a></li>
+                    <li><a href="/Proyecto-Talento-Tech/html/acerca-de.html">ACERCA DE</a></li>
                 </ul>
             </nav>
-            <img src="logo.png" alt="Logo" class="logo">
+
+            <!-- Contenedor de los íconos de interacción -->
             <div class="icons">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-search"></i> <!-- Ícono de búsqueda -->
+                <i class="fas fa-user" onclick="toggleLoginSidebar()"></i>
+
+                <!-- Ícono del carrito de compras -->
+                <div class="cart-icon-container">
+                    <i class="fas fa-shopping-cart" onclick="toggleCart()"></i> <!-- Ícono de carrito de compras que abre el carrito -->
+                    <span id="cart-count" class="cart-count">0</span> <!-- Contador del carrito de compras -->
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Contenedor de las marcas -->
-    <section class="brands-container">
-        <div class="brand-logo"><img src="marca1.jpg" alt="Marca 1"></div>
-        <div class="brand-logo"><img src="marca2.jpg" alt="Marca 2"></div>
-        <div class="brand-logo"><img src="marca3.jpg" alt="Marca 3"></div>
-        <div class="brand-logo"><img src="marca4.jpg" alt="Marca 4"></div>
-        <div class="brand-logo"><img src="marca5.jpg" alt="Marca 5"></div>
-        <div class="brand-logo"><img src="marca6.jpg" alt="Marca 6"></div>
-        <div class="brand-logo"><img src="marca7.jpg" alt="Marca 7"></div>
-        <div class="brand-logo"><img src="marca8.jpg" alt="Marca 8"></div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Enlaces rápidos</h3>
-                <p><a href="#">Inicio</a></p>
-                <p><a href="#">Tienda</a></p>
-                <p><a href="#">Contáctenos</a></p>
-            </div>
+    <!-- Contenido principal de la página -->
+    <main>
+        
+        <div class="brands-container">
+            <a href="https://www.puma.com" target="_blank" class="brand-logo">
+                <img src="/Proyecto-Talento-Tech/assets/img/MARCAS/logo-puma-Photoroom.png" alt="Puma Logo">
+            </a>
+            <a href="https://www.adidas.com" target="_blank" class="brand-logo">
+                <img src="/Proyecto-Talento-Tech/assets/img/MARCAS/logo-adidas-Photoroom.png" alt="Adidas Logo">
+            </a>
+            <a href="https://www.newbalance.com" target="_blank" class="brand-logo">
+                <img src="/Proyecto-Talento-Tech/assets/img/MARCAS/logo-newbalance-Photoroom.png" alt="New Balance Logo">
+            </a>
+            <a href="https://www.nike.com" target="_blank" class="brand-logo">
+                <img src="/Proyecto-Talento-Tech/assets/img/MARCAS/logo-nike-Photoroom.png" alt="Nike Logo">
+            </a>
+            <a href="https://www.vans.com" target="_blank" class="brand-logo">
+                <img src="/Proyecto-Talento-Tech/assets/img/MARCAS/logo-vans-Photoroom.png" alt="Vans Logo">
+            </a>
+            <a href="https://www.diadora.com" target="_blank" class="brand-logo">
+                <img src="/Proyecto-Talento-Tech/assets/img/MARCAS/logo-diadora-Photoroom.png" alt="Diadora Logo">
+            </a>
+            <a href="https://www.fila.com" target="_blank" class="brand-logo">
+                <img src="/Proyecto-Talento-Tech/assets/img/MARCAS/logo-fila-Photoroom.png" alt="Fila Logo">
+            </a>
+            <a href="https://www.reebok.com" target="_blank" class="brand-logo">
+                <img src="/Proyecto-Talento-Tech/assets/img/MARCAS/logo-reebok-Photoroom.png" alt="Reebok Logo">
+            </a>
         </div>
-    </footer>
+        
+    </main>
 
+    <!-- Carrito de compras: inicialmente oculto con "display: none;" -->
+    <div id="cart" style="display:none;">
+        <div class="cart-header">
+            <h3>Carrito</h3> <!-- Título del carrito -->
+            <i class="fas fa-times" onclick="toggleCart()"></i> <!-- Ícono para cerrar el carrito, que llama la función toggleCart() -->
+        </div>
+
+        <!-- Lista de productos dentro del carrito -->
+        <ul id="cart-items"></ul> 
+
+        <!-- Total del carrito -->
+        <div id="cart-total">
+            <strong>Total: $0</strong> <!-- Muestra el total acumulado del carrito -->
+        </div>
+
+        <!-- Botones de acción en el carrito -->
+        <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button> <!-- Botón para ver el carrito completo -->
+        <button onclick="emptyCart()" style="width: 100%; padding: 10px; background-color: red; color: white; border: none;">Vaciar Carrito</button> <!-- Botón para vaciar el carrito -->
+        <!-- Agregar el botón "Ver Más" al carrito -->
+         <a href="/Proyecto-Talento-Tech/html/carrito.html">
+        <button style="width: 100%; padding: 10px; background-color: #3498db; color: white; border: none;">
+        Ver Más 
+        </button>
+    </a>
+    </div>
+
+    <!-- Barra lateral de inicio de sesión -->
+<div id="loginSidebar">
+    <div class="sidebar-header">
+        <h3>Iniciar Sesión</h3>
+        <i class="fas fa-times" onclick="toggleLoginSidebar()"></i>
+    </div>
+    <form id="loginForm" onsubmit="loginUser(event)">
+        <input type="text" id="username" placeholder="Nombre de Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+    <div id="welcomeMessage" style="display:none;">
+        <p>Hola, <span id="usernameDisplay"></span>! Es un placer verte.</p>
+        <button onclick="logout()">Cerrar sesión</button>
+    </div>
+    <div id="errorMessage" style="display:none; color: red;">
+        <p>Inicio de sesión incorrecto. Inténtalo de nuevo.</p>
+    </div>
+</div>
+
+    <!-- Pie de página -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section contact-info">
+            <h3>Contacto</h3>
+            <p><strong>Teléfono:</strong> <a href="tel:3106041228">3106041228</a></p>
+            <p><strong>Dirección:</strong> Cra 4a #80-37, Barrio Santo Domingo</p>
+        </div>
+
+        <div class="footer-section social-media">
+            <h3>Redes Sociales</h3>
+            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/p/Kendra-Cantillo-100094295231154/">Kendra Cantillo</a></p>
+            <p><strong>Instagram:</strong> <a href="https://instagram.com/pontexclusivo-07" target="_blank">pontexclusivo-07</a></p>
+        </div>
+
+        <div class="footer-section about">
+            <h3>Sobre Nosotros</h3>
+            <p>En <strong>Sport Exclusive</strong> ofrecemos los mejores productos deportivos al alcance de todos. Encuentra calzado, ropa y accesorios para todos los deportes.</p>
+        </div>
+    </div>
+
+    <!-- Derechos reservados -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 <strong>Sport Exclusive</strong> - Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+    <!-- Archivo JavaScript para las funcionalidades dinámicas -->
+    <script src="/Proyecto-Talento-Tech/assets/js/script.js"></script> <!-- Vincula el archivo de script que contiene la lógica de JavaScript -->
 </body>
 </html>
