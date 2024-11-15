@@ -162,7 +162,7 @@ header {
 .nav-links {
     list-style: none; /* Elimina los puntos de lista por defecto */
     display: flex; /* Muestra los elementos de la lista en línea */
-    justify-content: flex-start; /* Alinea los elementos al final */
+    justify-content: center; /* Alinea los elementos al final */
 }
 
 /* Elementos de la lista de navegación */
