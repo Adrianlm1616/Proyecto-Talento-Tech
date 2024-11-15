@@ -170,85 +170,89 @@ section-title {
 
 /* Estilo para la barra de filtros deslizante */
 .filters {
-    position: fixed;
-    top: 0;
-    left: -300px;  /* Inicialmente oculta */
-    width: 300px;
-    height: 100%;
-    background-color: #fff;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    transition: left 0.3s ease;
-    z-index: 999;
+    position: fixed; /* Fija la barra de filtros en una posición relativa a la ventana */
+    top: 0; /* Coloca la barra en la parte superior de la ventana */
+    left: -300px;  /* Inicialmente oculta a la izquierda fuera de la pantalla */
+    width: 300px; /* Establece el ancho de la barra de filtros */
+    height: 100%; /* Hace que la barra de filtros ocupe toda la altura de la ventana */
+    background-color: #fff; /* Fondo blanco para la barra de filtros */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Sombra en el borde derecho de la barra */
+    padding: 20px; /* Espaciado interno alrededor de los elementos dentro de la barra */
+    transition: left 0.3s ease; /* Transición suave para mover la barra cuando se muestra */
+    z-index: 999; /* Asegura que la barra de filtros esté por encima de otros elementos */
 }
 
 /* Formulario de filtros: usamos display flex para organizarlos de forma vertical */
 .filters form {
-    display: flex;
+    display: flex; /* Utiliza Flexbox para organizar los elementos dentro del formulario */
     flex-direction: column;  /* Organiza los elementos de arriba hacia abajo */
 }
 
 /* Estilo para las etiquetas de los filtros */
 .filters label {
-    margin-bottom: 5px; /* Espaciado debajo de las etiquetas */
+    margin-bottom: 5px; /* Espaciado debajo de las etiquetas para separarlas de los campos */
 }
 
 /* Estilo para los campos de entrada y select (para marca, precios y ordenación) */
 .filters select, .filters input {
-    margin-bottom: 10px; /* Espaciado debajo de los campos de entrada */
-    padding: 5px;        /* Espaciado dentro de los campos */
+    margin-bottom: 10px; /* Espaciado debajo de los campos de entrada para mantener la separación */
+    padding: 5px;        /* Espaciado dentro de los campos para mejorar la legibilidad */
 }
 
 /* Estilo para el botón de filtro */
 #filter-button {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #3498db;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed; /* Fija el botón en una posición relativa a la ventana */
+    bottom: 20px; /* Coloca el botón 20px por encima del borde inferior */
+    left: 20px; /* Coloca el botón 20px desde el borde izquierdo */
+    background-color: #3498db; /* Color de fondo azul para el botón */
+    color: white; /* Color de texto blanco */
+    padding: 10px; /* Espaciado interno del botón */
+    border-radius: 50%; /* Hace que el botón sea redondeado */
+    cursor: pointer; /* Cambia el cursor a "puntero" para indicar interactividad */
+    z-index: 1000; /* Asegura que el botón esté sobre otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra suave al botón */
 }
 
-/* Estilo para los productos */
+/* Estilo para la lista de productos */
 .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
+    display: flex; /* Utiliza Flexbox para organizar los productos de forma horizontal */
+    flex-wrap: wrap; /* Permite que los productos se ajusten en varias filas si es necesario */
+    justify-content: space-between; /* Distribuye los productos con espacio entre ellos */
+    gap: 20px; /* Espaciado entre los productos */
+    padding: 20px; /* Espaciado interno de la lista de productos */
 }
 
-/* Estilo de cada producto */
+/* Estilo de cada producto individual */
 .product {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    background-color: white; /* Fondo blanco para cada producto */
+    border: 1px solid #ddd; /* Borde sutil gris claro alrededor del producto */
+    border-radius: 8px; /* Bordes redondeados para el producto */
+    width: 300px; /* Ancho fijo para cada producto */
+    text-align: center; /* Centra el texto dentro de cada producto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del producto */
+    transition: transform 0.3s ease; /* Transición para el efecto hover */
 }
 
+/* Efecto hover para el producto */
 .product:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Aumenta el tamaño del producto ligeramente al pasar el ratón sobre él */
 }
 
+/* Estilo de la imagen dentro de cada producto */
 .product img {
-    width: 100%;
-    border-radius: 8px 8px 0 0;
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor del producto */
+    border-radius: 8px 8px 0 0; /* Bordes redondeados solo en la parte superior */
 }
 
+/* Estilo para los detalles del producto (como título y descripción) */
 .product-details {
-    padding: 15px;
+    padding: 15px; /* Espaciado interno alrededor de los detalles del producto */
 }
 
+/* Estilo para el título de cada producto */
 .product h3 {
-    font-size: 1.4em;
-    color: #333;
+    font-size: 1.4em; /* Tamaño de fuente más grande para el título del producto */
+    color: #333; /* Color de texto gris oscuro para el título */
 }
 
 /* Estilo de la descripción del producto */
