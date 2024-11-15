@@ -6,14 +6,17 @@ function toggleCart() {
 }
 
 // Función para agregar productos al carrito
-function addToCart(id, name, price) {
+function addToCart(id, name, price, imageUrl) {
     // Obtener la cantidad seleccionada del producto desde un campo de entrada
     const quantity = parseInt(document.getElementById(`quantity-${id}`).value);
+    
+    // Crear el objeto producto con los datos: id, nombre, precio, cantidad e imagen
     const product = {
         id,        // ID del producto
         name,      // Nombre del producto
         price,     // Precio del producto
-        quantity  // Cantidad seleccionada
+        quantity,  // Cantidad seleccionada
+        image: imageUrl // URL de la imagen
     };
 
     // Obtener el carrito desde localStorage o un array vacío si no existe
@@ -48,9 +51,23 @@ function updateCart() {
 
     let total = 0;  // Variable para calcular el total del carrito
     cart.forEach(item => {
-        // Crear un elemento <li> para cada producto en el carrito
-        const itemElement = document.createElement('li');
-        itemElement.textContent = `${item.name} - ${item.quantity} x $${item.price.toLocaleString()}`;
+        // Crear un contenedor para cada producto en el carrito
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+        
+        // Crear la estructura del producto con la imagen, nombre, precio y cantidad
+        itemElement.innerHTML = `
+            <div class="cart-item-image">
+                <img src="${item.image}" alt="${item.name}" width="100" height="100"> <!-- Mostrar la imagen del producto -->
+            </div>
+            <div class="cart-item-details">
+                <h3>${item.name}</h3>
+                <div class="price">$${item.price.toLocaleString()}</div>
+                <div class="quantity">Cantidad: ${item.quantity}</div>
+            </div>
+        `;
+        
+        // Agregar el producto al contenedor del carrito
         cartItemsContainer.appendChild(itemElement);
 
         // Sumar al total del carrito
@@ -91,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCart();
     updateCartCount();
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const carousel = document.querySelector('.carousel');
