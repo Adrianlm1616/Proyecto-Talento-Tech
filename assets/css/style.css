@@ -96,9 +96,8 @@ header {
     font-size: 18px; /* Tamaño de los íconos */
     margin: 0 10px; /* Espaciado entre los íconos */
     cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
-    justify-content: flex-end;
 }
-.logo{
+header-logo{
     align-items: center;
     width: 150px;
 }
