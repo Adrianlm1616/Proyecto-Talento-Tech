@@ -354,10 +354,12 @@ section-title {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del formulario */
     border-radius: 8px; /* Bordes redondeados */
     padding: 40px; /* Espaciado interno */
-    height: 80%;
+    height: 100%;
     width: 100%; /* El formulario ocupará todo el ancho disponible */
     max-width: 500px; /* Ancho máximo del formulario */
     margin-top: 100px; /* Deja espacio desde la parte superior para que no quede pegado a la barra de navegación fija */
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 
 /* Título del formulario */
