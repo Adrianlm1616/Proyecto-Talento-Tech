@@ -18,7 +18,6 @@ header {
     color: white; /* Color del texto en blanco */
     padding: 10px; /* Espaciado dentro del encabezado */
     position: fixed; /* Permite posicionar elementos de manera relativa dentro del encabezado */
-    filter: brightness(50%);
 }
 
 /* Contenedor para los elementos dentro del encabezado */
