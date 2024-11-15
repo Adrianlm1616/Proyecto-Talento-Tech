@@ -130,9 +130,10 @@ section-title {
 
 /* Estilo de la columna de texto */
 .image-left {
+    padding-top: 35px;
     flex: 1; /* Permite que el texto ocupe el espacio disponible */
-    color: aliceblue; /* Color de texto claro */
-    text-align: center; /* Alinea el texto a la izquierda */
+    color: red; /* Color de texto rojo */
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 
 /* Estilo de la imagen dentro de la columna */
@@ -151,8 +152,9 @@ section-title {
 
 /* Estilo de la columna de imagen */
 .image-right {
+    color: red; /* Color de texto rojo */
     flex: 1; /* Permite que la imagen ocupe el espacio disponible */
-    text-align: center; /* Centra la imagen */
+    text-align: left; /* Centra la imagen */
 }
 
 /* Estilo de la imagen dentro de la columna */
