@@ -61,6 +61,7 @@ header {
     /*flex-grow: 1; /* Permite que la barra de navegación crezca y ocupe el espacio disponible */
     display: flex; /* Usamos flexbox para alinear los elementos dentro del contenedor */
     justify-content: center; /* Centra los elementos horizontalmente */
+    position: fixed;
 }
 
 /* Lista de enlaces de navegación */
