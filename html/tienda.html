@@ -25,27 +25,27 @@
             <!-- Barra de navegación con enlaces a las diferentes secciones de la página -->
             <nav>
                 <ul class="nav-links">
-                    <li><a href="/Proyecto-Talento-Tech/index.html">INICIO</a></li>
-                    <li><a href="/Proyecto-Talento-Tech/html/tienda.html">TIENDA</a></li>
-                    <li><a href="/Proyecto-Talento-Tech/html/novedades.html">NOVEDADES</a>
+                    <li><a href="/Proyecto-Talento-Tech/index.html">INICIO</a></li> <!-- Enlace a la página de inicio -->
+                    <li><a href="/Proyecto-Talento-Tech/html/tienda.html">TIENDA</a></li> <!-- Enlace a la tienda -->
+                    <li><a href="/Proyecto-Talento-Tech/html/novedades.html">NOVEDADES</a> <!-- Enlace a la página de novedades -->
                         <div class="submenu">
-                            <a href="/Proyecto-Talento-Tech/html/ofertas.html">OFERTAS</a>
-                            <a href="/Proyecto-Talento-Tech/html/marcas.html">MARCAS</a>
+                            <a href="/Proyecto-Talento-Tech/html/ofertas.html">OFERTAS</a> <!-- Subenlace a ofertas -->
+                            <a href="/Proyecto-Talento-Tech/html/marcas.html">MARCAS</a> <!-- Subenlace a marcas -->
                         </div>
                     </li>
-                    <li><a href="/Proyecto-Talento-Tech/html/contactenos.html">CONTACTENOS</a></li>
-                    <li><a href="/Proyecto-Talento-Tech/html/acerca-de.html">ACERCA DE</a></li>
+                    <li><a href="/Proyecto-Talento-Tech/html/contactenos.html">CONTACTENOS</a></li> <!-- Enlace a la página de contacto -->
+                    <li><a href="/Proyecto-Talento-Tech/html/acerca-de.html">ACERCA DE</a></li> <!-- Enlace a la página acerca de -->
                 </ul>
             </nav>
 
             <!-- Contenedor para los íconos de búsqueda, usuario y carrito -->
             <div class="icons">
                 <i class="fas fa-search"></i> <!-- Ícono de búsqueda -->
-                <i class="fas fa-user" onclick="toggleLoginSidebar()"></i>
+                <i class="fas fa-user" onclick="toggleLoginSidebar()"></i> <!-- Ícono de usuario que abre la barra lateral de inicio de sesión -->
                 
                 <!-- Ícono del carrito de compras -->
                 <div class="cart-icon-container">
-                    <i class="fas fa-shopping-cart" onclick="toggleCart()"></i> <!-- Ícono de carrito que llama la función toggleCart() -->
+                    <i class="fas fa-shopping-cart" onclick="toggleCart()"></i> <!-- Ícono de carrito que abre el carrito de compras -->
                     <span id="cart-count" class="cart-count">0</span> <!-- Contador de productos en el carrito -->
                 </div>
             </div>
@@ -54,46 +54,47 @@
 
     <!-- Contenido principal de la tienda -->
     <main>
-<!-- Filtros de productos -->
-<div class="filters" id="filters">
-    <form id="filters-form">
-        <!-- Filtro de Marca -->
-        <label for="brand">Marca</label>
-        <select id="brand" name="brand">
-            <option value="all">Todas las marcas</option>
-            <option value="Nike">Nike</option>
-            <option value="Puma">Puma</option>
-            <option value="Adidas">Adidas</option>
-            <option value="New Balance">New Balance</option>
-        </select>
+        <!-- Filtros de productos -->
+        <div class="filters" id="filters">
+            <form id="filters-form">
+                <!-- Filtro de Marca -->
+                <label for="brand">Marca</label>
+                <select id="brand" name="brand">
+                    <option value="all">Todas las marcas</option> <!-- Opción para todas las marcas -->
+                    <option value="Nike">Nike</option> <!-- Filtro por marca Nike -->
+                    <option value="Puma">Puma</option> <!-- Filtro por marca Puma -->
+                    <option value="Adidas">Adidas</option> <!-- Filtro por marca Adidas -->
+                    <option value="New Balance">New Balance</option> <!-- Filtro por marca New Balance -->
+                </select>
 
-        <!-- Filtro de Precio -->
-        <label for="price-min">Precio Mínimo</label>
-        <input type="number" id="price-min" name="price-min" placeholder="Precio mínimo" value="0" min="0">
+                <!-- Filtro de Precio -->
+                <label for="price-min">Precio Mínimo</label>
+                <input type="number" id="price-min" name="price-min" placeholder="Precio mínimo" value="0" min="0"> <!-- Campo para el precio mínimo -->
 
-        <label for="price-max">Precio Máximo</label>
-        <input type="number" id="price-max" name="price-max" placeholder="Precio máximo" value="1000000" min="0">
+                <label for="price-max">Precio Máximo</label>
+                <input type="number" id="price-max" name="price-max" placeholder="Precio máximo" value="1000000" min="0"> <!-- Campo para el precio máximo -->
 
-        <!-- Filtro de Ordenación -->
-        <label for="sort">Ordenar por Precio</label>
-        <select id="sort" name="sort">
-            <option value="asc">Menor a Mayor</option>
-            <option value="desc">Mayor a Menor</option>
-        </select>
+                <!-- Filtro de Ordenación -->
+                <label for="sort">Ordenar por Precio</label>
+                <select id="sort" name="sort">
+                    <option value="asc">Menor a Mayor</option> <!-- Opción para ordenar de menor a mayor precio -->
+                    <option value="desc">Mayor a Menor</option> <!-- Opción para ordenar de mayor a menor precio -->
+                </select>
 
-        <!-- Botón para aplicar filtros -->
-        <button type="button" onclick="applyFilters()">Aplicar Filtros</button>
-    </form>
-</div>
+                <!-- Botón para aplicar filtros -->
+                <button type="button" onclick="applyFilters()">Aplicar Filtros</button>
+            </form>
+        </div>
 
-<!-- Botón de filtro en la parte inferior izquierda -->
-<div id="filter-button" onclick="toggleFilter()">
-    <i class="fas fa-filter"></i> Filtros
-</div>
+        <!-- Botón de filtro en la parte inferior izquierda -->
+        <div id="filter-button" onclick="toggleFilter()">
+            <i class="fas fa-filter"></i> Filtros
+        </div>
 
-<div class="product-list" id="product-list">
-    <!-- Los productos se insertan dinámicamente aquí -->
-</div>
+        <!-- Contenedor para la lista de productos -->
+        <div class="product-list" id="product-list">
+            <!-- Los productos se insertan dinámicamente aquí -->
+        </div>
 
     </main>
 
@@ -101,7 +102,7 @@
     <div id="cart" style="display:none;">
         <div class="cart-header">
             <h3>Carrito</h3> <!-- Título del carrito -->
-            <i class="fas fa-times" onclick="toggleCart()"></i> <!-- Ícono para cerrar el carrito, que llama la función toggleCart() -->
+            <i class="fas fa-times" onclick="toggleCart()"></i> <!-- Ícono para cerrar el carrito -->
         </div>
 
         <!-- Lista de productos dentro del carrito -->
@@ -116,14 +117,15 @@
         <button style="width: 100%; padding: 10px; background-color: #333; color: white; border: none;">Ver Carrito</button> <!-- Botón para ver el carrito completo -->
         <button onclick="emptyCart()" style="width: 100%; padding: 10px; background-color: red; color: white; border: none;">Vaciar Carrito</button> <!-- Botón para vaciar el carrito -->
         <!-- Agregar el botón "Ver Más" al carrito -->
-         <a href="/Proyecto-Talento-Tech/html/carrito.html">
-        <button style="width: 100%; padding: 10px; background-color: #3498db; color: white; border: none;">
-        Ver Más 
-        </button>
-    </a>
+        <a href="/Proyecto-Talento-Tech/html/carrito.html">
+            <button style="width: 100%; padding: 10px; background-color: #3498db; color: white; border: none;">
+            Ver Más 
+            </button>
+        </a>
     </div>
 
-    <div class="product-list"> <!-- Contenedor principal donde se mostrarán los productos -->
+    <!-- Contenedor principal donde se mostrarán los productos -->
+    <div class="product-list">
         <!-- Producto 1: Nike Bailleli -->
         <div class="product" data-id="1" data-name="Nike Bailleli" data-price="195000" data-brand="Nike">
             <img src="/Proyecto-Talento-Tech/assets/img/TIENDA/IMAGEN 1 TIENDA.png" alt="Producto 1" height="300" width="300"> <!-- Imagen del producto -->
@@ -131,8 +133,8 @@
                 <h3>Nike Bailleli</h3> <!-- Nombre del producto -->
                 <div class="price">$195.000</div> <!-- Precio del producto -->
                 <div class="quantity-container"> <!-- Contenedor para la cantidad -->
-                <label for="quantity-1">Cantidad =</label> <!-- Label para la cantidad de productos -->
-                <input type="number" id="quantity-1" value="1" min="1" class="quantity-input"> <!-- Input para la cantidad de productos -->
+                    <label for="quantity-1">Cantidad =</label> <!-- Label para la cantidad de productos -->
+                    <input type="number" id="quantity-1" value="1" min="1" class="quantity-input"> <!-- Input para la cantidad de productos -->
                 </div>
                 <!-- Botón para agregar al carrito, con la función addToCart() -->
                 <button class="buy-button" onclick="addToCart(1, 'Nike Bailleli', 195000)">Comprar Ahora</button>
