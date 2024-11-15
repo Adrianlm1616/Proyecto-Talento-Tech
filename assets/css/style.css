@@ -191,6 +191,17 @@ header {
     background-color: #575757; /* Fondo gris oscuro al pasar el ratón */
 }
 
+/* Logo centrado */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centra el logo horizontalmente */
+}
+
+.logo img {
+    width: 150px; /* Ajusta el tamaño del logo */
+}
+
 /* Estilos de los íconos dentro del encabezado */
 .icons i {
     color: white; /* Color blanco para los íconos */
