@@ -213,48 +213,75 @@ function toggleFilter() {
     }
 }
 
-// Función para aplicar los filtros
+// Muestra u oculta la barra de filtros
+function toggleFilter() {
+    const filterBar = document.getElementById('filters');
+    if (filterBar.style.left === '0px') {
+        filterBar.style.left = '-300px';  // Oculta
+    } else {
+        filterBar.style.left = '0';  // Muestra
+    }
+}
+
+// Aplica los filtros seleccionados
 function applyFilters() {
-    // Obtener los valores de los filtros
-    const brandFilter = document.getElementById('brand').value;
-    const priceMinFilter = parseFloat(document.getElementById('price-min').value);
-    const priceMaxFilter = parseFloat(document.getElementById('price-max').value);
-    const sortFilter = document.getElementById('sort').value;
+    const brand = document.getElementById('brand').value;
+    const priceMin = parseInt(document.getElementById('price-min').value);
+    const priceMax = parseInt(document.getElementById('price-max').value);
+    const sort = document.getElementById('sort').value;
 
-    // Obtener todos los productos
+    // Obtén todos los productos
     const products = document.querySelectorAll('.product');
-    const productList = document.getElementById('product-list');
-    
-    // Filtrar productos
+
+    // Filtra los productos en función de los criterios seleccionados
     let filteredProducts = Array.from(products).filter(product => {
-        const productPrice = parseFloat(product.getAttribute('data-price'));
         const productBrand = product.getAttribute('data-brand');
+        const productPrice = parseInt(product.getAttribute('data-price'));
 
-        // Aplicar filtro de marca
-        if (brandFilter !== 'all' && productBrand !== brandFilter) {
-            return false;
-        }
+        // Filtra por marca
+        const isBrandValid = brand === 'all' || productBrand === brand;
 
-        // Aplicar filtro de precio
-        if (productPrice < priceMinFilter || productPrice > priceMaxFilter) {
-            return false;
-        }
+        // Filtra por precio
+        const isPriceValid = productPrice >= priceMin && productPrice <= priceMax;
 
-        return true;
+        return isBrandValid && isPriceValid;
     });
 
-    // Ordenar los productos si se ha seleccionado alguna opción
-    if (sortFilter === 'asc') {
-        filteredProducts.sort((a, b) => parseFloat(a.getAttribute('data-price')) - parseFloat(b.getAttribute('data-price')));
-    } else if (sortFilter === 'desc') {
-        filteredProducts.sort((a, b) => parseFloat(b.getAttribute('data-price')) - parseFloat(a.getAttribute('data-price')));
+    // Ordena los productos si se selecciona ordenar por precio
+    if (sort === 'asc') {
+        filteredProducts.sort((a, b) => {
+            return parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price'));
+        });
+    } else if (sort === 'desc') {
+        filteredProducts.sort((a, b) => {
+            return parseInt(b.getAttribute('data-price')) - parseInt(a.getAttribute('data-price'));
+        });
     }
 
-    // Limpiar la lista de productos
-    productList.innerHTML = '';
+    // Muestra los productos filtrados
+    updateProductList(filteredProducts);
+}
 
-    // Añadir los productos filtrados y ordenados a la lista
+// Actualiza la lista de productos en la página
+function updateProductList(filteredProducts) {
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = '';  // Limpia la lista de productos
+
+    // Agrega los productos filtrados al contenedor
     filteredProducts.forEach(product => {
         productList.appendChild(product);
     });
+
+    // Si no hay productos que mostrar, muestra un mensaje
+    if (filteredProducts.length === 0) {
+        const noProductsMessage = document.createElement('div');
+        noProductsMessage.textContent = 'No se encontraron productos que coincidan con los filtros seleccionados.';
+        productList.appendChild(noProductsMessage);
+    }
 }
+
+// Inicializa la lista de productos al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    const products = document.querySelectorAll('.product');
+    updateProductList(products);  // Muestra todos los productos inicialmente
+});
