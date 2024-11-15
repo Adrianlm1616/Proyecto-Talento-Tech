@@ -306,14 +306,6 @@ document.getElementById('price-min').addEventListener('input', applyFilters);
 document.getElementById('price-max').addEventListener('input', applyFilters);
 document.getElementById('sort').addEventListener('change', applyFilters);
 
-// Agregar un event listener para enviar el formulario
-document.querySelector(".form").addEventListener("submit", function(event) {
-    event.preventDefault();  // Prevenir el comportamiento por defecto del formulario (no recargar la página)
-
-    const name = document.getElementById("name").value;  // Obtener el valor del campo "name"
-    const email = document.getElementById("email").value;  // Obtener el valor del campo "email"
-    const message = document.getElementById("message").value;  // Obtener el valor del campo "message"
-
 // Configurar EmailJS con tu user ID
 (function() {
     emailjs.init("user_your_user_id_here");  // Reemplaza con tu User ID de EmailJS
