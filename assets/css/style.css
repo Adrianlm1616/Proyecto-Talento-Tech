@@ -9,6 +9,7 @@ body {
     font-family: Arial, sans-serif; /* Define la tipografía global */
     color: #333; /* Color del texto principal */
     line-height: 1.6; /* Espaciado entre líneas de texto para mayor legibilidad */
+    min-height: 100vh;
 }
 
 /* Estilo del encabezado */
@@ -97,6 +98,8 @@ header {
 
 /* Estilo del contenido principal */
 .main {
+    flex: 1; /* Esto hace que el contenido ocupe todo el espacio disponible */
+    padding-bottom: 80px; /* Espacio para que el pie de página no tape el contenido */
     padding: 40px; /* Espaciado alrededor del contenido principal */
 }
 
