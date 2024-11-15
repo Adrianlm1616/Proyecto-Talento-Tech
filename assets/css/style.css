@@ -577,87 +577,98 @@ del{
     opacity: 0.8; /* Reduce la opacidad de la imagen al pasar el ratón */
 }
 
+/* Estilo para el pie de página principal */
 .footer {
-    background-color: #333; /* Color de fondo oscuro */
-    color: white;
-    position: relative;  /* Pie de página se posiciona según el flujo del contenido */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
-    font-family: Arial, sans-serif;
-    z-index: 1000;
+    background-color: #333; /* Color de fondo oscuro para el pie de página */
+    color: white; /* Texto blanco para el pie de página */
+    position: relative;  /* El pie de página se posiciona según el flujo del contenido */
+    bottom: 0; /* Asegura que el pie de página quede al final de la página */
+    left: 0; /* Coloca el pie de página en el borde izquierdo */
+    width: 100%; /* El pie de página ocupa todo el ancho de la pantalla */
+    padding: 20px 0; /* Espaciado vertical dentro del pie de página */
+    font-family: Arial, sans-serif; /* Establece la fuente para el texto */
+    z-index: 1000; /* Asegura que el pie de página esté sobre otros elementos */
 }
 
+/* Estilo para el contenedor del pie de página, que organiza el contenido en columnas */
 .footer-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    display: flex; /* Utiliza Flexbox para organizar los elementos de forma flexible */
+    justify-content: space-around; /* Distribuye las secciones de manera uniforme en el contenedor */
+    flex-wrap: wrap; /* Permite que las secciones se envuelvan en una nueva fila en pantallas pequeñas */
+    max-width: 1200px; /* Establece un ancho máximo para el contenedor */
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
+    padding: 0 20px; /* Añade espaciado horizontal alrededor del contenedor */
 }
 
+/* Estilo para cada sección del pie de página */
 .footer-section {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px;
+    flex: 1; /* Cada sección ocupa un espacio igual dentro del contenedor */
+    min-width: 200px; /* Establece un ancho mínimo para cada sección */
+    margin: 10px; /* Añade un margen alrededor de cada sección */
 }
 
+/* Estilo para los encabezados de las secciones del pie de página */
 .footer-section h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: bold;
+    margin-bottom: 10px; /* Añade espacio debajo del encabezado */
+    font-size: 18px; /* Tamaño de fuente para los encabezados */
+    font-weight: bold; /* Hace que el texto del encabezado sea en negrita */
 }
 
+/* Estilo para los párrafos dentro de las secciones del pie de página */
 .footer-section p {
-    font-size: 14px;
-    margin: 5px 0;
+    font-size: 14px; /* Tamaño de fuente pequeño para los párrafos */
+    margin: 5px 0; /* Espaciado vertical entre los párrafos */
 }
 
+/* Estilo para los enlaces dentro de las secciones del pie de página */
 .footer-section a {
     color: #FFD700; /* Color dorado para los enlaces */
-    text-decoration: none;
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
 }
 
+/* Estilo para los enlaces cuando se pasa el cursor sobre ellos */
 .footer-section a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Añade subrayado cuando el usuario pasa el cursor sobre el enlace */
 }
 
-/* Estilo para el pie de página inferior */
+/* Estilo para la parte inferior del pie de página */
 .footer-bottom {
-    text-align: center;
-    background-color: #222;
-    padding: 10px 0;
-    font-size: 12px;
+    text-align: center; /* Centra el texto en el pie de página inferior */
+    background-color: #222; /* Fondo oscuro para el pie de página inferior */
+    padding: 10px 0; /* Espaciado vertical dentro del pie de página inferior */
+    font-size: 12px; /* Tamaño de fuente pequeño para el texto inferior */
 }
 
+/* Estilo para los párrafos dentro del pie de página inferior */
 .footer-bottom p {
-    margin: 0;
+    margin: 0; /* Elimina el margen de los párrafos */
 }
 
-/* Responsividad: en pantallas más pequeñas se ajusta el contenido */
+/* Media query para pantallas pequeñas (máximo de 768px de ancho) */
 @media (max-width: 768px) {
     .footer-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Organiza las secciones en columna en pantallas pequeñas */
+        align-items: center; /* Centra las secciones dentro del contenedor */
     }
 
     .footer-section {
-        text-align: center;
-        margin-bottom: 15px;
+        text-align: center; /* Centra el texto dentro de cada sección */
+        margin-bottom: 15px; /* Añade margen inferior entre las secciones */
     }
 }
+
 /* Estilo para el contador de visitas */
 #visit-counter {
-    font-weight: bold;
+    font-weight: bold; /* Hace que el texto del contador de visitas esté en negrita */
 }
+
+/* Estilo para el contenedor del mapa */
 .map-container {
-    width: 80%;
-    max-width: 800px;
-    height: 500px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border: 2px solid #ccc;
+    width: 80%; /* El mapa ocupa el 80% del ancho disponible */
+    max-width: 800px; /* Ancho máximo de 800px */
+    height: 500px; /* Altura fija para el mapa */
+    border-radius: 15px; /* Bordes redondeados para el contenedor del mapa */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde fuera del contenedor */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del contenedor del mapa */
+    border: 2px solid #ccc; /* Borde gris claro alrededor del contenedor del mapa */
 }
