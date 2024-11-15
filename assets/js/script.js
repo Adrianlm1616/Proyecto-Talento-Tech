@@ -317,38 +317,3 @@ document.addEventListener('DOMContentLoaded', () => {
     const products = document.querySelectorAll('.product');
     updateProductList(Array.from(products));  // Muestra todos los productos inicialmente
 });
-
-// Obtener el formulario y el contenedor del mensaje
-const form = document.querySelector('.form');
-const formContainer = document.querySelector('.form-container');
-
-// Función para manejar el envío del formulario
-form.addEventListener('submit', function(event) {
-    // Prevenir el comportamiento por defecto (enviar el formulario)
-    event.preventDefault();
-
-    // Obtener los valores del formulario
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Verificar que todos los campos están llenos (aunque ya es obligatorio por "required")
-    if (name && email && message) {
-        // Crear el mensaje de confirmación
-        const confirmationMessage = document.createElement('div');
-        confirmationMessage.classList.add('confirmation-message');
-        confirmationMessage.innerHTML = `
-            <p>Mensaje enviado con éxito, ${name}. ¡Te contactaremos pronto!</p>
-        `;
-
-        // Limpiar el formulario
-        form.reset();
-
-        // Mostrar el mensaje de confirmación y ocultar el formulario
-        formContainer.innerHTML = '';
-        formContainer.appendChild(confirmationMessage);
-    } else {
-        // Si falta algún campo, mostrar un mensaje de error
-        alert('Por favor, completa todos los campos.');
-    }
-});
