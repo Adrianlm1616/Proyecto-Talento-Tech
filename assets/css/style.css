@@ -427,6 +427,42 @@ input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
     outline: none; /* Elimina el contorno al enfocar el botón */
 }
 
+/* Estilo para el mensaje de éxito */
+.success-message {
+    text-align: center;
+    padding: 30px;
+    background-color: #4CAF50; /* Color verde */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.success-message h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    font-size: 18px;
+}
+
+/* Estilo para el mensaje de error */
+.error-message {
+    text-align: center;
+    padding: 30px;
+    background-color: #F44336; /* Color rojo */
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.error-message h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
 /* Contenedor principal del carrusel */
 .carousel-container {
     position: relative;
