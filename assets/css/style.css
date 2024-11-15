@@ -20,6 +20,7 @@ header {
     padding: 10px; /* Espaciado dentro del encabezado */
     position: relative; /* Permite posicionar elementos de manera relativa dentro del encabezado */
     width: 100%;
+    z-index: 10;
 }
 
 /* Contenedor para los elementos dentro del encabezado */
