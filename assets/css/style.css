@@ -154,7 +154,7 @@ header {
 /* Barra de navegación */
 .navbar {
     display: flex; /* Usamos flexbox para alinear los elementos dentro del contenedor */
-    justify-content: center; /* Centra los elementos horizontalmente */
+    justify-content: flex-start; /* Centra los elementos horizontalmente */
     
 }
 
@@ -162,7 +162,7 @@ header {
 .nav-links {
     list-style: none; /* Elimina los puntos de lista por defecto */
     display: flex; /* Muestra los elementos de la lista en línea */
-    justify-content: center; /* Alinea los elementos al final */
+    justify-content: flex-start; /* Alinea los elementos al final */
 }
 
 /* Elementos de la lista de navegación */
