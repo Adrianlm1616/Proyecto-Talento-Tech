@@ -531,6 +531,43 @@ del{
     color: red;
 }
 
+/* Contenedor principal que alberga todos los logos */
+.brands-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los logos horizontalmente */
+    gap: 20px; /* Espacio entre los logos */
+    padding: 20px;
+}
+
+/* Contenedor individual de cada logo */
+.brand-logo {
+    display: block; /* Hacer que los enlaces sean bloques para facilitar el tamaño */
+    width: 150px; /* Ancho fijo para cada logo */
+    height: 150px; /* Alto fijo para cada logo */
+    overflow: hidden; /* Evita que el contenido se desborde */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease; /* Transición suave cuando se pasa el ratón */
+}
+
+/* Estilo para las imágenes de los logos */
+.brand-logo img {
+    width: 100%; /* Hace que la imagen ocupe todo el espacio del contenedor */
+    height: 100%; /* Hace que la imagen ocupe todo el alto del contenedor */
+    object-fit: contain; /* Ajusta la imagen manteniendo la relación de aspecto */
+    transition: opacity 0.3s ease; /* Transición para el efecto hover */
+}
+
+/* Efecto hover: escala el logo y lo resalta */
+.brand-logo:hover {
+    transform: scale(1.1); /* Escala ligeramente el logo al pasar el ratón */
+}
+
+/* Efecto hover sobre la imagen (para desvanecer ligeramente la imagen) */
+.brand-logo:hover img {
+    opacity: 0.8; /* Reduce la opacidad de la imagen al pasar el ratón */
+}
+
 /* Estilo del footer */
 footer {
     background-color: #000; /* Fondo negro */
