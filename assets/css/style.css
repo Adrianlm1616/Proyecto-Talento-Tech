@@ -6,8 +6,9 @@
 }
 
 body {
+    background-color: #000000;
     font-family: Arial, sans-serif; /* Define la tipografía global */
-    color: #ddd;/* Color del texto principal */
+    color: black;/* Color del texto principal -- ver 1.11.1*/
     line-height: 1.6; /* Espaciado entre líneas de texto para mayor legibilidad */
     min-height: 100vh;
 }
@@ -68,7 +69,7 @@ header {
 .nav-links {
     list-style: none; /* Elimina los puntos de lista por defecto */
     display: flex; /* Muestra los elementos de la lista en línea */
-    justify-content: flex-end; /* Alinea los elementos al final */
+    justify-content: flex-start; /* Alinea los elementos al final */
 }
 
 /* Elementos de la lista de navegación */
@@ -95,6 +96,11 @@ header {
     font-size: 18px; /* Tamaño de los íconos */
     margin: 0 10px; /* Espaciado entre los íconos */
     cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+    justify-content: flex-end;
+}
+.logo{
+    align-items: center;
+    width: 150px;
 }
 
 /* Estilo del contenido principal */
