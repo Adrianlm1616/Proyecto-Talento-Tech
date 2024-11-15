@@ -133,7 +133,7 @@ section-title {
 .image-left {
     padding-top: 45px; /* Espaciado Arriba */
     flex: 1; /* Permite que el texto ocupe el espacio disponible */
-    color: red; /* Color de texto rojo */
+    color: white; /* Color de texto rojo */
     text-align: center; /* Alinea el texto a la izquierda */
 }
 
@@ -154,7 +154,7 @@ section-title {
 /* Estilo de la columna de imagen */
 .image-right {
     padding-top: 45px; /* Espaciado Arriba */
-    color: red; /* Color de texto rojo */
+    color: white; /* Color de texto rojo */
     flex: 1; /* Permite que la imagen ocupe el espacio disponible */
     text-align: center; /* Centra la imagen */
 }
@@ -578,6 +578,7 @@ del{
     padding: 20px;
     text-align: center;
     background-color: #f4f4f4;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #errorMessage {
