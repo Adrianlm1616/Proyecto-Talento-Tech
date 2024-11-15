@@ -15,11 +15,11 @@
 <body>
 
     <!-- Encabezado principal del sitio -->
-    <header style="background-color: black;">
+    <header style="background-image: url(/Proyecto-Talento-Tech/assets/img/TIENDA/elegante-hombre-afroamericano-casual-chaqueta-jeans-boina-negra-tienda-ropa-probando-calzado-nuevo_627829-13415.avif);">
         <div class="header-content">
             <!-- Logo de la tienda -->
             <div class="logo">
-                <img src="/Proyecto-Talento-Tech/assets/img/INICIO/logo pagina inicio.png" alt="Logo" width="200"> <!-- Imagen del logo -->
+                <img src="/Proyecto-Talento-Tech/assets/img/INICIO/logo pagina inicio.png" alt="Logo" width="150"> <!-- Imagen del logo -->
             </div>
 
             <!-- Barra de navegación con enlaces a las diferentes secciones de la página -->
@@ -81,8 +81,6 @@
                     <option value="desc">Mayor a Menor</option> <!-- Opción para ordenar de mayor a menor precio -->
                 </select>
 
-                <!-- Botón para aplicar filtros -->
-                <button type="button" onclick="applyFilters()">Aplicar Filtros</button>
             </form>
         </div>
 
@@ -126,6 +124,7 @@
 
     <!-- Contenedor principal donde se mostrarán los productos -->
     <div class="product-list">
+
         <!-- Producto 1: Nike Bailleli -->
         <div class="product" data-id="1" data-name="Nike Bailleli" data-price="195000" data-brand="Nike">
             <img src="/Proyecto-Talento-Tech/assets/img/TIENDA/IMAGEN 1 TIENDA.png" alt="Producto 1" height="300" width="300"> <!-- Imagen del producto -->
@@ -133,11 +132,11 @@
                 <h3>Nike Bailleli</h3> <!-- Nombre del producto -->
                 <div class="price">$195.000</div> <!-- Precio del producto -->
                 <div class="quantity-container"> <!-- Contenedor para la cantidad -->
-                    <label for="quantity-1">Cantidad =</label> <!-- Label para la cantidad de productos -->
+                    <label for="quantity-1"><C1>Cantidad</C1></label> <!-- Label para la cantidad de productos -->
                     <input type="number" id="quantity-1" value="1" min="1" class="quantity-input"> <!-- Input para la cantidad de productos -->
                 </div>
                 <!-- Botón para agregar al carrito, con la función addToCart() -->
-                <button class="buy-button" onclick="addToCart(1, 'Nike Bailleli', 195000)">Comprar Ahora</button>
+                <button class="buy-button" onclick="addToCart(1, 'Nike Bailleli', 195000)">Add to Cart</button>
             </div>
         </div>
 
@@ -147,8 +146,9 @@
             <div class="product-details">
                 <h3>Puma Park Beige</h3> <!-- Nombre del producto -->
                 <div class="price">$455.000</div> <!-- Precio del producto -->
-                <input type="number" id="quantity-2" value="1" min="1"> <!-- Input para la cantidad de productos -->
-                <button class="buy-button" onclick="addToCart(2, 'Puma Park Beige', 455000)">Comprar Ahora</button> <!-- Botón de compra -->
+                <label for="quantity-1"><C1>Cantidad</C1></label> <!-- Label para la cantidad de productos -->
+                <input type="number" id="quantity-2" value="1" min="1" class="quantity-input"> <!-- Input para la cantidad de productos -->
+                <button class="buy-button" onclick="addToCart(2, 'Puma Park Beige', 455000)">Add to Cart</button> <!-- Botón de compra -->
             </div>
         </div>
 
@@ -158,8 +158,9 @@
             <div class="product-details">
                 <h3>Adidas Tenis Samba</h3> <!-- Nombre del producto -->
                 <div class="price">$590.000</div> <!-- Precio del producto -->
-                <input type="number" id="quantity-3" value="1" min="1"> <!-- Input para la cantidad de productos -->
-                <button class="buy-button" onclick="addToCart(3, 'Adidas Tenis Samba', 590000)">Comprar Ahora</button> <!-- Botón de compra -->
+                <label for="quantity-1"><C1>Cantidad</C1></label> <!-- Label para la cantidad de productos -->
+                <input type="number" id="quantity-3" value="1" min="1" class="quantity-input"> <!-- Input para la cantidad de productos -->
+                <button class="buy-button" onclick="addToCart(3, 'Adidas Tenis Samba', 590000)">Add to Cart/button> <!-- Botón de compra -->
             </div>
         </div>
         <!-- Producto 4: Tenis Dame 9 Low -->
@@ -168,10 +169,11 @@
             <div class="product-details">
                 <h3>Tenis Dame 9 Low</h3> <!-- Nombre del producto -->
                 <div class="price">$250.000</div> <!-- Precio del producto -->
+                <label for="quantity-1"><C1>Cantidad</C1></label> <!-- Label para la cantidad de productos -->
                 <!-- Input para la cantidad de productos -->
-                <input type="number" id="quantity-4" value="1" min="1">
+                <input type="number" id="quantity-4" value="1" min="1" class="quantity-input">
                 <!-- Botón para agregar al carrito, con la función addToCart() -->
-                <button class="buy-button" onclick="addToCart(4, 'Tenis Dame 9 Low', 250000)">Comprar Ahora</button>
+                <button class="buy-button" onclick="addToCart(4, 'Tenis Dame 9 Low', 250000)">Add to Cart</button>
             </div>
         </div>
         <!-- Producto 5: Running Nike Renew Ride 3 -->
@@ -180,10 +182,11 @@
             <div class="product-details">
                 <h3>Running Nike Renew Ride 3</h3> <!-- Nombre del producto -->
                 <div class="price"><del>$330.000</del> - $290.000</div> <!-- Precio del producto -->
+                <label for="quantity-1"><C1>Cantidad</C1></label> <!-- Label para la cantidad de productos -->
                 <!-- Input para la cantidad de productos -->
-                <input type="number" id="quantity-5" value="1" min="1">
+                <input type="number" id="quantity-5" value="1" min="1" class="quantity-input">
                 <!-- Botón para agregar al carrito, con la función addToCart() -->
-                <button class="buy-button" onclick="addToCart(4, 'Running Nike Renew Ride 3', 290000)">Comprar Ahora</button>
+                <button class="buy-button" onclick="addToCart(4, 'Running Nike Renew Ride 3', 290000)">Add to Cart</button>
             </div>
         </div>
         <!-- Producto 6: Tenis de Running Supernova Rise adidas -->
@@ -192,10 +195,11 @@
             <div class="product-details">
                 <h3>Tenis de Running Supernova Rise adidas</h3> <!-- Nombre del producto -->
                 <div class="price">$495.000</div> <!-- Precio del producto -->
+                <label for="quantity-1"><C1>Cantidad</C1></label> <!-- Label para la cantidad de productos -->
                 <!-- Input para la cantidad de productos -->
-                <input type="number" id="quantity-6" value="1" min="1">
+                <input type="number" id="quantity-6" value="1" min="1" class="quantity-input">
                 <!-- Botón para agregar al carrito, con la función addToCart() -->
-                <button class="buy-button" onclick="addToCart(6, 'Tenis de Running Supernova Rise', 495000)">Comprar Ahora</button>
+                <button class="buy-button" onclick="addToCart(6, 'Tenis de Running Supernova Rise', 495000)">Add to Cart</button>
             </div>
         </div>
         <!-- Producto 7: Nike Downshifter 13 -->
@@ -204,10 +208,11 @@
             <div class="product-details">
                 <h3>Nike Downshifter 13</h3> <!-- Nombre del producto -->
                 <div class="price">$305.000</div> <!-- Precio del producto -->
+                <label for="quantity-1"><C1>Cantidad</C1></label> <!-- Label para la cantidad de productos -->
                 <!-- Input para la cantidad de productos -->
-                <input type="number" id="quantity-7" value="1" min="1">
+                <input type="number" id="quantity-7" value="1" min="1" class="quantity-input">
                 <!-- Botón para agregar al carrito, con la función addToCart() -->
-                <button class="buy-button" onclick="addToCart(7, 'Nike Downshifter 13', 305000)">Comprar Ahora</button>
+                <button class="buy-button" onclick="addToCart(7, 'Nike Downshifter 13', 305000)">Add to Cart</button>
             </div>
         </div>
         <!-- Producto 8: New Balance Edición especial Fresh Foam 574 -->
@@ -216,10 +221,11 @@
             <div class="product-details">
                 <h3>New Balance Edición especial Fresh Foam 574</h3> <!-- Nombre del producto -->
                 <div class="price"><del>$320.000</del> - $235.000</div> <!-- Precio del producto -->
+                <label for="quantity-1"><C1>Cantidad</C1></label> <!-- Label para la cantidad de productos -->
                 <!-- Input para la cantidad de productos -->
-                <input type="number" id="quantity-8" value="1" min="1">
+                <input type="number" id="quantity-8" value="1" min="1" class="quantity-input">
                 <!-- Botón para agregar al carrito, con la función addToCart() -->
-                <button class="buy-button" onclick="addToCart(8, 'New Balance Edición especial Fresh Foam 574', 235000)">Comprar Ahora</button>
+                <button class="buy-button" onclick="addToCart(8, 'New Balance Edición especial Fresh Foam 574', 235000)">Add to Cart</button>
             </div>
         </div>
         <!-- Producto 9: New Balance 442 v2 Pro FG -->
@@ -228,10 +234,11 @@
             <div class="product-details">
                 <h3>New Balance 442 v2 Pro FG</h3> <!-- Nombre del producto -->
                 <div class="price"><del>$600.000</del> - $395.000</div> <!-- Precio del producto -->
+                <label for="quantity-1"><C1>Cantidad</C1></label> <!-- Label para la cantidad de productos -->
                 <!-- Input para la cantidad de productos -->
-                <input type="number" id="quantity-9" value="1" min="1">
+                <input type="number" id="quantity-9" value="1" min="1" class="quantity-input">
                 <!-- Botón para agregar al carrito, con la función addToCart() -->
-                <button class="buy-button" onclick="addToCart(9, 'New Balance 442 v2 Pro FG', 395000)">Comprar Ahora</button>
+                <button class="buy-button" onclick="addToCart(9, 'New Balance 442 v2 Pro FG', 395000)">Add to Cart</button>
             </div>
         </div>
     </div> <!-- Fin del contenedor de productos -->
