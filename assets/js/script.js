@@ -308,7 +308,7 @@ document.getElementById('sort').addEventListener('change', applyFilters);
 
 // Configurar EmailJS con tu user ID
 (function() {
-    emailjs.init("user_your_user_id_here");  // Reemplaza con tu User ID de EmailJS
+    emailjs.init("Gz686p0bvQMAWeV95");  // Reemplaza con tu User ID de EmailJS
 })();
 
 // Agregar un event listener para enviar el formulario
@@ -320,11 +320,12 @@ document.querySelector(".form").addEventListener("submit", function(event) {
     const message = document.getElementById("message").value;  // Obtener el valor del campo "message"
 
     // Usar EmailJS para enviar el correo con la información
-    emailjs.send("service_id", "template_id", {
+    emailjs.send("your_service_id", "your_template_id", {
         name: name,
         email: email,
         message: message
     })
+    
     .then(function(response) {
         // Si el mensaje fue enviado con éxito
         console.log("SUCCESS", response);
