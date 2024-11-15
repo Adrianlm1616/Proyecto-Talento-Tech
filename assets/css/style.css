@@ -271,6 +271,10 @@ section-title {
     margin-top: 10px; /* Espaciado superior */
 }
 
+C1 {
+    font-weight: bold; /* Aplica negrita al texto */
+}
+
 /* Estilo para el contenedor de la cantidad */
 .quantity-container {
     margin-top: 10px; /* Añade un espacio arriba para separar este contenedor de otros elementos */
@@ -283,6 +287,7 @@ section-title {
 .quantity-container label {
     font-size: 16px; /* Establece el tamaño de la fuente del texto */
     color: #333; /* Define el color del texto con un gris oscuro */
+    text-align: center;
 }
 
 /* Estilo para el campo de entrada de cantidad (input[type="number"]) */
